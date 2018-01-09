@@ -26,12 +26,13 @@ class UserProfile(AbstractUser):
     # 地址
     address = models.CharField(max_length=100, verbose_name="地址", default="")
     # 电话
-    mobile = models.CharField(max_length=11, null=True, blank=True)
+    mobile = models.CharField(max_length=11, null=True, blank=True, verbose_name=u"电话")
     # 头像 默认使用default.png
     image = models.ImageField(
         upload_to="image/%Y/%m",
         default=u"image/default.png",
-        max_length=100
+        max_length=100,
+        verbose_name=u"头像"
     )
 
     # meta信息，即后台栏目名
@@ -54,17 +55,21 @@ class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u"验证码")
     # 未设置null = true blank = true 默认不可为空
     email = models.EmailField(max_length=50, verbose_name=u"邮箱")
-    send_type = models.CharField(choices=SEND_CHOICES, max_length=10)
+    send_type = models.CharField(choices=SEND_CHOICES, max_length=10, verbose_name=u"验证码类型")
     # 这里的now得去掉(),不去掉会根据编译时间。而不是根据实例化时间。
-    send_time = models.DateTimeField(default=datetime.now)
+    send_time = models.DateTimeField(default=datetime.now, verbose_name=u"发送时间")
 
     class Meta:
         verbose_name = "邮箱验证码"
         verbose_name_plural = verbose_name
 
+
+    # 重载str方法使后台不再直接显示object
+    def __str__(self):
+        return '{0}({1})'.format(self.code, self.email)
+
+
 # 轮播图model
-
-
 class Banner(models.Model):
     title = models.CharField(max_length=100, verbose_name=u"标题")
     image = models.ImageField(
@@ -79,3 +84,8 @@ class Banner(models.Model):
     class Meta:
         verbose_name = u"轮播图"
         verbose_name_plural = verbose_name
+
+
+    # 重载__str__方法使后台不再直接显示object
+    def __str__(self):
+        return '{0}(位于第{1}位)'.format(self.title, self.index)
