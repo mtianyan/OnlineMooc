@@ -18,11 +18,13 @@ from django.urls import path
 # 导入x admin，替换admin
 import xadmin
 from django.views.generic import TemplateView
-from users.views import user_login
+# from users.views import user_login
+from users.views import LoginView
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     # TemplateView.as_view会将template转换为view
     path('', TemplateView.as_view(template_name= "index.html"), name=  "index"),
-    path('login/', user_login, name="login")
+    # 基于类方法实现登录,这里是调用它的方法
+    path('login/', LoginView.as_view(), name="login")
 ]
