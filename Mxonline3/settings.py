@@ -29,7 +29,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition 注册我们的app
+# 设置邮箱和用户名均可登录
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
 
+)
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
