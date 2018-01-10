@@ -226,8 +226,8 @@ a:hover{
     background: #fb8344;
     color:#fff !important;
     text-align: center;
-    line-height: 40px !important;
-    margin:10px 0;
+    line-height: 30px !important;
+    margin:20px 0;
 }
 .form-group{
     position:relative;
@@ -302,7 +302,7 @@ a:hover{
     cursor: pointer;
 }
 .auto-box{
-    height:18px;
+    height:10px;
     line-height:18px;
 }
 .auto-box > label > input{
