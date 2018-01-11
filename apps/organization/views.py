@@ -1,9 +1,13 @@
 # encoding: utf-8
+import json
+
+from django.http import HttpResponse, JsonResponse
 
 from django.shortcuts import render
 
 from django.views.generic.base import View
 # Create your views here.
+from organization.forms import UserAskForm
 from .models import CourseOrg, CityDict
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 
@@ -67,3 +71,15 @@ class OrgView(View):
             "hot_orgs":hot_orgs,
             "sort": sort,
         })
+
+class AddUserAskView(View):
+    """
+    用户添加咨询
+    """
+    def post(self, request):
+        userask_form = UserAskForm(request.POST)
+        if userask_form.is_valid():
+            user_ask = userask_form.save(commit=True)
+            return HttpResponse('{"status":"success"}', content_type='application/json')
+        else:
+            return HttpResponse('{"status":"fail", "msg":"您的字段有错误,请检查"}', content_type='application/json')
