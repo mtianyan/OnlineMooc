@@ -133,15 +133,15 @@
                 <!--</div>-->
                 <div class="tab-form">
                     <form id="email_register_form" method="post" action="{% url 'register' %}" autocomplete="off">
-                        <div class="form-group marb20 ">
+                        <div class="form-group marb20 {% if register_form.email.errors %} errorput{% endif %}">
                             <label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
                             <input  type="text" id="id_email" name="email" value="{% ifnotequal None register_form.email.value %}{{ register_form.email.value }}{% endifnotequal %}" placeholder="请输入您的邮箱地址" />
                         </div>
-                        <div class="form-group marb8 ">
+                        <div class="form-group marb8 {% if register_form.password.errors %} errorput{% endif %}">
                             <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                             <input type="password" id="id_password" name="password"  value="{% ifnotequal None register_form.password.value %}{{ register_form.password.value }}{% endifnotequal %}" placeholder="请输入6-20位非中文字符密码" />
                         </div>
-                        <div class="form-group marb8 captcha1 ">
+                        <div class="form-group marb8 captcha1 {% if register_form.captcha.errors %} errorput{% endif %}">
                             <label>验&nbsp;证&nbsp;码</label>
                            {{ register_form.captcha }}
                             {{ active_form.captcha }}

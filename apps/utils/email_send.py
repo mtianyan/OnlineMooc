@@ -65,6 +65,17 @@ def send_register_eamil(email, send_type="register"):
         # 如果发送成功
         if send_status:
                 pass
+    elif send_type == "forget":
+        email_title = "mtianyan慕课小站 找回密码链接"
+        email_body = loader.render_to_string(
+            "email_forget.html",  # 需要渲染的html模板
+            {
+                "active_code": code  # 参数
+            }
+        )
+        msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
+        msg.content_subtype = "html"
+        send_status = msg.send()
 
 
 
