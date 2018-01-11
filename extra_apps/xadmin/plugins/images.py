@@ -51,6 +51,8 @@ class AdminImageWidget(forms.FileInput):
         output.append(super(AdminImageWidget, self).render(name, value, attrs))
         return mark_safe(u''.join(output))
 
+    def use_required_attribute(self, initial):
+        return super(AdminImageWidget, self).use_required_attribute(initial) and not initial
 
 class ModelDetailPlugin(BaseAdminPlugin):
 

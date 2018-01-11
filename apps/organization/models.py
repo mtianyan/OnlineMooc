@@ -23,19 +23,30 @@ class CityDict(models.Model):
 
 # 课程机构
 class CourseOrg(models.Model):
+    ORG_CHOICES = (
+        ("pxjg", u"培训机构"),
+        ("gx", u"高校"),
+        ("gr", u"个人"),
+    )
     name = models.CharField(max_length=50, verbose_name=u"机构名称")
     # 机构描述，后面会替换为富文本展示
     desc = models.TextField(verbose_name=u"机构描述")
+    # 机构类别:
+    category = models.CharField(max_length=20, choices=ORG_CHOICES, verbose_name=u"机构类别", default="pxjg")
     click_nums = models.IntegerField(default=0, verbose_name=u"点击数")
     fav_nums = models.IntegerField(default=0, verbose_name=u"收藏数")
     image = models.ImageField(
         upload_to="org/%Y/%m",
-        verbose_name=u"封面图",
+        verbose_name=u"Logo",
         max_length=100)
     address = models.CharField(max_length=150, verbose_name=u"机构地址")
     # 一个城市可以有很多课程机构，通过将city设置外键，变成课程机构的一个字段
     # 可以让我们通过机构找到城市
     city = models.ForeignKey(CityDict, on_delete=models.CASCADE, verbose_name=u"所在城市")
+    # 当学生点击学习课程，找到所属机构，学习人数加1
+    students = models.IntegerField(default=0, verbose_name=u"学习人数")
+    # 当发布课程就加1
+    course_nums = models.IntegerField(default=0, verbose_name=u"课程数")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:
