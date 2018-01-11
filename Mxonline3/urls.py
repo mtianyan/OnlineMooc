@@ -19,6 +19,7 @@ from django.urls import path, include, re_path
 import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
+from organization.views import OrgView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
 
 urlpatterns = [
@@ -45,5 +46,8 @@ urlpatterns = [
 
     # 修改密码url; 用于passwordreset页面提交表单
     path('modify_pwd/', ModifyPwdView.as_view(), name="modify_pwd"),
+
+    # 课程机构首页url
+    path('org_list/', OrgView.as_view(), name="org_list"),
 
 ]
