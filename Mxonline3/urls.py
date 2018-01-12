@@ -53,6 +53,8 @@ urlpatterns = [
     # 课程机构app的url配置
     path("org/", include('organization.urls', namespace='org')),
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
-    re_path(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT })
+    re_path('media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
 
+    # 课程app的url配置
+    path("course/", include('courses.urls', namespace="course")),
 ]
