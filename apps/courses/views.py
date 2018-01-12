@@ -1,10 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic.base import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from courses.models import Course, CourseResource
-from operation.models import UserFavorite
+from operation.models import UserFavorite, CourseComments
 
 
 class CourseListView(View):
@@ -81,3 +82,36 @@ class CourseInfoView(View):
             "course": course,
             "all_resources": all_resources,
         })
+class CommentsView(View):
+    def get(self, request, course_id):
+        # 此处的id为表默认为我们添加的值。
+        course = Course.objects.get(id=int(course_id))
+        all_resources = CourseResource.objects.filter(course=course)
+        all_comments = CourseComments.objects.all()
+        return render(request, "course-comment.html", {
+            "course": course,
+            "all_resources": all_resources,
+            "all_comments":all_comments,
+        })
+
+# ajax方式添加评论
+class AddCommentsView(View):
+    def post(self, request):
+        if not request.user.is_authenticated:
+            # 未登录时返回json提示未登录，跳转到登录页面是在ajax中做的
+            return HttpResponse('{"status":"fail", "msg":"用户未登录"}', content_type='application/json')
+        course_id = request.POST.get("course_id", 0)
+        comments = request.POST.get("comments", "")
+        if int(course_id) > 0 and comments:
+            course_comments = CourseComments()
+            # get只能取出一条数据，如果有多条抛出异常。没有数据也抛异常
+            # filter取一个列表出来，queryset。没有数据返回空的queryset不会抛异常
+            course = Course.objects.get(id = int(course_id))
+            # 外键存入要存入对象
+            course_comments.course = course
+            course_comments.comments = comments
+            course_comments.user = request.user
+            course_comments.save()
+            return HttpResponse('{"status":"success", "msg":"评论成功"}', content_type='application/json')
+        else:
+            return HttpResponse('{"status":"fail", "msg":"评论失败"}', content_type='application/json')
