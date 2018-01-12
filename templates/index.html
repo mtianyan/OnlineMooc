@@ -18,8 +18,10 @@
 <section class="headerwrap ">
     <header>
 		<div  class=" header">
- 			<div class="top">
                 {% if request.user.is_authenticated %}
+                     			<div class="top">
+                                        				<div class="wp">
+                    <div class="fl"><p>服务电话：<b>23333333</b></p></div>
 			<div class="personal">
                             <dl class="user fr">
                                 <dd>mtianyan<img class="down fr" src="{% static 'images/top_down.png' %}"/></dd>
@@ -39,6 +41,7 @@
                                 </div>
                             </div>
                         </div>
+                    				</div>
     {% else %}
                     				<div class="wp">
 					<div class="fl"><p>服务电话：<b>23333333</b></p></div>
@@ -52,10 +55,10 @@
 
 
 				</div>
-{% endif %}
+
 
 			</div>
-
+{% endif %}
             <div class="middle">
                 <div class="wp">
                     <a href="index.html"><img class="fl" src="{% static 'images/logo.jpg'%}"/></a>
