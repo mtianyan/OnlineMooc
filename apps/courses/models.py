@@ -29,11 +29,24 @@ class Course(models.Model):
         max_length=100)
     # 保存点击量，点进页面就算
     click_nums = models.IntegerField(default=0, verbose_name=u"点击数")
+    category = models.CharField(max_length=20, verbose_name=u"课程类别", default=u"后端开发")
+    tag = models.CharField(max_length=15, verbose_name=u"课程标签", default=u"")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:
         verbose_name = u"课程"
         verbose_name_plural = verbose_name
+
+    # 替代标签:course.lesson_set.count
+    # def get_zj_nums(self):
+    #     # 获取课程章节数的方法
+    #     return self.lesson_set.all().count()
+
+    # 获取学习这门课程的用户
+    # 替代标签:course.usercourse_set.get_queryset|slice:":1"
+    # def get_learn_users(self):
+    #     # 谁的里面添加了它做外键，他都可以取出来
+    #     return self.usercourse_set.all()[:5]
 
     def __str__(self):
         return self.name
