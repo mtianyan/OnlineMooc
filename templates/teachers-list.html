@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+课程讲师 | mtianyan慕课小站
+{% endblock %}
+
+{% load staticfiles %}
+<!--crumbs start-->
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <ul  class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li>授课教师</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+	<div class="wp butler_list_box list">
+	<div class='left'>
+		<div class="butler_list layout">
+			<div class="head">
+				<ul class="fl tab_header">
+					<li {% ifequal sort "" %}class="active"{% endifequal %}><a href="?sort=">全部</a> </li>
+					<li  {% ifequal sort "hot" %}class="active"{% endifequal %}><a href="?sort=hot">人气 &#8595;</a></li>
+				</ul>
+                <div class="fr butler-num">共<span class="key">{{ teacher_nums }}</span>人&nbsp;&nbsp;&nbsp;</div>
+			</div>
+{% for teacher in all_teacher.object_list %}
+     <dl class="des">
+					<dt>
+						<a href="{% url 'org:teacher_detail' teacher.id %}">
+                            <div class="picpic">
+                                <img width="100" height="100" class="scrollLoading" src="{{ MEDIA_URL }}{{ teacher.image }}"/>
+                            </div>
+                        </a>
+						<div class="btn">
+							<div class="fr btn2 bdsharebuttonbox"
+                                 data-text="授课教师-奥巴马-慕学在线"
+                                 data-desc="我在#慕课网#发现了教师“奥巴马”，对学习中的小伙伴很有帮助，一起来看看吧。"
+                                 data-comment="奥巴马金牌讲师，从业年限：5年"
+                                 >
+                                <span class="fl">分享</span>
+                                <a href="#" class="bds_more" data-cmd="more"></a>
+                            </div>
+						</div>
+					</dt>
+					<dd>
+						<a href="{% url 'org:teacher_detail' teacher.id %}">
+                            <h1>{{ teacher.name }}<span class="key picbig">金牌讲师</span></h1>
+                        </a>
+						<ul class="cont">
+							<li>工作年限：<span>{{ teacher.work_years }}</span></li>
+							<li>工作职位：<span>{{ teacher.work_position }}</span></li>
+							<li>就职公司：<span>{{ teacher.work_company }}&nbsp;</span></li>
+							<li>年龄：<span>{{ teacher.age }}</span></li>
+							<li>教学特点：<span>{{ teacher.points }}</span></li>
+						</ul>
+					</dd>
+                    <a class="buy buyservice" href="{% url 'org:teacher_detail' teacher.id %}"><br/>查看<br/>详情</a>
+                </dl>
+            {% endfor %}
+
+
+
+
+		</div>
+		 <div class="pageturn">
+            <ul class="pagelist">
+              {% if all_teacher.has_previous %}
+ <li class="long"><a href="?{{ all_teacher.previous_page_number.querystring }}" >上一页</a></li>
+             {% endif %}
+          {% for page in all_teacher.pages %}
+        {% if page %}
+            {% ifequal page all_teacher.number %}
+                   <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+            {% else %}
+<li><a href="?{{ page.querystring }}">{{ page }}</a></li>
+            {% endifequal %}
+        {% else %}
+            <li class="none"><a href="">...</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if all_teacher.has_next %}
+    <li class="long"><a href="?{{ all_teacher.next_page_number.querystring }}">下一页</a></li>
+    {% endif %}
+            </ul>
+         </div>
+	</div>
+	<div class="right layout">
+		<div class="head">讲师排行榜</div>
+
+        {% for rank_teacher in rank_teachers %}
+              <dl class="des">
+                <span class="num fl">{{ forloop.counter }}</span>
+                <a href="/diary/hk_detail/6/">
+                    <dt>
+                        <img width="50" height="50" class="scrollLoading"  src="{{ MEDIA_URL }}{{ rank_teacher.image }}"/>
+                    </dt>
+                </a>
+                <dd>
+                    <a href="/diary/hk_detail/6/">
+                        <h1 title="{{ rank_teacher.name }}">{{ rank_teacher.name }}</h1>
+                    </a>
+                    <p>资历：<span>{{ rank_teacher.work_years }}年</span></p>
+                </dd>
+            </dl>
+        {% endfor %}
+        
+
+        
+
+
+	</div>
+    </div>
+</section>
+{% endblock %}
+
+{% block custom_js %}
+
+{% endblock %}
