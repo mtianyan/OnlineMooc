@@ -25,8 +25,8 @@
 		<div class="butler_list layout">
 			<div class="head">
 				<ul class="fl tab_header">
-					<li {% ifequal sort "" %}class="active"{% endifequal %}><a href="?sort=">全部</a> </li>
-					<li  {% ifequal sort "hot" %}class="active"{% endifequal %}><a href="?sort=hot">人气 &#8595;</a></li>
+					<li {% ifequal sort "" %}class="active"{% endifequal %}><a href="?sort=&keywords={{ search_keywords }}">全部</a> </li>
+					<li  {% ifequal sort "hot" %}class="active"{% endifequal %}><a href="?sort=hot&keywords={{ search_keywords }}">人气 &#8595;</a></li>
 				</ul>
                 <div class="fr butler-num">共<span class="key">{{ teacher_nums }}</span>人&nbsp;&nbsp;&nbsp;</div>
 			</div>

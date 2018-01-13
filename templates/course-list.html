@@ -24,9 +24,9 @@
 			<div class="left layout">
 				<div class="head">
 					<ul class="tab_header">
-						<li class="{% ifequal sort "" %}active{% endifequal %}"><a href="?sort=">最新 </a></li>
-						<li class="{% ifequal sort "hot" %}active{% endifequal %}"><a href="?sort=hot">最热门</a></li>
-						<li class="{% ifequal sort "students" %}active{% endifequal %}"><a href="?sort=students">参与人数</a></li>
+						<li class="{% ifequal sort "" %}active{% endifequal %}"><a href="?sort=&keywords={{ search_keywords }}">最新 </a></li>
+						<li class="{% ifequal sort "hot" %}active{% endifequal %}"><a href="?sort=hot&keywords={{ search_keywords }}">最热门</a></li>
+						<li class="{% ifequal sort "students" %}active{% endifequal %}"><a href="?sort=students&keywords={{ search_keywords }}">参与人数</a></li>
 					</ul>
 				</div>
                 <div id="inWindow">

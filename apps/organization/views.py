@@ -1,4 +1,5 @@
 # encoding: utf-8
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
@@ -15,7 +16,13 @@ class OrgView(View):
 
         # 热门机构,如果不加负号会是有小到大。
         hot_orgs = all_orgs.order_by("-click_nums")[:3]
-
+        # 搜索功能
+        search_keywords = request.GET.get('keywords', '')
+        if search_keywords:
+            # 在name字段进行操作,做like语句的操作。i代表不区分大小写
+            # or操作使用Q
+            all_orgs = all_orgs.filter(Q(name__icontains=search_keywords) | Q(desc__icontains=search_keywords) | Q(
+                address__icontains=search_keywords))
         # 取出所有的城市
         all_city = CityDict.objects.all()
 
@@ -67,6 +74,7 @@ class OrgView(View):
             "category":category,
             "hot_orgs":hot_orgs,
             "sort": sort,
+            "search_keywords": search_keywords,
         })
 
 class AddUserAskView(View):
@@ -221,6 +229,14 @@ class TeacherListView(View):
                 if sort == "hot":
                     all_teacher = all_teacher.order_by("-click_nums")
 
+              # 搜索功能
+            search_keywords = request.GET.get('keywords', '')
+            if search_keywords:
+                # 在name字段进行操作,做like语句的操作。i代表不区分大小写
+                # or操作使用Q
+                all_teacher = all_teacher.filter(
+                    Q(name__icontains=search_keywords) | Q(work_company__icontains=search_keywords))
+
             # 排行榜讲师
             rank_teacher = Teacher.objects.all().order_by("-fav_nums")[:5]
             # 总共有多少老师使用count进行统计
@@ -240,6 +256,7 @@ class TeacherListView(View):
             "teacher_nums":teacher_nums,
                 "sort":sort,
                 "rank_teachers":rank_teacher,
+                "search_keywords": search_keywords,
             })
 
 # 教师详情页面

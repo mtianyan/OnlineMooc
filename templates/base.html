@@ -50,7 +50,7 @@
 
 
                       <a style="color:white" class="fr registerbtn" href="{% url "register" %}">注册</a>
-                    <a style="color:white" class="fr loginbtn" href="/login/">登录</a>
+                    <a style="color:white" class="fr loginbtn" href="{% url 'login'%}?next={{ request.path }}">登录</a>
 
 
 
@@ -64,13 +64,11 @@
                     <a href="{% url 'index' %}"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
                     <div class="searchbox fr">
                         <div class="selectContainer fl">
-                            <span class="selectOption" id="jsSelectOption" data-value="course">
-                                公开课
-                            </span>
+                            <span class="selectOption" id="jsSelectOption" {% ifequal  '/' request.path %}data-value="course"> 公开课{% endifequal %}{% ifequal  '/course' request.path|slice:":7" %}data-value="course"> 公开课 {% endifequal %}{% ifequal  '/org/teacher' request.path|slice:":12" %}data-value="teacher"> 授课教师{% endifequal %}{% ifequal  '/org/list' request.path|slice:":9" %}data-value="org"> 课程机构{% endifequal %}</span>
                             <ul class="selectMenu" id="jsSelectMenu">
                                 <li data-value="course">公开课</li>
                                 <li data-value="org">课程机构</li>
-                                <li data-value="teacher">授课老师</li>
+                                <li data-value="teacher">授课教师</li>
                             </ul>
                         </div>
                         <input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
@@ -84,16 +82,24 @@
 				<div class="nav">
 					<div class="wp">
 						<ul>
-							<li ><a href="{% url 'index' %}">首页</a></li>
-							<li >
+							<li {% ifequal  '/' request.path %}
+							 class="active"
+							{% endifequal %}><a href="{% url 'index' %}">首页</a></li>
+							<li  {% ifequal  '/course' request.path|slice:":7" %}
+							 class="active"
+							{% endifequal %}>
 								<a href="{% url 'course:list' %}">
 									公开课<img class="hot" src="{% static 'images/nav_hot.png' %}">
 								</a>
 							</li>
-							<li >
-								<a href="teachers-list.html">授课教师</a>
+							<li {% ifequal  '/org/teacher' request.path|slice:":12" %}
+							 class="active"
+							{% endifequal %}>
+								<a href="{% url 'org:teacher_list' %}">授课教师</a>
 							</li>
-							<li class="active" ><a href="{% url 'org:org_list' %}">授课机构</a></li>
+							<li {% ifequal  '/org/list' request.path|slice:":9" %}
+							 class="active"
+							{% endifequal %}><a href="{% url 'org:org_list' %}">课程机构</a></li>
 						</ul>
 					</div>
 				</div>
