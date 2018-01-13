@@ -13,7 +13,7 @@
 			<ul>
 				<li><a href="{% url 'index' %}">首页</a>></li>
                 <li><a href="{% url 'course:list' %}">公开课程</a>></li>
-				<li>课程详情</li>
+				<li>{{ course.name }}</li>
 			</ul>
 		</div>
 	</div>
