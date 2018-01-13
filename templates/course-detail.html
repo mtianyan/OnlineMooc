@@ -176,7 +176,7 @@ function add_fav(current_elem, fav_id, fav_type){
         success: function(data) {
             if(data.status == 'fail'){
                 if(data.msg == '用户未登录'){
-                    window.location.href="/login/";
+                    window.location.href="{% url 'login' %}?next={{ request.path }}";
                 }else{
                     alert(data.msg)
                 }

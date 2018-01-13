@@ -86,6 +86,7 @@
                         <a class="fr" href="{% url "forget_pwd" %}">忘记密码？</a>
                      </div>
                      <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即登录 > " />
+                <input type="hidden" name="next" value="{{ redirect_url }}" />
                 {% csrf_token %}
                 </form>
                 <p class="form-p">没有mtianyan慕课小站帐号？<a href="{% url 'register' %}">[立即注册]</a></p>

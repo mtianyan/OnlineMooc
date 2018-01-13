@@ -1,4 +1,5 @@
 # encoding: utf-8
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 # Django自带的用户验证,login
 from django.contrib.auth import authenticate, login
@@ -111,7 +112,10 @@ class LoginView(View):
     def get(self, request):
         # render就是渲染html返回用户
         # render三变量: request 模板名称 一个字典写明传给前端的值
-        return render(request, "login.html", {})
+        redirect_url = request.GET.get('next', '')
+        return render(request, "login.html", {
+            "redirect_url": redirect_url
+        })
 
     def post(self, request):
         # 类实例化需要一个字典参数dict:request.POST就是一个QueryDict所以直接传入
@@ -136,6 +140,11 @@ class LoginView(View):
                     # request是要render回去的。这些信息也就随着返回浏览器。完成登录
                     login(request, user)
                     # 跳转到首页 user request会被带回到首页
+                    # 增加重定向回原网页。
+                    redirect_url = request.POST.get('next', '')
+                    if redirect_url:
+                        return HttpResponseRedirect(redirect_url)
+                    # 跳转到首页 user request会被带回到首页
                     return render(request, "index.html")
                 # 即用户未激活跳转登录，提示未激活
                 else:
@@ -156,6 +165,7 @@ class LoginView(View):
 
 
 # 当我们配置url被这个view处理时，自动传入request对象.
+# 这个是已经被我抛弃的方法型实现，改为类实现
 def user_login(request):
     # 前端向后端发送的请求方式: get 或post
 
@@ -174,7 +184,6 @@ def user_login(request):
             # 实际是对request写了一部分东西进去，然后在render的时候：
             # request是要render回去的。这些信息也就随着返回浏览器。完成登录
             login(request, user)
-            # 跳转到首页 user request会被带回到首页
             return render(request, "index.html")
         # 没有成功说明里面的值是None，并再次跳转回主页面
         else:
