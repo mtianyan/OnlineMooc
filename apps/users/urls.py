@@ -1,4 +1,6 @@
 # encoding: utf-8
+import django
+
 from users.views import UserInfoView, UploadImageView, SendEmailCodeView, UpdateEmailView, UpdatePwdView, MyCourseView, \
     MyFavOrgView, MyFavTeacherView, MyFavCourseView, MyMessageView
 

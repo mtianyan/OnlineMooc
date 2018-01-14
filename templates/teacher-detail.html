@@ -34,18 +34,14 @@
                                 <span class="fl btn1 collectionbtn" id="jsLeftBtn">
                                     {% if has_fav_teacher %} 已收藏{% else %}收藏{% endif %}
                                 </span>
-                                <span class="fr btn2 shareBtn bdsharebuttonbox"
-                                      data-text="授课教师-李老师-慕学网"
-                                      data-desc="我在#慕课网#发现了"
-                                      data-comment="李老师，工作年限：5年；学历：本科；所在公司：阿里巴巴&nbsp;；经典案例：django入门和深入；flask入门"
-                                      data-url="/diary/hk_detail/10/">
+                                <span class="fr btn2 shareBtn bdsharebuttonbox" data-tag="share_{{ teacher.id }}">
                                     <span class="fl">分享</span>
                                     <a href="#" class="bds_more" data-cmd="more"></a>
                                 </span>
                             </div>
                         </dt>
                         <dd>
-                            <a href="/diary/hk_detail/10/">
+                            <a href="{% url 'org:teacher_detail' teacher.id %}">
                                 <h1>{{ teacher.name }}<span class="key picbig">金牌讲师</span></h1>
                             </a>
                             <ul class="cont">
@@ -62,7 +58,7 @@
                 <div class="left layout">
 				<div class="head">
 					<ul class="tab_header">
-						<li class="active"><a href="/diary/hk_detail/10/">全部课程</a> </li>
+						<li class="active">全部课程</li>
 					</ul>
 				</div>
                     <div class="companycenter">
@@ -74,7 +70,7 @@
                                     <img width="214" height="190" class="scrollLoading" src="{{ MEDIA_URL }}{{ course.image }}"/>
                                 </a>
                                 <div class="des">
-                                    <a href="course-detail.html"><h2>{{ course.name }}</h2></a>
+                                    <a href="{% url 'course:course_detail' course.id %}"><h2>{{ course.name }}</h2></a>
                                     <span class="fl">时长：<i class="key">{{ course.learn_times }}</i></span>
                                     <span class="fr">学习人数：{{ course.students }}</span>
                                 </div>
@@ -189,6 +185,26 @@ $('#jsRightBtn').on('click', function(){
 });
 
 
+</script>
+<script>
+
+    window._bd_share_config = {
+        "common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},
+        share : [
+                   {
+			"tag" : "share_{{ teacher.id }}",
+			"bdSize" : 16,
+                       "bdText":"授课教师-{{ teacher.name }}-mtianyan慕课小站",
+                       "bdDesc": "我在#mtianyan慕课小站#发现了老师“{{ teacher.name }}”，对我们学习很有帮助，一起来看看吧",
+                        "bdUrl": 'http://mxonline.mtianyan.cn{% url 'org:teacher_detail' teacher.id %}',
+
+
+		},
+]
+
+    }
+	//以下为js加载部分
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
 {% endblock %}

@@ -63,6 +63,7 @@ table.linehei50 td, table.linehei50 th {
     width: 100%;
     height: 100%;
     color: #23353c;
+    overflow: visible;
 }
 
 .errorpage .wp {

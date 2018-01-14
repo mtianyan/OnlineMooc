@@ -38,12 +38,12 @@
                                 <img width="100" height="100" class="scrollLoading" src="{{ MEDIA_URL }}{{ teacher.image }}"/>
                             </div>
                         </a>
-						<div class="btn">
-							<div class="fr btn2 bdsharebuttonbox"
-                                 data-text="授课教师-奥巴马-慕学在线"
-                                 data-desc="我在#慕课网#发现了教师“奥巴马”，对学习中的小伙伴很有帮助，一起来看看吧。"
-                                 data-comment="奥巴马金牌讲师，从业年限：5年"
+					<div class="btn">
+							<div class="fr btn2 bdsharebuttonbox " data-tag="share_{{ teacher.id }}"
+                                 data="{'text':'授课教师-{{ teacher.name }}-mtianyan慕课小站'}"
                                  >
+
+
                                 <span class="fl">分享</span>
                                 <a href="#" class="bds_more" data-cmd="more"></a>
                             </div>
@@ -121,5 +121,26 @@
 {% endblock %}
 
 {% block custom_js %}
+<script>
 
+    window._bd_share_config = {
+        "common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},
+        share : [
+            {% for teacher in all_teacher.object_list %}
+                   {
+			"tag" : "share_{{ teacher.id }}",
+			"bdSize" : 16,
+                       "bdText":"授课教师-{{ teacher.name }}-mtianyan慕课小站",
+                       "bdDesc": "我在#mtianyan慕课小站#发现了老师“{{ teacher.name }}”，对我们学习很有帮助，一起来看看吧",
+                        "bdUrl": 'http://mxonline.mtianyan.cn{% url 'org:teacher_detail' teacher.id %}',
+
+
+		},{% endfor %}
+]
+
+    }
+	//以下为js加载部分
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 {% endblock %}
+

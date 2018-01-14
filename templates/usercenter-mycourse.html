@@ -36,7 +36,7 @@
                             </div>
                             <div class="bottom">
                                 <span class="fl">{{ user_course.course.course_org.name }}</span>
-                                <span class="star fr  notlogin" data-favid="15">{{ user_course.course.fav_nums }}</span>
+                                <span class="star fr  notlogin" data-favid="{{ user_course.course.id }}">{{ user_course.course.fav_nums }}</span>
                             </div>
                         </div>
 {% endfor %}

@@ -13,24 +13,30 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import django
 from django.contrib import admin
 from django.urls import path, include, re_path
 # 导入x admin，替换admin
 from django.views.static import serve
 
+import users
 import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
-from Mxonline3.settings import MEDIA_ROOT
+from Mxonline3.settings import MEDIA_ROOT, STATIC_ROOT
 from organization.views import OrgView
-from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
+from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
+    IndexView
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     # TemplateView.as_view会将template转换为view
-    path('', TemplateView.as_view(template_name= "index.html"), name=  "index"),
+    #path('', TemplateView.as_view(template_name= "index.html"), name=  "index"),
+    path('', IndexView.as_view(), name=  "index"),
     # 基于类方法实现登录,这里是调用它的方法
     path('login/', LoginView.as_view(), name="login"),
+    # 退出功能url
+    path('logout/', LogoutView.as_view(), name="logout"),
 
     # 注册url
     path("register/", RegisterView.as_view(), name = "register" ),
@@ -54,7 +60,8 @@ urlpatterns = [
     path("org/", include('organization.urls', namespace='org')),
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
     re_path('media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
-
+    # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
+    re_path('static/(?P<path>.*)', serve, {"document_root": STATIC_ROOT}),
     # 课程app的url配置
     path("course/", include('courses.urls', namespace="course")),
     # user app的url配置

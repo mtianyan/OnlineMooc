@@ -92,6 +92,8 @@ class CourseInfoView(LoginRequiredMixin, View):
         user_courses = UserCourse.objects.filter(user= request.user, course= course)
         if not user_courses:
             user_course = UserCourse(user= request.user, course= course)
+            course.students +=1
+            course.save()
             user_course.save()
         # 查询课程资源
         all_resources = CourseResource.objects.filter(course=course)

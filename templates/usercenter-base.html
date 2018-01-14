@@ -45,7 +45,7 @@
                                 </dl>
                                 <div class="btn">
 	                                <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
-	                                <a class="fr" href="/logout/">退出</a>
+	                                <a class="fr" href="{% url 'logout' %}">退出</a>
                                 </div>
                             </div>
                         </div>
@@ -97,10 +97,18 @@
 	<div class="wp list personal_list">
 	<div class="left">
         <ul>
-            <li class="active2"><a href="{% url 'users:user_info' %}">个人资料</a></li>
-            <li ><a href="{% url 'users:mycourse' %}">我的课程</a></li>
-            <li ><a href="{% url 'users:myfav_org' %}">我的收藏</a></li>
-            <li >
+            <li {% ifequal  '/users/info/' request.path %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:user_info' %}">个人资料</a></li>
+            <li {% ifequal  '/users/mycourse/' request.path %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:mycourse' %}">我的课程</a></li>
+            <li {% ifequal  '/users/myfav/' request.path|slice:'13' %}
+            class="active2"
+            {% endifequal %}><a href="{% url 'users:myfav_org' %}">我的收藏</a></li>
+            <li {% ifequal  '/users/my_message/' request.path %}
+            class="active2"
+            {% endifequal %}>
                 <a href="{% url 'users:my_message' %}" style="position: relative;">
                     我的消息
                 </a>
@@ -139,7 +147,7 @@
     <!--提示弹出框-->
     <div class="bidtips dialogbox promptbox" id="jsComfirmDialig">
         <h1>确认提交</h1>
-        <div class="close jsCloseDialog"><img src="{% static '' %}images/dig_close.png"/></div>
+        <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
         <div class="cont">
             <h2>您确认提交吗？</h2>
             <dd class="autoTxtCount">
@@ -195,7 +203,7 @@
         <h1>邮件验证提示</h1>
         <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
         <div class="center">
-            <img src="{% static '' %}images/send.png"/>
+            <img src="{% static 'images/send.png' %}"/>
             <p>我们已经向您的邮箱<span class="green" id="jsEmailToActive">12@13.com</span>发送了邮件，<br/>为保证您的账号安全，请及时验证邮箱</p>
             <p class="a"><a class="btn" id="jsGoToEmail" target="_blank" href="http://mail.qq.com">去邮箱验证</a></p>
             <p class="zy_success upmove"></p>
@@ -205,7 +213,7 @@
     </div>
     <div class="resetpassbox dialogbox" id="jsSetNewPwd">
         <h1>重新设置密码</h1>
-        <div class="close jsCloseDialog"><img src="{% static '' %}images/dig_close.png"/></div>
+        <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
         <p class="green">请输入新密码</p>
         <form id="jsSetNewPwdForm">
             <div class="box">
@@ -229,7 +237,7 @@
     </div>
     <div class="forgetbox dialogbox">
         <h1>忘记密码</h1>
-        <div class="close jsCloseDialog"><img src="{% static '' %}images/dig_close.png"/></div>
+        <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
         <div class="cont">
             <form id="jsFindPwdForm" autocomplete="off">
                 <div class="box">

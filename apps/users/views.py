@@ -2,17 +2,18 @@
 import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 # Django自带的用户验证,login
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 
 from courses.models import Course
 from operation.models import UserCourse, UserFavorite, UserMessage
 from organization.models import CourseOrg, Teacher
-from .models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord, Banner
 # 并集运算
 from django.db.models import Q
 # 基于类实现需要继承的view
@@ -87,7 +88,7 @@ class RegisterView(View):
             # 写入欢迎注册消息
             user_message = UserMessage()
             user_message.user = user_profile.id
-            user_message.message = "欢迎注册mtianyan慕课小站!!"
+            user_message.message = "欢迎注册mtianyan慕课小站!! --系统自动消息"
             user_message.save()
             # 发送注册激活邮件
             send_register_eamil(user_name, "register")
@@ -118,6 +119,13 @@ class CustomBackend(ModelBackend):
                 return user
         except Exception as e:
             return None
+
+class LogoutView(View):
+    def get(self, request):
+        # django自带的logout
+        logout(request)
+        # 重定向到首页,
+        return HttpResponseRedirect(reverse("index"))
 
 
 class LoginView(View):
@@ -486,6 +494,12 @@ class MyMessageView(LoginRequiredMixin, View):
 
     def get(self, request):
         all_message = UserMessage.objects.filter(user= request.user.id)
+
+        # 用户进入个人中心消息页面，清空未读消息记录
+        all_unread_messages = UserMessage.objects.filter(user=request.user.id, has_read=False)
+        for unread_message in all_unread_messages:
+            unread_message.has_read = True
+            unread_message.save()
         # 对课程机构进行分页
         # 尝试获取前台get请求传递过来的page参数
         # 如果是不合法的配置参数默认返回第一页
@@ -498,4 +512,22 @@ class MyMessageView(LoginRequiredMixin, View):
         messages = p.page(page)
         return  render(request, "usercenter-message.html", {
         "messages":messages,
+        })
+
+## 首页view
+class IndexView(View):
+    def get(self,request):
+        # 取出轮播图
+        all_banner = Banner.objects.all().order_by('index')[:5]
+        # 正常位课程
+        courses = Course.objects.filter(is_banner=False)[:6]
+        # 轮播图课程取三个
+        banner_courses = Course.objects.filter(is_banner=True)[:3]
+        # 课程机构
+        course_orgs = CourseOrg.objects.all()[:15]
+        return render(request, 'index.html', {
+            "all_banner":all_banner,
+            "courses":courses,
+            "banner_courses":banner_courses,
+            "course_orgs":course_orgs,
         })
