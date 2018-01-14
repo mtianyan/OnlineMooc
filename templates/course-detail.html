@@ -138,12 +138,12 @@
                     {% for relate_course in relate_courses %}
                        <dl>
                             <dt>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="{% url 'course:course_detail' relate_course.id %}">
                                     <img width="240" height="220" class="scrollLoading" src="{{ MEDIA_URL }}{{ relate_course.image }}"/>
                                 </a>
                             </dt>
                             <dd>
-                                <a target="_blank" href=""><h2>{{ relate_course.name }}</h2></a>
+                                <a target="_blank" href="{% url 'course:course_detail' relate_course.id %}"><h2>{{ relate_course.name }}</h2></a>
                                 <span class="fl">学习时长：<i class="key">{{ relate_course.learn_times }}</i></span>
                             </dd>
                         </dl>

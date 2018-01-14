@@ -44,6 +44,12 @@ class UserProfile(AbstractUser):
     def __str__(self):
         return self.username
 
+    # 获取用户未读消息的数量
+    def unread_nums(self):
+        from operation.models import UserMessage
+        return  UserMessage.objects.filter(user=self.id).count()
+
+
 # 邮箱验证码model
 
 

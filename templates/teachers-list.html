@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block titile %}
-课程讲师 | mtianyan慕课小站
+授课教师 | mtianyan慕课小站
 {% endblock %}
 
 {% load staticfiles %}
@@ -97,13 +97,13 @@
         {% for rank_teacher in rank_teachers %}
               <dl class="des">
                 <span class="num fl">{{ forloop.counter }}</span>
-                <a href="/diary/hk_detail/6/">
+                <a href="{% url 'org:teacher_detail' rank_teacher.id %}">
                     <dt>
                         <img width="50" height="50" class="scrollLoading"  src="{{ MEDIA_URL }}{{ rank_teacher.image }}"/>
                     </dt>
                 </a>
                 <dd>
-                    <a href="/diary/hk_detail/6/">
+                    <a href="{% url 'org:teacher_detail' rank_teacher.id %}">
                         <h1 title="{{ rank_teacher.name }}">{{ rank_teacher.name }}</h1>
                     </a>
                     <p>资历：<span>{{ rank_teacher.work_years }}年</span></p>

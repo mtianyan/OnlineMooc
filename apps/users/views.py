@@ -2,11 +2,16 @@
 import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 # Django自带的用户验证,login
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.backends import ModelBackend
+
+from courses.models import Course
+from operation.models import UserCourse, UserFavorite, UserMessage
+from organization.models import CourseOrg, Teacher
 from .models import UserProfile, EmailVerifyRecord
 # 并集运算
 from django.db.models import Q
@@ -79,6 +84,11 @@ class RegisterView(View):
             user_profile.password = make_password(pass_word)
             user_profile.save()
 
+            # 写入欢迎注册消息
+            user_message = UserMessage()
+            user_message.user = user_profile.id
+            user_message.message = "欢迎注册mtianyan慕课小站!!"
+            user_message.save()
             # 发送注册激活邮件
             send_register_eamil(user_name, "register")
 
@@ -396,3 +406,96 @@ class UpdateEmailView(LoginRequiredMixin, View):
             return HttpResponse(
                 '{"email":"验证码无效"}',
                 content_type='application/json')
+
+
+# 个人中心页我的课程
+
+class MyCourseView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        user_courses = UserCourse.objects.filter(user=request.user)
+        return render(request, "usercenter-mycourse.html", {
+            "user_courses":user_courses,
+        })
+
+# 我收藏的机构
+
+class MyFavOrgView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        org_list = []
+        fav_orgs= UserFavorite.objects.filter(user=request.user, fav_type=2)
+        # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
+        for fav_org in fav_orgs:
+            # 取出fav_id也就是机构的id。
+            org_id = fav_org.fav_id
+            # 获取这个机构对象
+            org = CourseOrg.objects.get(id=org_id)
+            org_list.append(org)
+        return render(request, "usercenter-fav-org.html", {
+            "org_list": org_list,
+        })
+# 我收藏的授课讲师
+
+class MyFavTeacherView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        teacher_list = []
+        fav_teachers= UserFavorite.objects.filter(user=request.user, fav_type=3)
+        # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
+        for fav_teacher in fav_teachers:
+            # 取出fav_id也就是机构的id。
+            teacher_id = fav_teacher.fav_id
+            # 获取这个机构对象
+            teacher = Teacher.objects.get(id=teacher_id)
+            teacher_list.append(teacher)
+        return render(request, "usercenter-fav-teacher.html", {
+            "teacher_list": teacher_list,
+        })
+
+# 我收藏的课程
+
+class MyFavCourseView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        course_list = []
+        fav_courses = UserFavorite.objects.filter(user=request.user, fav_type=1)
+        # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
+        for fav_course in fav_courses:
+            # 取出fav_id也就是机构的id。
+            course_id = fav_course.fav_id
+            # 获取这个机构对象
+            course = Course.objects.get(id=course_id)
+            course_list.append(course)
+        return render(request, "usercenter-fav-course.html", {
+            "course_list": course_list,
+        })
+
+# 我的消息
+class MyMessageView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        all_message = UserMessage.objects.filter(user= request.user.id)
+        # 对课程机构进行分页
+        # 尝试获取前台get请求传递过来的page参数
+        # 如果是不合法的配置参数默认返回第一页
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+        # 这里指从allorg中取五个出来，每页显示5个
+        p = Paginator(all_message, 4)
+        messages = p.page(page)
+        return  render(request, "usercenter-message.html", {
+        "messages":messages,
+        })
