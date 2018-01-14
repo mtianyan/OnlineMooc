@@ -118,7 +118,7 @@ class CommentsView(LoginRequiredMixin, View):
         # 此处的id为表默认为我们添加的值。
         course = Course.objects.get(id=int(course_id))
         all_resources = CourseResource.objects.filter(course=course)
-        all_comments = CourseComments.objects.all().order_by("-add_time")
+        all_comments = CourseComments.objects.filter(course=course).order_by("-add_time")
         # 选出学了这门课的学生关系
         user_courses = UserCourse.objects.filter(course=course)
         # 从关系中取出user_id

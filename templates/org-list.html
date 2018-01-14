@@ -84,10 +84,9 @@
                             <li class="first"><p class="pic9">课程数：<span>{{ course_org.course_nums }}</span></p><p class="c7">学习人数：<span>{{ course_org.students }}</span></p></li>
                             <li class="c8" style="padding-left:18px;">{{ course_org.address }}</li>
                             <li class="pic10" style="padding-left:18px;">经典课程：
-
-                                    <a href="/diary/19/">c语言基础入门</a>
-
-                                    <a href="/diary/16/">数据库基础</a>
+                                {% for course in course_org.course_set.get_queryset  %}
+                                     <a href="{% url 'course:course_detail' course.id %}">{{ course.name }}</a>
+                                {% endfor %}
 
                             </li>
                         </ul>
@@ -151,7 +150,7 @@
  <dl class="des">
                     <dt class="num fl">{{ forloop.counter }}</dt>
                     <dd>
-                        <a href="/company/2/"><h1>{{ curent_org.name }}</h1></a>
+                        <a href="{% url 'org:org_home' curent_org.id %}"><h1>{{ curent_org.name }}</h1></a>
                         <p>{{ curent_org.address }}</p>
                     </dd>
                 </dl>

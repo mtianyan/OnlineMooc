@@ -11,12 +11,12 @@
 
             {% for course in all_courses %}
                             <div class="module1_5 box">
-                    <a class="comp-img-box" href="course-detail.html">
+                    <a class="comp-img-box" href="{% url 'course:course_detail' course.id %}">
 
                         <img width="214" height="195" src="{{ MEDIA_URL }}{{ course.image }}"/>
                     </a>
                     <div class="des">
-                        <a href="course-detail.html"><h2>{{ course.name }}</h2></a>
+                        <a href="{% url 'course:course_detail' course.id %}"><h2>{{ course.name }}</h2></a>
                         <span class="fl">课时：<i class="key">{{ course.learn_times }}</i></span>
                         <span class="fr">学习人数：{{ course.students }}</span>
                     </div>

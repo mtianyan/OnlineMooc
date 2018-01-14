@@ -20,30 +20,33 @@
     <header>
 		<div  class="header2 header">
                      			<div class="top">
-                {% if request.user.is_authenticated %}
-
-                                        				<div class="wp">
-                    <div class="fl"><p>服务电话：<b>23333333</b></p></div>
+        {% if request.user.is_authenticated %}
+            <div class="wp">
+             <div class="fl"><p>服务电话：<b>23333333</b></p></div>
 			<div class="personal">
+
                             <dl class="user fr">
-                                <dd>mtianyan<img class="down fr" src="{% static 'images/top_down.png' %}"/></dd>
-                                <dt><img width="20" height="20" src="{% static 'media/image/2016/12/default_big_14.png' %}"/></dt>
+                                <dd>{{ user.username }}<img class="down fr" src="{% static 'images/top_down.png' %}"/></dd>
+                                <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ user.image }}"/></dt>
                             </dl>
                             <div class="userdetail">
                             	<dl>
-	                                <dt><img width="80" height="80" src="{% static 'media/image/2016/12/default_big_14.png' %}"/></dt>
+	                                <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ user.image }}"/></dt>
 	                                <dd>
-	                                    <h2>django</h2>
-	                                    <p>天涯明月笙</p>
+	                                    <h2>{{ user.nick_name }}</h2>
+	                                    <p>{{ user.username }}</p>
 	                                </dd>
                                 </dl>
                                 <div class="btn">
-	                                <a class="personcenter fl" href="usercenter-info.html">进入个人中心</a>
+	                                <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
 	                                <a class="fr" href="/logout/">退出</a>
                                 </div>
                             </div>
                         </div>
-                    				</div>
+              <a href="usercenter-message.html">
+                            <div class="msg-num"><span id="MsgNum">0</span></div>
+                        </a>
+            </div>
     {% else %}
                     				<div class="wp">
 					<div class="fl"><p>服务电话：<b>23333333</b></p></div>
@@ -51,15 +54,12 @@
 
 
                       <a style="color:white" class="fr registerbtn" href="{% url "register" %}">注册</a>
-                    <a style="color:white" class="fr loginbtn" href="/login/">登录</a>
+                    <a style="color:white" class="fr loginbtn" href="{% url 'login'%}?next={{ request.path }}">登录</a>
 
 
 
 
 				</div>
-
-
-			</div>
 {% endif %}
 
 

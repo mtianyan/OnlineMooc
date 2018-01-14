@@ -25,23 +25,26 @@
 			<div class="personal">
 
                             <dl class="user fr">
-                                <dd>mtianyan<img class="down fr" src="{% static 'images/top_down.png' %}"/></dd>
-                                <dt><img width="20" height="20" src="{% static 'media/image/2016/12/default_big_14.png' %}"/></dt>
+                                <dd>{{ user.username }}<img class="down fr" src="{% static 'images/top_down.png' %}"/></dd>
+                                <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ user.image }}"/></dt>
                             </dl>
                             <div class="userdetail">
                             	<dl>
-	                                <dt><img width="80" height="80" src="{% static 'media/image/2016/12/default_big_14.png' %}"/></dt>
+	                                <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ user.image }}"/></dt>
 	                                <dd>
-	                                    <h2>django</h2>
-	                                    <p>天涯明月笙</p>
+	                                    <h2>{{ user.nick_name }}</h2>
+	                                    <p>{{ user.username }}</p>
 	                                </dd>
                                 </dl>
                                 <div class="btn">
-	                                <a class="personcenter fl" href="usercenter-info.html">进入个人中心</a>
+	                                <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
 	                                <a class="fr" href="/logout/">退出</a>
                                 </div>
                             </div>
                         </div>
+              <a href="usercenter-message.html">
+                            <div class="msg-num"><span id="MsgNum">0</span></div>
+                        </a>
             </div>
     {% else %}
                     				<div class="wp">
@@ -126,7 +129,7 @@
 		<div class="footer">
 			<div class="wp">
 				<ul class="cont">
-					<li class="logo"><a href=""><img src="{% static 'images/footlogo.png' %}"/></a></li>
+					<li class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/footlogo.png' %}"/></a></li>
 					<li class="code"><img src="{% static 'images/code.jpg' %}"/><p class="center">扫描关注微信</p></li>
 					<li class="third"><img class="fl" src="{% static 'images/tell.png' %}"/><p class="tell">23333333</p><p class="time">周一至周日 9:00-18:00</p></li>
 				</ul>
