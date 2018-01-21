@@ -166,7 +166,7 @@ class LoginView(View):
                     if redirect_url:
                         return HttpResponseRedirect(redirect_url)
                     # 跳转到首页 user request会被带回到首页
-                    return render(request, "index.html")
+                    return HttpResponseRedirect(reverse("index"))
                 # 即用户未激活跳转登录，提示未激活
                 else:
                     return render(
