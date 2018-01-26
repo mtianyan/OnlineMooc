@@ -3,19 +3,24 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-使用Python3.x与Django2.0.1开发的在线教育平台网站
+使用Python3.x与Django2.0.1开发的在线教育平台网站: http://mxonline.mtianyan.cn
 
 ## Quick Start
 
 ```
-$ git clone https://github.com/mtianyan/Mxonline2.git
-$ cd Mxonline2
+$ git clone https://github.com/mtianyan/Mxonline3.git
+$ cd Mxonline3
 $ pip install -r requirements.txt
-$ pip install mysqlclient-1.3.12-cp27-cp27m-win_amd64
 $ python manage.py runserver
 ```
 
 use the address: http://127.0.0.1:8000/
+
+## Contents：
+
+对应教程已开通简书连载文集: https://www.jianshu.com/nb/21010157
+
+**欢迎大家关注订阅，点赞！！！**
 
 ## Background:
 
@@ -32,16 +37,6 @@ use the address: http://127.0.0.1:8000/
 - 每节教程后面会写明对应的已结束commit: 方便本节出错参考。
 
 希望可以对Django初学者，Python爱好者有所帮助。
-
-## Contents：
-
-#### 1. [项目演示和课程介绍](http://blog.mtianyan.cn/post/e4b77eed.html)
-#### 2. [开发环境搭建](http://blog.mtianyan.cn/post/d2647be6.html)
-#### 3. django基础知识回顾
-#### 4. 数据库设计和xadmin搭建后台管理系统
-#### 5. 系统功能模块实现
-#### 6. web系统知识以及网络安全
-#### 7. xadmin扩展知识
 
 ## About me
 [简书](https://www.jianshu.com/u/db9a7a0daa1f) && [mtianyan's blog](http://blog.mtianyan.cn/)

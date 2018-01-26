@@ -1,337 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="第十一章完结撒花。完成了首页细节，404及500页面配置。静态文件代理。">
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/commands.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/forms.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/readme.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/UEditorSnapscreen.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/addCustomizeButton.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/addCustomizeCombox.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/addCustomizeDialog.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/charts.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/completeDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/customPluginDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/customToolbarDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/customizeDialogPage.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/customizeToolbarUIDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/editor_api.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/filterRuleDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/highlightDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/jqueryCompleteDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/jqueryValidation.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/multiDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/multiEditorWithOneInstance.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/renderInTable.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/resetDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/sectiondemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/server/getContent.ashx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/server/getContent.asp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/server/getContent.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/server/getContent.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/setWidthHeightDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/simpleDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/sortableDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/submitFormDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/textareaDemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/_examples/uparsedemo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/anchor/anchor.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/attachment.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/attachment.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/attachment.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/alignicon.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/alignicon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/file-icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/file-icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/image.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/progress.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/success.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/attachment/images/success.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/background/background.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/background/background.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/background/background.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/background/images/bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/background/images/success.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/chart.config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/charts.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/charts.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/charts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/charts/images/charts5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/emotion.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/emotion.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/emotion.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/0.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/bface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/cface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/fface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/jxface2.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/tface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/wface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/emotion/images/yface.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/gmap/gmap.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/help/help.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/help/help.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/help/help.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/image.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/image.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/image.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/alignicon.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/image.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/progress.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/success.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/image/images/success.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/insertframe/insertframe.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/internal.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/link/link.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/map/map.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/map/show.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/music/music.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/music/music.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/music/music.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/preview/preview.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/addimg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/brush.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/delimg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/delimgH.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/empty.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/emptyH.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/eraser.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/redo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/redoH.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/scale.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/scaleH.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/size.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/undo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/images/undoH.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/scrawl.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/scrawl.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/scrawl/scrawl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/searchreplace/searchreplace.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/searchreplace/searchreplace.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/snapscreen/snapscreen.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/spechars/spechars.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/spechars/spechars.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/dragicon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/edittable.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/edittable.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/edittable.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/edittd.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/table/edittip.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/bg.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/pre0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/pre1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/pre2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/pre3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/images/pre4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/template.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/template.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/template/template.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/center_focus.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/file-icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/file-icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/image.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/left_focus.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/none_focus.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/progress.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/right_focus.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/success.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/images/success.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/video.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/video.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/video/video.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/webapp/webapp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/wordimage/imageUploader.swf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/wordimage/tangram.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/wordimage/wordimage.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/dialogs/wordimage/wordimage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/addimage.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/alldeletebtnhoverskin.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/alldeletebtnupskin.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/background.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/button.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/deletedisable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/deleteenable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/listbackground.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/localimage.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/music.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/rotateleftdisable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/rotateleftenable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/rotaterightdisable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/rotaterightenable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/en/images/upload.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/zh-cn/images/copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/zh-cn/images/localimage.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/zh-cn/images/music.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/zh-cn/images/upload.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/lang/zh-cn/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/Uploader.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/action_crawler.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/action_list.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/action_upload.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/config.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/controller.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/css/ueditor.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/css/ueditor.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/dialogbase.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/anchor.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/arrow.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/arrow_down.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/arrow_up.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/button-bg.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/cancelbutton.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/charts.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/cursor_h.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/cursor_h.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/cursor_v.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/cursor_v.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/dialog-title-bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/fileScan.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/highlighted.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/icons-all.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/icons.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/loaderror.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/loading.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/lock.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/neweditor-tab-bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/pagebreak.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/scale.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/sortable.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/spacer.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/sparator_v.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/table-cell-align.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/tangram-colorpicker.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/toolbar_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/unhighlighted.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/upload.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/videologo.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/word.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/default/images/wordpaste.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/themes/iframe.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/SyntaxHighlighter/shCore.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/codemirror/codemirror.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/codemirror/codemirror.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/mootools-adapter.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/prototype-adapter.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/standalone-framework.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/highcharts-more.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/highcharts-more.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/highcharts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/highcharts.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/annotations.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/annotations.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/canvas-tools.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/canvas-tools.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/data.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/data.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/drilldown.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/drilldown.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/exporting.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/exporting.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/funnel.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/funnel.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/heatmap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/heatmap.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/map.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/map.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/no-data-to-display.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/themes/dark-blue.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/themes/dark-green.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/themes/gray.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/themes/grid.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/highcharts/themes/skies.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/jquery-1.10.2.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/jquery-1.10.2.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/jquery-1.10.2.min.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/font/vjs.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/font/vjs.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/font/vjs.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/font/vjs.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/video-js.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/video-js.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/video-js.swf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/video.dev.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/video-js/video.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/Uploader.swf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.custom.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.custom.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.flashonly.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.flashonly.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.html5only.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.html5only.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.withoutimage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/zeroclipboard/ZeroClipboard.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/ueditor.all.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/ueditor.all.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/ueditor.config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/ueditor.parse.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/ueditor.parse.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/templates/ueditor.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/templates/ueditor_old.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/test_try.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/widgets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py" />
+    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Mxonline3/settings.py" afterPath="$PROJECT_DIR$/Mxonline3/settings.py" />
-      <change beforePath="$PROJECT_DIR$/Mxonline3/urls.py" afterPath="$PROJECT_DIR$/Mxonline3/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/adminx.py" afterPath="$PROJECT_DIR$/apps/courses/adminx.py" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/models.py" afterPath="$PROJECT_DIR$/apps/courses/models.py" />
-      <change beforePath="$PROJECT_DIR$/apps/users/adminx.py" afterPath="$PROJECT_DIR$/apps/users/adminx.py" />
-      <change beforePath="$PROJECT_DIR$/apps/users/views.py" afterPath="$PROJECT_DIR$/apps/users/views.py" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/__init__.py" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/templates/course-detail.html" afterPath="$PROJECT_DIR$/templates/course-detail.html" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -348,34 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mxonline3/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="148" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/courses/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="380">
+              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ueditor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#79#92#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -383,18 +34,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../PythonEnvs/mxonline3/Lib/importlib/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+            <state relative-caret-position="513">
+              <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -403,7 +44,7 @@
       <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/users/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="608">
               <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
               <folding>
                 <element signature="e#815#2629#0" expanded="false" />
@@ -412,44 +53,72 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/courses/adminx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course-detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="course-detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/course-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+            <state relative-caret-position="2337">
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/urls.py">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="39" column="1" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="2508">
+              <caret line="132" column="96" lean-forward="false" selection-start-line="132" selection-start-column="96" selection-end-line="132" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mxonline3/urls.py">
+      <file leaf-file-name="forgetpwd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/forgetpwd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
-              <folding>
-                <element signature="e#633#646#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usercenter-base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usercenter-info.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usercenter-mycourse.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/usercenter-mycourse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="org-detail-course.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/org-detail-course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -551,8 +220,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="793" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="507" />
     <option name="width" value="814" />
     <option name="height" value="867" />
   </component>
@@ -574,53 +243,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="courses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
-              <item name="xadmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
-              <item name="xadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxonline3" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="Mxonline3" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -629,8 +256,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -845,20 +470,26 @@
       <option name="project" value="LOCAL" />
       <updated>1515964787487</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Python3+django2.0.1版本基本完结。富文本正常，基本功能全部正常。进阶功能2版本的太细小了懒得弄过来了，应该一切正常。">
+      <created>1516509828886</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1516509828886</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="507" y="0" width="814" height="867" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27415144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27415144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.139375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41854638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -921,7 +552,8 @@
     <MESSAGE value="10.3- 7 个人信息展示，修改密码和修改头像，修改邮箱和用户信息" />
     <MESSAGE value="第十章完结撒花。完成了我的课程我的收藏我的消息" />
     <MESSAGE value="第十一章完结撒花。完成了首页细节，404及500页面配置。静态文件代理。" />
-    <option name="LAST_COMMIT_MESSAGE" value="第十一章完结撒花。完成了首页细节，404及500页面配置。静态文件代理。" />
+    <MESSAGE value="Python3+django2.0.1版本基本完结。富文本正常，基本功能全部正常。进阶功能2版本的太细小了懒得弄过来了，应该一切正常。" />
+    <option name="LAST_COMMIT_MESSAGE" value="Python3+django2.0.1版本基本完结。富文本正常，基本功能全部正常。进阶功能2版本的太细小了懒得弄过来了，应该一切正常。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -937,20 +569,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../PythonEnvs/mxonline3/Lib/site-packages/django/template/context_processors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="88" column="71" lean-forward="false" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../PythonEnvs/mxonline3/Lib/site-packages/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -997,20 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="105" column="75" lean-forward="false" selection-start-line="105" selection-start-column="75" selection-end-line="105" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-mycourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1077,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1102,13 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="41" column="74" lean-forward="false" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/courses/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1144,13 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1361">
           <caret line="228" column="40" lean-forward="true" selection-start-line="228" selection-start-column="40" selection-end-line="228" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="132" column="96" lean-forward="true" selection-start-line="132" selection-start-column="96" selection-end-line="132" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -1200,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2736">
           <caret line="168" column="20" lean-forward="false" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="39" column="1" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,24 +811,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#15#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mxonline3/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
+        <state relative-caret-position="2755">
           <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="148" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PythonEnvs/mxonline3/Lib/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2356">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/courses/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/courses/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mxonline3/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+        <state relative-caret-position="912">
+          <caret line="61" column="64" lean-forward="false" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
           <folding>
             <element signature="e#633#646#0" expanded="true" />
           </folding>
@@ -1258,41 +857,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PythonEnvs/mxonline3/Lib/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/courses/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="380">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/users/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="608">
           <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
           <folding>
             <element signature="e#815#2629#0" expanded="false" />
@@ -1300,18 +880,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/courses/adminx.py">
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="513">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/course-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+        <state relative-caret-position="2337">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="132" column="96" lean-forward="false" selection-start-line="132" selection-start-column="96" selection-end-line="132" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forgetpwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-mycourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/org-detail-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
