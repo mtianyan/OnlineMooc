@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitattributes" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -477,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516509828886</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新README文件，以及忘记附上的requirements.txt">
+      <created>1516988521972</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1516988521973</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -553,7 +559,8 @@
     <MESSAGE value="第十章完结撒花。完成了我的课程我的收藏我的消息" />
     <MESSAGE value="第十一章完结撒花。完成了首页细节，404及500页面配置。静态文件代理。" />
     <MESSAGE value="Python3+django2.0.1版本基本完结。富文本正常，基本功能全部正常。进阶功能2版本的太细小了懒得弄过来了，应该一切正常。" />
-    <option name="LAST_COMMIT_MESSAGE" value="Python3+django2.0.1版本基本完结。富文本正常，基本功能全部正常。进阶功能2版本的太细小了懒得弄过来了，应该一切正常。" />
+    <MESSAGE value="更新README文件，以及忘记附上的requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README文件，以及忘记附上的requirements.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
