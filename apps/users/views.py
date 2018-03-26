@@ -255,7 +255,8 @@ class ResetView(View):
                 # 获取到对应的邮箱
                 email = record.email
                 # 将email传回来
-                return render(request, "password_reset.html", {"email": email})
+                # 只传回active_code
+                return render(request, "password_reset.html", {"active_code": active_code})
         # 自己瞎输的验证码
         else:
             return render(
@@ -271,13 +272,18 @@ class ModifyPwdView(View):
         if modiypwd_form.is_valid():
             pwd1 = request.POST.get("password1", "")
             pwd2 = request.POST.get("password2", "")
-            email = request.POST.get("email", "")
+            active_code = request.POST.get("active_code", "")
+            # email = request.POST.get("email", "")
             # 如果两次密码不相等，返回错误信息
             if pwd1 != pwd2:
                 return render(
                     request, "password_reset.html", {
                         "email": email, "msg": "密码不一致"})
             # 如果密码一致
+            # 找到激活码对应的邮箱
+            all_record = EmailVerifyRecord.objects.filter(code=active_code)
+            for record in all_record:
+                email = record.email
             user = UserProfile.objects.get(email=email)
             # 加密成密文
             user.password = make_password(pwd2)
