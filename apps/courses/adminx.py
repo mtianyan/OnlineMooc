@@ -30,21 +30,21 @@ class CourseAdmin(object):
 
 class LessonAdmin(object):
     list_display = ['course', 'name', 'add_time']
-    search_fields = ['course', 'name']
+    search_fields = ['course__name', 'name']
     # __name代表使用外键中name字段
-    list_filter = ['course__name', 'name', 'add_time']
+    list_filter = ['course', 'name', 'add_time']
 
 
 class VideoAdmin(object):
     list_display = ['lesson', 'name', 'add_time']
-    search_fields = ['lesson', 'name']
+    search_fields = ['lesson__name', 'name']
     list_filter = ['lesson', 'name', 'add_time']
 
 
 class CourseResourceAdmin(object):
     list_display = ['course', 'name', 'download', 'add_time']
-    search_fields = ['course', 'name', 'download']
-    list_filter = ['course__name', 'name', 'download', 'add_time']
+    search_fields = ['course__name', 'name', 'download']
+    list_filter = ['course', 'name', 'download', 'add_time']
 
 
 # 将管理器与model进行注册关联
