@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+diff-match-patch = "*"
+django-crispy-forms = "*"
+django-formtools = "*"
+django-import-export = "*"
+django-pure-pagination = "*"
+django-ranged-response = "*"
+django-reversion = "*"
+django-simple-captcha = "*"
+future = "*"
+"httplib2" = "*"
+jdcal = "*"
+mysqlclient = "*"
+odfpy = "*"
+openpyxl = "*"
+pytz = "*"
+six = "*"
+tablib = "*"
+unicodecsv = "*"
+xlrd = "*"
+xlwt = "*"
+Django = "*"
+et_xmlfile = "*"
+Pillow = "*"
+PyYAML = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
