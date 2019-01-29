@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-sys.path.insert(0,os.path.join(BASE_DIR, 'extra_apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -27,13 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition 注册我们的app
 # 设置邮箱和用户名均可登录
-AUTHENTICATION_BACKENDS = (
-    'users.views.CustomBackend',
-
-)
+# AUTHENTICATION_BACKENDS = (
+#     'users.views.CustomBackend',
+#
+# )
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,8 +67,7 @@ ROOT_URLCONF = 'Mxonline3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +85,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Mxonline3.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -96,12 +93,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline3',
         'USER': 'root',
-        'PASSWORD': 'tp158917',
-        'HOST':'127.0.0.1'
+        'PASSWORD': 'ty158917',
+        'HOST': '127.0.0.1'
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -121,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -138,7 +133,6 @@ USE_L10N = True
 # 数据库存储使用时间，True时间会被存为UTC的时间
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
@@ -154,7 +148,7 @@ EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 25
 EMAIL_HOST_USER = "mxonline@mtianyan.cn"
 EMAIL_HOST_PASSWORD = "ystfiwntwmonjebe"
-EMAIL_USE_TLS= True
+EMAIL_USE_TLS = True
 EMAIL_FROM = "mxonline@mtianyan.cn"
 
 # 设置我们上传文件的路径
