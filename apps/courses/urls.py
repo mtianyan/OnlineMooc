@@ -6,7 +6,7 @@ __date__ = '2018/1/13 0013 01:57'
 from courses.views import CourseListView, CourseDetailView, CourseInfoView, CommentsView, AddCommentsView, VideoPlayView
 from django.urls import path, re_path
 
-app_name = "courses"
+app_name = "course"
 urlpatterns = [
     # 课程列表url
     path('list/', CourseListView.as_view(), name="list"),

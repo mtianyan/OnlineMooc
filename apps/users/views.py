@@ -120,6 +120,7 @@ class CustomBackend(ModelBackend):
         except Exception as e:
             return None
 
+
 class LogoutView(View):
     def get(self, request):
         # django自带的logout
@@ -256,7 +257,9 @@ class ResetView(View):
                 email = record.email
                 # 将email传回来
                 # 只传回active_code
-                return render(request, "password_reset.html", {"active_code": active_code})
+                return render(
+                    request, "password_reset.html", {
+                        "active_code": active_code})
         # 自己瞎输的验证码
         else:
             return render(
@@ -431,10 +434,11 @@ class MyCourseView(LoginRequiredMixin, View):
     def get(self, request):
         user_courses = UserCourse.objects.filter(user=request.user)
         return render(request, "usercenter-mycourse.html", {
-            "user_courses":user_courses,
+            "user_courses": user_courses,
         })
 
 # 我收藏的机构
+
 
 class MyFavOrgView(LoginRequiredMixin, View):
     login_url = '/login/'
@@ -442,7 +446,7 @@ class MyFavOrgView(LoginRequiredMixin, View):
 
     def get(self, request):
         org_list = []
-        fav_orgs= UserFavorite.objects.filter(user=request.user, fav_type=2)
+        fav_orgs = UserFavorite.objects.filter(user=request.user, fav_type=2)
         # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
         for fav_org in fav_orgs:
             # 取出fav_id也就是机构的id。
@@ -455,13 +459,15 @@ class MyFavOrgView(LoginRequiredMixin, View):
         })
 # 我收藏的授课讲师
 
+
 class MyFavTeacherView(LoginRequiredMixin, View):
     login_url = '/login/'
     redirect_field_name = 'next'
 
     def get(self, request):
         teacher_list = []
-        fav_teachers= UserFavorite.objects.filter(user=request.user, fav_type=3)
+        fav_teachers = UserFavorite.objects.filter(
+            user=request.user, fav_type=3)
         # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
         for fav_teacher in fav_teachers:
             # 取出fav_id也就是机构的id。
@@ -475,13 +481,15 @@ class MyFavTeacherView(LoginRequiredMixin, View):
 
 # 我收藏的课程
 
+
 class MyFavCourseView(LoginRequiredMixin, View):
     login_url = '/login/'
     redirect_field_name = 'next'
 
     def get(self, request):
         course_list = []
-        fav_courses = UserFavorite.objects.filter(user=request.user, fav_type=1)
+        fav_courses = UserFavorite.objects.filter(
+            user=request.user, fav_type=1)
         # 上面的fav_orgs只是存放了id。我们还需要通过id找到机构对象
         for fav_course in fav_courses:
             # 取出fav_id也就是机构的id。
@@ -494,15 +502,18 @@ class MyFavCourseView(LoginRequiredMixin, View):
         })
 
 # 我的消息
+
+
 class MyMessageView(LoginRequiredMixin, View):
     login_url = '/login/'
     redirect_field_name = 'next'
 
     def get(self, request):
-        all_message = UserMessage.objects.filter(user= request.user.id)
+        all_message = UserMessage.objects.filter(user=request.user.id)
 
         # 用户进入个人中心消息页面，清空未读消息记录
-        all_unread_messages = UserMessage.objects.filter(user=request.user.id, has_read=False)
+        all_unread_messages = UserMessage.objects.filter(
+            user=request.user.id, has_read=False)
         for unread_message in all_unread_messages:
             unread_message.has_read = True
             unread_message.save()
@@ -516,13 +527,15 @@ class MyMessageView(LoginRequiredMixin, View):
         # 这里指从allorg中取五个出来，每页显示5个
         p = Paginator(all_message, 4)
         messages = p.page(page)
-        return  render(request, "usercenter-message.html", {
-        "messages":messages,
+        return render(request, "usercenter-message.html", {
+            "messages": messages,
         })
 
-## 首页view
+# 首页view
+
+
 class IndexView(View):
-    def get(self,request):
+    def get(self, request):
         # 取出轮播图
         all_banner = Banner.objects.all().order_by('index')[:5]
         # 正常位课程
@@ -532,8 +545,8 @@ class IndexView(View):
         # 课程机构
         course_orgs = CourseOrg.objects.all()[:15]
         return render(request, 'index.html', {
-            "all_banner":all_banner,
-            "courses":courses,
-            "banner_courses":banner_courses,
-            "course_orgs":course_orgs,
+            "all_banner": all_banner,
+            "courses": courses,
+            "banner_courses": banner_courses,
+            "course_orgs": course_orgs,
         })
