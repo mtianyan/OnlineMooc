@@ -26,8 +26,9 @@ from django.contrib.auth.hashers import make_password
 from utils.email_send import send_register_eamil
 
 
-# 激活用户的view
 class ActiveUserView(View):
+    """激活用户的view"""
+
     def get(self, request, active_code):
         # 查询邮箱验证记录是否存在
         all_record = EmailVerifyRecord.objects.filter(code=active_code)
@@ -50,9 +51,10 @@ class ActiveUserView(View):
                     "msg": "您的激活链接无效", "active_form": active_form})
 
 
-# 注册功能的view
 class RegisterView(View):
+    """注册功能的view"""
     # get方法直接返回页面
+
     def get(self, request):
         # 添加验证码
         register_form = RegisterForm()
@@ -102,11 +104,12 @@ class RegisterView(View):
                     "register_form": register_form})
 
 
-# 实现用户名邮箱均可登录
-# 继承ModelBackend类，因为它有方法authenticate，可点进源码查看
-
-
 class CustomBackend(ModelBackend):
+    """
+    实现用户名邮箱均可登录
+    继承ModelBackend类，因为它有方法authenticate，可点进源码查看
+    """
+
     def authenticate(self, username=None, password=None, **kwargs):
         try:
             # 不希望用户存在两个，get只能有一个。两个是get失败的一种原因 Q为使用并集查询
@@ -218,9 +221,10 @@ def user_login(request):
         return render(request, "login.html", {})
 
 
-# 用户忘记密码的处理view
 class ForgetPwdView(View):
+    """用户忘记密码的处理view"""
     # get方法直接返回页面
+
     def get(self, request):
         # 给忘记密码页面加上验证码
         active_form = ActiveForm(request.POST)
@@ -242,10 +246,10 @@ class ForgetPwdView(View):
                 request, "forgetpwd.html", {
                     "forget_from": forget_form})
 
-# 重置密码的view
-
 
 class ResetView(View):
+    """重置密码的view"""
+
     def get(self, request, active_code):
         # 查询邮箱验证记录是否存在
         all_record = EmailVerifyRecord.objects.filter(code=active_code)
@@ -266,10 +270,10 @@ class ResetView(View):
                 request, "forgetpwd.html", {
                     "msg": "您的重置密码链接无效,请重新请求", "active_form": active_form})
 
-# 改变密码的view
-
 
 class ModifyPwdView(View):
+    """改变密码的view"""
+
     def post(self, request):
         modiypwd_form = ModifyPwdForm(request.POST)
         if modiypwd_form.is_valid():
@@ -324,10 +328,10 @@ class UserInfoView(LoginRequiredMixin, View):
                 json.dumps(
                     user_info_form.errors),
                 content_type='application/json')
-# 用户上传图片的view:用于修改头像
 
 
 class UploadImageView(LoginRequiredMixin, View):
+    """用户上传图片的view:用于修改头像"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -349,10 +353,9 @@ class UploadImageView(LoginRequiredMixin, View):
                 '{"status":"fail"}',
                 content_type='application/json')
 
-# 在个人中心修改用户密码
-
 
 class UpdatePwdView(LoginRequiredMixin, View):
+    """在个人中心修改用户密码"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -384,8 +387,9 @@ class UpdatePwdView(LoginRequiredMixin, View):
                 content_type='application/json')
 
 
-# 发送邮箱验证码的view:
 class SendEmailCodeView(LoginRequiredMixin, View):
+    """发送邮箱验证码的view:"""
+
     def get(self, request):
         # 取出需要发送的邮件
         email = request.GET.get("email", "")
@@ -401,8 +405,8 @@ class SendEmailCodeView(LoginRequiredMixin, View):
             content_type='application/json')
 
 
-# 修改邮箱的view:
 class UpdateEmailView(LoginRequiredMixin, View):
+    """修改邮箱的view:"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -425,9 +429,8 @@ class UpdateEmailView(LoginRequiredMixin, View):
                 content_type='application/json')
 
 
-# 个人中心页我的课程
-
 class MyCourseView(LoginRequiredMixin, View):
+    """个人中心页我的课程"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -437,10 +440,9 @@ class MyCourseView(LoginRequiredMixin, View):
             "user_courses": user_courses,
         })
 
-# 我收藏的机构
-
 
 class MyFavOrgView(LoginRequiredMixin, View):
+    """我收藏的机构"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -457,10 +459,10 @@ class MyFavOrgView(LoginRequiredMixin, View):
         return render(request, "usercenter-fav-org.html", {
             "org_list": org_list,
         })
-# 我收藏的授课讲师
 
 
 class MyFavTeacherView(LoginRequiredMixin, View):
+    """我收藏的授课讲师"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -479,10 +481,9 @@ class MyFavTeacherView(LoginRequiredMixin, View):
             "teacher_list": teacher_list,
         })
 
-# 我收藏的课程
-
 
 class MyFavCourseView(LoginRequiredMixin, View):
+    """我收藏的课程"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -501,10 +502,9 @@ class MyFavCourseView(LoginRequiredMixin, View):
             "course_list": course_list,
         })
 
-# 我的消息
-
 
 class MyMessageView(LoginRequiredMixin, View):
+    """我的消息"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -531,10 +531,10 @@ class MyMessageView(LoginRequiredMixin, View):
             "messages": messages,
         })
 
-# 首页view
-
 
 class IndexView(View):
+    """首页view"""
+
     def get(self, request):
         # 取出轮播图
         all_banner = Banner.objects.all().order_by('index')[:5]

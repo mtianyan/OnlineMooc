@@ -287,10 +287,10 @@ class AddFavView(View):
                     '{"status":"fail", "msg":"收藏出错"}',
                     content_type='application/json')
 
-# 课程讲师列表页
-
 
 class TeacherListView(View):
+    """课程讲师列表页"""
+
     def get(self, request):
         all_teacher = Teacher.objects.all()
         sort = request.GET.get("sort", "")
@@ -298,7 +298,7 @@ class TeacherListView(View):
             if sort == "hot":
                 all_teacher = all_teacher.order_by("-click_nums")
 
-          # 搜索功能
+        # 搜索功能
         search_keywords = request.GET.get('keywords', '')
         if search_keywords:
             # 在name字段进行操作,做like语句的操作。i代表不区分大小写
@@ -328,10 +328,10 @@ class TeacherListView(View):
             "search_keywords": search_keywords,
         })
 
-# 教师详情页面
-
 
 class TeacherDetailView(View):
+    """教师详情页面"""
+
     def get(self, request, teacher_id):
         teacher = Teacher.objects.get(id=int(teacher_id))
         teacher.click_nums += 1

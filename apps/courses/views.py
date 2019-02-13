@@ -35,7 +35,7 @@ class CourseListView(View):
             page = request.GET.get('page', 1)
         except PageNotAnInteger:
             page = 1
-        # 这里指从allorg中取五个出来，每页显示5个
+        # 这里指从all_org中取五个出来，每页显示5个
         p = Paginator(all_course, 6, request=request)
         courses = p.page(page)
         return render(request, "course-list.html", {
@@ -46,9 +46,9 @@ class CourseListView(View):
         })
 
 
-# 课程详情处理view
-
 class CourseDetailView(View):
+    """课程详情处理view"""
+
     def get(self, request, course_id):
         # 此处的id为表默认为我们添加的值。
         course = Course.objects.get(id=int(course_id))
@@ -83,10 +83,10 @@ class CourseDetailView(View):
             "has_fav_course": has_fav_course,
             "has_fav_org": has_fav_org,
         })
-# 处理课程章节信息页面的view
 
 
 class CourseInfoView(LoginRequiredMixin, View):
+    """处理课程章节信息页面的view"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -125,6 +125,7 @@ class CourseInfoView(LoginRequiredMixin, View):
 
 
 class CommentsView(LoginRequiredMixin, View):
+    """评论视图"""
     login_url = '/login/'
     redirect_field_name = 'next'
 
@@ -154,10 +155,9 @@ class CommentsView(LoginRequiredMixin, View):
             "relate_courses": relate_courses,
         })
 
-# ajax方式添加评论
-
 
 class AddCommentsView(View):
+    """ajax方式添加评论"""
     def post(self, request):
         if not request.user.is_authenticated:
             # 未登录时返回json提示未登录，跳转到登录页面是在ajax中做的

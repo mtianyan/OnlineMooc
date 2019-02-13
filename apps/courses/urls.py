@@ -15,7 +15,7 @@ urlpatterns = [
     # 课程章节信息页
     re_path('info/(?P<course_id>\d+)/', CourseInfoView.as_view(), name="course_info"),
 
-# 课程章节信息页
+    # 课程章节信息页
     re_path('comments/(?P<course_id>\d+)/', CommentsView.as_view(), name="course_comments"),
 
     # 添加课程评论,已经把参数放到post当中了

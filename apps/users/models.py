@@ -54,10 +54,8 @@ class UserProfile(AbstractUser):
         return UserMessage.objects.filter(has_read=False, user=self.id).count()
 
 
-# 邮箱验证码model
-
-
 class EmailVerifyRecord(models.Model):
+    """邮箱验证码model"""
     SEND_CHOICES = (
         ("register", u"注册"),
         ("forget", u"找回密码"),
@@ -84,8 +82,8 @@ class EmailVerifyRecord(models.Model):
         return '{0}({1})'.format(self.code, self.email)
 
 
-# 轮播图model
 class Banner(models.Model):
+    """轮播图model"""
     title = models.CharField(max_length=100, verbose_name=u"标题")
     image = models.ImageField(
         upload_to="banner/%Y/%m",

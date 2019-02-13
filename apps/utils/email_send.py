@@ -7,17 +7,17 @@ from random import Random
 
 __author__ = 'mtianyan'
 __date__ = '2018/1/10 0010 20:47'
-from  users.models import EmailVerifyRecord
+from users.models import EmailVerifyRecord
 # 导入Django自带的邮件模块
-from django.core.mail import send_mail,EmailMessage
+from django.core.mail import send_mail, EmailMessage
 # 导入setting中发送邮件的配置
 from Mxonline3.settings import EMAIL_FROM
 # 发送html格式的邮件:
 from django.template import loader
 
 
-# 生成随机字符串
 def random_str(random_length=8):
+    """生成随机字符串"""
     str = ''
     # 生成字符串的可选字符串
     chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
@@ -28,8 +28,8 @@ def random_str(random_length=8):
     return str
 
 
-# 发送注册邮件
 def send_register_eamil(email, send_type="register"):
+    """发送注册邮件"""
     # 发送之前先保存到数据库，到时候查询链接是否存在
     # 实例化一个EmailVerifyRecord对象
     email_record = EmailVerifyRecord()
@@ -53,9 +53,9 @@ def send_register_eamil(email, send_type="register"):
         # email_body = "欢迎注册mtianyan的慕课小站:  请点击下面的链接激活你的账号: http://127.0.0.1:8000/active/{0}".format(code)
 
         email_body = loader.render_to_string(
-                "email_register.html",  # 需要渲染的html模板
-                {
-                    "active_code": code  # 参数
+            "email_register.html",  # 需要渲染的html模板
+            {
+                "active_code": code  # 参数
                 }
             )
 
@@ -67,7 +67,7 @@ def send_register_eamil(email, send_type="register"):
 
         # 如果发送成功
         if send_status:
-                pass
+            pass
     elif send_type == "forget":
         email_title = "mtianyan慕课小站 找回密码链接"
         email_body = loader.render_to_string(
@@ -90,7 +90,3 @@ def send_register_eamil(email, send_type="register"):
         msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
         msg.content_subtype = "html"
         send_status = msg.send()
-
-
-
-
