@@ -3,9 +3,6 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-使用Python3.6与Django2.1.0开发的在线教育平台网站: http://mxonline.mtianyan.cn
-
-项目对应教程已开通简书连载文集: https://www.jianshu.com/nb/21010157 **欢迎大家关注订阅，点赞！！！**
 
 ## 如何开始使用？
 
