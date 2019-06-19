@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline3',
         'USER': 'root',
-        'PASSWORD': 'ty158917',
+        'PASSWORD': 'mtianyanroot',
         'HOST': '127.0.0.1'
 
     }
