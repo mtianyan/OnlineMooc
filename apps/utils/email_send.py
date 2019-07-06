@@ -3,7 +3,7 @@ __author__ = 'mtianyan'
 __date__ = '2018/1/11 0011 03:57'
 
 # encoding: utf-8
-from random import Random
+import random
 
 __author__ = 'mtianyan'
 __date__ = '2018/1/10 0010 20:47'
@@ -18,13 +18,11 @@ from django.template import loader
 
 def random_str(random_length=8):
     """生成随机字符串"""
-    str = ''
+    
     # 生成字符串的可选字符串
     chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
     length = len(chars) - 1
-    random = Random()
-    for i in range(random_length):
-        str += chars[random.randint(0, length)]
+    str = ''.join(chars[random.randint(0, length)] for i in range(random_length))
     return str
 
 
