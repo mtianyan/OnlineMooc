@@ -285,7 +285,7 @@ class ModifyPwdView(View):
             if pwd1 != pwd2:
                 return render(
                     request, "password_reset.html", {
-                        "email": email, "msg": "密码不一致"})
+                        "active_code": active_code, "msg": "密码不一致"})
             # 如果密码一致
             # 找到激活码对应的邮箱
             all_record = EmailVerifyRecord.objects.filter(code=active_code)
@@ -299,10 +299,10 @@ class ModifyPwdView(View):
             return render(request, "login.html", {"msg": "密码修改成功，请登录"})
         # 验证失败说明密码位数不够。
         else:
-            email = request.POST.get("email", "")
+            active_code = request.POST.get("active_code", "")
             return render(
                 request, "password_reset.html", {
-                    "email": email, "modiypwd_form": modiypwd_form})
+                    "active_code": active_code,  "msg": "密码小于5位"})
 
 
 class UserInfoView(LoginRequiredMixin, View):

@@ -1,7 +1,5 @@
 .idea
-config.py
-FunpySpiderSearch/cookies/zhihu/*.zhihu
-config.py
+mxonline2.sql
 
 # Windows image file caches
 Thumbs.db
