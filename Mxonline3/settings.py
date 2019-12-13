@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 25
 EMAIL_HOST_USER = "1147727180@qq.com"
-EMAIL_HOST_PASSWORD = "befmpxdvzkdygdie"
+EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = True
 EMAIL_FROM = "1147727180@qq.com"
 
@@ -156,3 +156,4 @@ EMAIL_FROM = "1147727180@qq.com"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+X_FRAME_OPTIONS = 'sameorigin'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Django default">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
     <root id="1">
       <ServerVersion>8.0.12</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -27,7 +27,6 @@
     </schema>
     <schema id="8" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
-      <Substituted>1</Substituted>
     </schema>
     <schema id="9" parent="1" name="movie">
       <Collation>utf8_general_ci</Collation>
@@ -38,7 +37,6 @@
     <schema id="11" parent="1" name="mxonline3">
       <Current>1</Current>
       <Collation>utf8mb4_general_ci</Collation>
-      <Visible>1</Visible>
     </schema>
     <schema id="12" parent="1" name="mydatabase">
       <Collation>utf8_general_ci</Collation>

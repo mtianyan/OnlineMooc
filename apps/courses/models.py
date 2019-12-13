@@ -5,6 +5,9 @@ from DjangoUeditor.models import UEditorField
 from organization.models import CourseOrg, Teacher
 
 
+
+
+
 # Create your models here.
 class Course(models.Model):
     """课程信息表"""
@@ -55,7 +58,7 @@ class Course(models.Model):
     #     return self.usercourse_set.all()[:5]
 
     def __str__(self):
-        return self.name
+        return self.name + self.teacher
 
 
 class Lesson(models.Model):
@@ -90,7 +93,7 @@ class Video(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return '{0}章节的视频 >> {1}'.format(self.lesson, self.name)
+        return '{0}章节的视频 >> {1}'.format(self.lesson, self.name, self.lesson.course.teacher.name)
 
 
 class CourseResource(models.Model):

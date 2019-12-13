@@ -1,7 +1,12 @@
 from .models import Course, Lesson, Video, CourseResource
 import xadmin
 
+
 # Course的admin管理器
+# 课程直接添加章节
+class LessonInline(object):
+    model = Lesson
+    extra = 0
 
 
 class CourseAdmin(object):
@@ -19,9 +24,12 @@ class CourseAdmin(object):
         'students']
     # 富文本
     style_fields = {"detail": "ueditor"}
+    # 课程直接添加章节
+    inlines = [LessonInline]
 
 
 class LessonAdmin(object):
+    fields =['course__name', 'course__desc','course', 'name', 'add_time' ]
     list_display = ['course', 'name', 'add_time']
     search_fields = ['course__name', 'name']
     # __name代表使用外键中name字段
