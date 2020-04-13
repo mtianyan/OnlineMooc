@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="Django3.0 更新">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="fix bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +176,7 @@
       <workItem from="1577720837298" duration="19000" />
       <workItem from="1577720879882" duration="22000" />
       <workItem from="1577779882418" duration="642000" />
-      <workItem from="1586787740999" duration="51000" />
+      <workItem from="1586787740999" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="7-6完成列表筛选以及排序功能">
       <created>1515698110311</created>
@@ -356,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1576245442901</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fix bug">
+      <created>1586787812266</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1586787812266</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -399,73 +403,34 @@
     <MESSAGE value="强制更新了所有依赖，大致可用，有待测试完善" />
     <MESSAGE value="Django2.2 更新+基本可用" />
     <MESSAGE value="Django3.0 更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="Django3.0 更新" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1384" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576242779018">
+    <state x="892" y="255" key="CommitChangelistDialog2" timestamp="1586787812041">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state x="1384" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1327@0.23.2560.1327" timestamp="1576242779018" />
-    <state x="1635" y="300" key="#mxonline3" timestamp="1576242937627">
+    <state x="892" y="255" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1586787812041" />
+    <state width="1256" height="272" key="GridCell.Tab.0.bottom" timestamp="1586787980365">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state x="1635" y="300" key="#mxonline3/0.23.2560.1327@0.23.2560.1327" timestamp="1576242937627" />
-    <state x="899" y="282" key="CommitChangelistDialog2" timestamp="1576245442655">
+    <state width="1256" height="272" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980365" />
+    <state width="1256" height="272" key="GridCell.Tab.0.center" timestamp="1586787980364">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state x="899" y="282" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1576245442655" />
-    <state width="458" height="190" key="GridCell.Tab.0.bottom" timestamp="1577805876612">
-      <screen x="0" y="23" width="2560" height="1331" />
-    </state>
-    <state width="918" height="180" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1576057970837" />
-    <state width="2518" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901200" />
-    <state width="458" height="190" key="GridCell.Tab.0.bottom/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876612" />
-    <state width="458" height="190" key="GridCell.Tab.0.center" timestamp="1577805876611">
-      <screen x="0" y="23" width="2560" height="1331" />
-    </state>
-    <state width="918" height="180" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901199" />
-    <state width="458" height="190" key="GridCell.Tab.0.center/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876611" />
-    <state width="458" height="190" key="GridCell.Tab.0.left" timestamp="1577805876611">
-      <screen x="0" y="23" width="2560" height="1331" />
-    </state>
-    <state width="918" height="180" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901199" />
-    <state width="458" height="190" key="GridCell.Tab.0.left/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876611" />
-    <state width="458" height="190" key="GridCell.Tab.0.right" timestamp="1577805876612">
-      <screen x="0" y="23" width="2560" height="1331" />
-    </state>
-    <state width="918" height="180" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901200" />
-    <state width="458" height="190" key="GridCell.Tab.0.right/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876612" />
-    <state width="2518" height="441" key="GridCell.Tab.1.bottom" timestamp="1576245003585">
+    <state width="1256" height="272" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
+    <state width="1256" height="272" key="GridCell.Tab.0.left" timestamp="1586787980364">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state width="2518" height="441" key="GridCell.Tab.1.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1576245003585" />
-    <state width="2518" height="441" key="GridCell.Tab.1.center" timestamp="1576245003584">
+    <state width="1256" height="272" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
+    <state width="1256" height="272" key="GridCell.Tab.0.right" timestamp="1586787980364">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state width="2518" height="441" key="GridCell.Tab.1.center/0.23.2560.1327@0.23.2560.1327" timestamp="1576245003584" />
-    <state width="2518" height="441" key="GridCell.Tab.1.left" timestamp="1576245003584">
+    <state width="1256" height="272" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
+    <state x="880" y="426" key="Vcs.Push.Dialog.v2" timestamp="1586787814825">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state width="2518" height="441" key="GridCell.Tab.1.left/0.23.2560.1327@0.23.2560.1327" timestamp="1576245003584" />
-    <state width="2518" height="441" key="GridCell.Tab.1.right" timestamp="1576245003585">
-      <screen x="0" y="23" width="2560" height="1327" />
-    </state>
-    <state width="2518" height="441" key="GridCell.Tab.1.right/0.23.2560.1327@0.23.2560.1327" timestamp="1576245003585" />
-    <state x="379" y="157" key="SettingsEditor" timestamp="1576057969460">
-      <screen x="0" y="23" width="1920" height="986" />
-    </state>
-    <state x="379" y="157" key="SettingsEditor/0.23.1920.986@0.23.1920.986" timestamp="1576057969460" />
-    <state x="880" y="426" key="Vcs.Push.Dialog.v2" timestamp="1576245445006">
-      <screen x="0" y="23" width="2560" height="1327" />
-    </state>
-    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.23.2560.1327@0.23.2560.1327" timestamp="1576245445006" />
-    <state x="1279" y="448" width="791" height="540" key="find.popup" timestamp="1576244997173">
-      <screen x="0" y="23" width="2560" height="1327" />
-    </state>
-    <state x="1279" y="448" width="791" height="540" key="find.popup/0.23.2560.1327@0.23.2560.1327" timestamp="1576244997173" />
+    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.23.2560.1327@0.23.2560.1327" timestamp="1586787814825" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
