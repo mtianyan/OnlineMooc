@@ -2,63 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="Django3.0 更新">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5bd5e4dd-e970-4de6-aa76-59ac079fd3f9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5bd5e4dd-e970-4de6-aa76-59ac079fd3f9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mtianyan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mtianyan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mxonline3/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mxonline3/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/adminx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/DjangoUeditor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/DjangoUeditor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/inline.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/inline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/quickfilter.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/quickfilter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/relate.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/relate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/themes.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/themes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/wizard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/xversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/xversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/sites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/templatetags/xadmin_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/templatetags/xadmin_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/delete.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/detail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/edit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/views/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/views/list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mxonline2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-play.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-play.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course-video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forgetpwd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forgetpwd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org-detail-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org-detail-course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org-detail-desc.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org-detail-desc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org-detail-homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org-detail-homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org-detail-teachers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org-detail-teachers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/org_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/org_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password_reset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teacher-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teachers-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teachers-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-fav-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-fav-course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-fav-org.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-fav-org.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-fav-teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-fav-teacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/usercenter-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usercenter-message.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +33,12 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -167,18 +113,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -240,7 +174,12 @@
       <workItem from="1575856370086" duration="2387000" />
       <workItem from="1576057927334" duration="44000" />
       <workItem from="1576215126718" duration="649000" />
-      <workItem from="1576242750227" duration="2646000" />
+      <workItem from="1576242750227" duration="3467000" />
+      <workItem from="1576247836014" duration="169000" />
+      <workItem from="1577720837298" duration="19000" />
+      <workItem from="1577720879882" duration="22000" />
+      <workItem from="1577779882418" duration="642000" />
+      <workItem from="1586787740999" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="7-6完成列表筛选以及排序功能">
       <created>1515698110311</created>
@@ -410,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560935079064</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Django3.0 更新">
+      <created>1576245442901</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1576245442901</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,13 +367,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="7-6完成列表筛选以及排序功能" />
@@ -453,7 +398,8 @@
     <MESSAGE value="修復ueditor的render" />
     <MESSAGE value="强制更新了所有依赖，大致可用，有待测试完善" />
     <MESSAGE value="Django2.2 更新+基本可用" />
-    <option name="LAST_COMMIT_MESSAGE" value="Django2.2 更新+基本可用" />
+    <MESSAGE value="Django3.0 更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="Django3.0 更新" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1384" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576242779018">
@@ -464,30 +410,34 @@
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
     <state x="1635" y="300" key="#mxonline3/0.23.2560.1327@0.23.2560.1327" timestamp="1576242937627" />
-    <state x="899" y="282" key="CommitChangelistDialog2" timestamp="1576245270543">
+    <state x="899" y="282" key="CommitChangelistDialog2" timestamp="1576245442655">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
-    <state x="899" y="282" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1576245270543" />
-    <state width="2518" height="274" key="GridCell.Tab.0.bottom" timestamp="1576245180143">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state x="899" y="282" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1576245442655" />
+    <state width="458" height="190" key="GridCell.Tab.0.bottom" timestamp="1577805876612">
+      <screen x="0" y="23" width="2560" height="1331" />
     </state>
     <state width="918" height="180" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1576057970837" />
-    <state width="2518" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1576245180143" />
-    <state width="2518" height="274" key="GridCell.Tab.0.center" timestamp="1576245180142">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="2518" height="274" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901200" />
+    <state width="458" height="190" key="GridCell.Tab.0.bottom/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876612" />
+    <state width="458" height="190" key="GridCell.Tab.0.center" timestamp="1577805876611">
+      <screen x="0" y="23" width="2560" height="1331" />
     </state>
     <state width="918" height="180" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1576245180142" />
-    <state width="2518" height="274" key="GridCell.Tab.0.left" timestamp="1576245180142">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="2518" height="274" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901199" />
+    <state width="458" height="190" key="GridCell.Tab.0.center/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876611" />
+    <state width="458" height="190" key="GridCell.Tab.0.left" timestamp="1577805876611">
+      <screen x="0" y="23" width="2560" height="1331" />
     </state>
     <state width="918" height="180" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1576245180142" />
-    <state width="2518" height="274" key="GridCell.Tab.0.right" timestamp="1576245180143">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="2518" height="274" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901199" />
+    <state width="458" height="190" key="GridCell.Tab.0.left/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876611" />
+    <state width="458" height="190" key="GridCell.Tab.0.right" timestamp="1577805876612">
+      <screen x="0" y="23" width="2560" height="1331" />
     </state>
     <state width="918" height="180" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1576057970836" />
-    <state width="2518" height="274" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1576245180143" />
+    <state width="2518" height="274" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1577720901200" />
+    <state width="458" height="190" key="GridCell.Tab.0.right/0.23.2560.1331@0.23.2560.1331" timestamp="1577805876612" />
     <state width="2518" height="441" key="GridCell.Tab.1.bottom" timestamp="1576245003585">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
@@ -508,6 +458,10 @@
       <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="379" y="157" key="SettingsEditor/0.23.1920.986@0.23.1920.986" timestamp="1576057969460" />
+    <state x="880" y="426" key="Vcs.Push.Dialog.v2" timestamp="1576245445006">
+      <screen x="0" y="23" width="2560" height="1327" />
+    </state>
+    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.23.2560.1327@0.23.2560.1327" timestamp="1576245445006" />
     <state x="1279" y="448" width="791" height="540" key="find.popup" timestamp="1576244997173">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>

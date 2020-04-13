@@ -58,7 +58,7 @@ class Course(models.Model):
     #     return self.usercourse_set.all()[:5]
 
     def __str__(self):
-        return self.name + self.teacher
+        return self.name + self.teacher.name
 
 
 class Lesson(models.Model):
