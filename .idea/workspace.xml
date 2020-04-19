@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="fix bug" />
+    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="fix bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mxonline3/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mxonline3/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,6 +181,7 @@
       <workItem from="1577720879882" duration="22000" />
       <workItem from="1577779882418" duration="642000" />
       <workItem from="1586787740999" duration="230000" />
+      <workItem from="1587292647226" duration="629000" />
     </task>
     <task id="LOCAL-00001" summary="7-6完成列表筛选以及排序功能">
       <created>1515698110311</created>
@@ -411,22 +416,42 @@
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
     <state x="892" y="255" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1586787812041" />
-    <state width="1256" height="272" key="GridCell.Tab.0.bottom" timestamp="1586787980365">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="650" height="443" key="GridCell.Tab.0.bottom" timestamp="1587293279834">
+      <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1256" height="272" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980365" />
-    <state width="1256" height="272" key="GridCell.Tab.0.center" timestamp="1586787980364">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="650" height="443" key="GridCell.Tab.0.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1587293279834" />
+    <state width="650" height="443" key="GridCell.Tab.0.center" timestamp="1587293279833">
+      <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1256" height="272" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
-    <state width="1256" height="272" key="GridCell.Tab.0.left" timestamp="1586787980364">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="650" height="443" key="GridCell.Tab.0.center/0.23.2560.1333@0.23.2560.1333" timestamp="1587293279833" />
+    <state width="650" height="443" key="GridCell.Tab.0.left" timestamp="1587293279833">
+      <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1256" height="272" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
-    <state width="1256" height="272" key="GridCell.Tab.0.right" timestamp="1586787980364">
-      <screen x="0" y="23" width="2560" height="1327" />
+    <state width="650" height="443" key="GridCell.Tab.0.left/0.23.2560.1333@0.23.2560.1333" timestamp="1587293279833" />
+    <state width="650" height="443" key="GridCell.Tab.0.right" timestamp="1587293279833">
+      <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1256" height="272" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
+    <state width="650" height="443" key="GridCell.Tab.0.right/0.23.2560.1333@0.23.2560.1333" timestamp="1587293279833" />
+    <state width="650" height="443" key="GridCell.Tab.1.bottom" timestamp="1587293260306">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state width="650" height="443" key="GridCell.Tab.1.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1587293260306" />
+    <state width="650" height="443" key="GridCell.Tab.1.center" timestamp="1587293260305">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state width="650" height="443" key="GridCell.Tab.1.center/0.23.2560.1333@0.23.2560.1333" timestamp="1587293260305" />
+    <state width="650" height="443" key="GridCell.Tab.1.left" timestamp="1587293260305">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state width="650" height="443" key="GridCell.Tab.1.left/0.23.2560.1333@0.23.2560.1333" timestamp="1587293260305" />
+    <state width="650" height="443" key="GridCell.Tab.1.right" timestamp="1587293260306">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state width="650" height="443" key="GridCell.Tab.1.right/0.23.2560.1333@0.23.2560.1333" timestamp="1587293260306" />
     <state x="880" y="426" key="Vcs.Push.Dialog.v2" timestamp="1586787814825">
       <screen x="0" y="23" width="2560" height="1327" />
     </state>
@@ -442,13 +467,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/apps/users/views.py</url>
-          <line>277</line>
+          <line>281</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/extra_apps/DjangoUeditor/views.py</url>
           <line>128</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/users/views.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/PyEnvs/Mxonline3-MFJFMeys/lib/python3.7/site-packages/django/contrib/auth/__init__.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -53,6 +53,7 @@ class ActiveUserView(View):
 
 class RegisterView(View):
     """注册功能的view"""
+
     # get方法直接返回页面
 
     def get(self, request):
@@ -110,7 +111,7 @@ class CustomBackend(ModelBackend):
     继承ModelBackend类，因为它有方法authenticate，可点进源码查看
     """
 
-    def authenticate(self, username=None, password=None, **kwargs):
+    def authenticate(self, request, username=None, password=None, **kwargs):
         try:
             # 不希望用户存在两个，get只能有一个。两个是get失败的一种原因 Q为使用并集查询
             user = UserProfile.objects.get(
@@ -154,7 +155,7 @@ class LoginView(View):
             pass_word = request.POST.get("password", "")
 
             # 成功返回user对象,失败返回null
-            user = authenticate(username=user_name, password=pass_word)
+            user = authenticate(request, username=user_name, password=pass_word)
 
             # 如果不是null说明验证成功
             if user is not None:
@@ -185,6 +186,7 @@ class LoginView(View):
             return render(
                 request, "login.html", {
                     "login_form": login_form})
+
 
 # Create your views here
 
@@ -223,12 +225,14 @@ def user_login(request):
 
 class ForgetPwdView(View):
     """用户忘记密码的处理view"""
+
     # get方法直接返回页面
 
     def get(self, request):
         # 给忘记密码页面加上验证码
         active_form = ActiveForm(request.POST)
         return render(request, "forgetpwd.html", {"active_form": active_form})
+
     # post方法实现
 
     def post(self, request):
@@ -302,7 +306,7 @@ class ModifyPwdView(View):
             active_code = request.POST.get("active_code", "")
             return render(
                 request, "password_reset.html", {
-                    "active_code": active_code,  "msg": "密码小于5位"})
+                    "active_code": active_code, "msg": "密码小于5位"})
 
 
 class UserInfoView(LoginRequiredMixin, View):
