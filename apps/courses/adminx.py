@@ -29,7 +29,7 @@ class CourseAdmin(object):
 
 
 class LessonAdmin(object):
-    fields =['course__name', 'course__desc','course', 'name', 'add_time' ]
+    fields = ['course', 'name', 'add_time']
     list_display = ['course', 'name', 'add_time']
     search_fields = ['course__name', 'name']
     # __name代表使用外键中name字段

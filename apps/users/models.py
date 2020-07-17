@@ -53,7 +53,6 @@ class UserProfile(AbstractUser):
         from operation.models import UserMessage
         return UserMessage.objects.filter(has_read=False, user=self.id).count()
 
-
 class EmailVerifyRecord(models.Model):
     """邮箱验证码model"""
     SEND_CHOICES = (

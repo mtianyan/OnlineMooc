@@ -198,7 +198,7 @@ class OrgTeacherView(View):
         # 向前端传值说明用户是否收藏
         has_fav = False
         # 必须是用户已登录我们才需要判断。
-        if request.user.is_authenticated:
+        if request.user.is_authenticated():
             if UserFavorite.objects.filter(
                     user=request.user,
                     fav_id=course_org.id,
