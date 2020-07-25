@@ -1,0 +1,13 @@
+{
+  "name": "stdin",
+  "version": "0.0.1",
+  "description": "Because stdin with node is annoying",
+  "keywords": [],
+  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@umijs/error-code-map",
+  "version": "1.0.1",
+  "description": "Error code map for umi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish"
+  },
+  "devDependencies": {
+    "np": "^5.0.3"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/umijs/error-code-map"
+  },
+  "homepage": "http://github.com/umijs/error-code-map",
+  "bugs": "http://github.com/umijs/error-code-map/issues",
+  "authors": [
+    "chencheng <sorrycc@gmail.com> (https://github.com/sorrycc)"
+  ],
+  "license": "MIT"
+}

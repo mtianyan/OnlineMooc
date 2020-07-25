@@ -1,0 +1,30 @@
+sudo: required
+dist: trusty
+language: node_js
+env:
+  global:
+    - CI=true
+
+matrix:
+  include:
+    - node_js: "8"
+    - node_js: "10"
+    - node_js: "12"
+  fast_finish: true
+
+before_script:
+  - yarn build
+
+script:
+  - yarn test
+
+after_success:
+  - yarn coveralls
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+git:
+  depth: 5

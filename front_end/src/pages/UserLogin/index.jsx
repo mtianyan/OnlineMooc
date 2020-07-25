@@ -68,7 +68,7 @@ const Login = props => {
 
           <UserName
             name="userName"
-            placeholder="用户名"
+            placeholder="登录账号:admin"
             rules={[
               {
                 required: true,
@@ -78,7 +78,7 @@ const Login = props => {
           />
           <Password
             name="password"
-            placeholder="密码"
+            placeholder="登录密码:admin"
             rules={[
               {
                 required: true,
