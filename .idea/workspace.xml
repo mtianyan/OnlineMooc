@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +294,7 @@
       <workItem from="1595492148740" duration="614000" />
       <workItem from="1595651144049" duration="16205000" />
       <workItem from="1595678610071" duration="329000" />
-      <workItem from="1595680456632" duration="512000" />
+      <workItem from="1595680456632" duration="653000" />
     </task>
     <task id="LOCAL-00001" summary="7-6完成列表筛选以及排序功能">
       <created>1515698110311</created>
@@ -514,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595680865533</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update">
+      <created>1595681051845</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1595681051845</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,10 +572,10 @@
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="1051" y="488" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1595651188192" />
-    <state x="892" y="256" key="CommitChangelistDialog2" timestamp="1595680849863">
+    <state x="892" y="256" key="CommitChangelistDialog2" timestamp="1595681049050">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
-    <state x="892" y="256" key="CommitChangelistDialog2/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595680849863" />
+    <state x="892" y="256" key="CommitChangelistDialog2/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595681049050" />
     <state x="892" y="256" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1594999603771" />
     <state width="754" height="466" key="DebuggerActiveHint" timestamp="1595475652545">
       <screen x="0" y="23" width="1920" height="975" />
@@ -644,10 +650,10 @@
     <state width="1352" height="303" key="GridCell.Tab.1.right/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475710050" />
     <state width="1352" height="303" key="GridCell.Tab.1.right/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595678555658" />
     <state width="875" height="443" key="GridCell.Tab.1.right/0.23.2560.1333@0.23.2560.1333" timestamp="1587296631160" />
-    <state x="880" y="428" key="Vcs.Push.Dialog.v2" timestamp="1595680875123">
+    <state x="880" y="428" key="Vcs.Push.Dialog.v2" timestamp="1595681056144">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
-    <state x="880" y="428" key="Vcs.Push.Dialog.v2/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595680875123" />
+    <state x="880" y="428" key="Vcs.Push.Dialog.v2/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595681056144" />
     <state x="880" y="428" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1594999607690" />
     <state x="1341" y="439" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1595680821392">
       <screen x="0" y="23" width="2560" height="1333" />
@@ -663,6 +669,10 @@
     <state x="730" y="272" width="588" height="486" key="find.popup/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1587633776836" />
     <state x="878" y="326" width="784" height="659" key="find.popup/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595659245470" />
     <state x="973" y="360" width="784" height="659" key="find.popup/0.23.2560.1333@0.23.2560.1333" timestamp="1589019810473" />
+    <state x="1600" y="567" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595681012893">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state x="1600" y="567" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595681012893" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
