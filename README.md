@@ -16,7 +16,7 @@ cd OnlineMooc
 docker-compose up
 
 # 导入数据
-docker exec -it mxonline3_mtianyan_mysql_1 bash
+docker exec -it onlinemooc_mtianyan_mysql_1 bash
 mysql -u root -p -D mxonline3 < sql/mxonline3.sql
 # 输入密码: mtianyanroot 
 ```
