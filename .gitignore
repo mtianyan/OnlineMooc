@@ -224,3 +224,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+./front_end/node_modules

@@ -24,13 +24,47 @@ import xadmin
 from django.views.generic import TemplateView
 # from users.views import user_login
 from Mxonline3.settings import MEDIA_ROOT
+from courses.api_views import CourseViewSet, LessonViewSet, VideoViewSet, CourseResourceViewSet
+from operation.api_views import UserAskViewSet, CourseCommentsViewSet, UserFavoriteViewSet, UserMessageViewSet, UserCourseViewSet
+from organization.api_views import CityDictViewSet, CourseOrgViewSet, TeacherViewSet
 from organization.views import OrgView
+from users.api_views import EmailVerifyRecordViewSet, BannerViewSet, UserProfileViewSet, CurrentUserView, AdminLoginView, DashBoardView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
-    IndexView
+    IndexView, CaptchaView, AdminIndexView
+from rest_framework.routers import DefaultRouter
 
+router = DefaultRouter(trailing_slash=False)
+router.register('email_verify_record/?', EmailVerifyRecordViewSet)
+
+router.register('banner/?', BannerViewSet)
+
+router.register('city_dict/?', CityDictViewSet)
+
+router.register('course_org/?', CourseOrgViewSet)
+
+router.register('teacher/?', TeacherViewSet)
+
+router.register('course/?', CourseViewSet)
+
+router.register('lesson/?', LessonViewSet)
+
+router.register('video/?', VideoViewSet)
+
+router.register('course_resource/?', CourseResourceViewSet)
+
+router.register('user_ask/?', UserAskViewSet)
+
+router.register('course_comments/?', CourseCommentsViewSet)
+
+router.register('user_favorite/?', UserFavoriteViewSet)
+
+router.register('user_message/?', UserMessageViewSet)
+
+router.register('user_course/?', UserCourseViewSet)
+router.register('users/?', UserProfileViewSet)
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('xadmin/', xadmin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('admin/', xadmin.site.urls),
     # TemplateView.as_view会将template转换为view
     # path('', TemplateView.as_view(template_name= "index.html"), name=  "index"),
     path('', IndexView.as_view(), name="index"),
@@ -70,4 +104,12 @@ urlpatterns = [
 
     # 富文本相关url
     path('ueditor/', include('DjangoUeditor.urls')),
+    path('xadmin/', AdminIndexView.as_view(), name="admin_index"),
+
+    path('api/v1/', include(router.urls)),
+    path('api/v1/user/currentUser', CurrentUserView.as_view(), name='user_current_user'),
+    path('api/v1/captcha-generate/', CaptchaView.as_view(), name='captcha'),
+    path('api/v1/user/login', AdminLoginView.as_view(), name='admin_login'),
+    path('api/v1/fake_chart_data', DashBoardView.as_view(), name='dashboard'),
+
 ]

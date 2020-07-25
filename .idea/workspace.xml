@@ -1,14 +1,542 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="fix bug-2">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="81620384-a96b-4217-a47c-ab354458db82" name="Default" comment="fix some bug">
+      <change afterPath="$PROJECT_DIR$/Mxonline3/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/courses/api_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/courses/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organization/api_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organization/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/copy_static.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deal_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/config/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/config/defaultSettings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/config/proxy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/mock/listTableList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/mock/notices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/mock/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/mock/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/home_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/icons/icon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/icons/icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/icons/icon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/public/pro_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/devScripts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/history.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/plugin.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/pluginConfig.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/polyfill.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/core/umiExports.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-antd-icon/icons.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-dva/connect.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-dva/dva.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-dva/exports.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-dva/runtime.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-helmet/exports.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-initial-state/Provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-initial-state/exports.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-initial-state/models/initialState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-initial-state/runtime.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-locale/SelectLang.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-locale/locale.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-locale/localeExports.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-locale/runtime.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-model/Provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-model/runtime.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-model/useModel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/plugin-request/request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/preset-ui/UmiUIFlag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/.umi/umi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/assets/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/Authorized.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/AuthorizedRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/CheckPermissions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/NoMatch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/PromiseRender.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/Secured.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Authorized/renderAuthorize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/demo/403.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/demo/404.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/demo/500.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/index.en-US.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/index.zh-CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/Exception/typeConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/GlobalHeader/AvatarDropdown.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/GlobalHeader/NoticeIconView.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/GlobalHeader/RightContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/GlobalHeader/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/HOCModal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/HeaderDropdown/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/HeaderDropdown/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/HeaderSearch/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/HeaderSearch/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/NoticeIcon/NoticeList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/NoticeIcon/NoticeList.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/NoticeIcon/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/NoticeIcon/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/breadcrumb.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/breadcrumb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/demo/image.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/demo/simple.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/demo/standard.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/demo/structure.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeader/index.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeaderWrapper/GridContent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeaderWrapper/GridContent.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeaderWrapper/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageHeaderWrapper/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/PageLoading/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/SelectLang/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/SelectLang/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/_utils/pathTools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/components/_utils/pathTools.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/e2e/__mocks__/antd-pro-merge-less.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/e2e/baseLayout.e2e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/global.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/global.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/BasicLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/BlankLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/MenuContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/SecurityLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/UserLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/layouts/UserLayout.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/globalHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/pwa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/settingDrawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/en-US/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/globalHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/pwa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/settingDrawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/pt-BR/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/globalHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/pwa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/settingDrawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-CN/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/globalHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/pwa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/settingDrawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/locales/zh-TW/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/models/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/models/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/models/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/404.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/Admin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/Authorized.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/BannerList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CityList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CodeList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CommentList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ConfList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ConfList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/CourseList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Bar/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/ChartCard/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/ChartCard/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Field/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Field/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Gauge/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/MiniArea/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/MiniBar/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/MiniProgress/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/MiniProgress/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Pie/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/Pie/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/TagCloud/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/TagCloud/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/TimelineChart/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/TimelineChart/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/WaterWave/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/WaterWave/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/autoHeight.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/bizcharts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Charts/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/IntroduceRow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/NumberInfo/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/NumberInfo/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/OfflineData.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/PageLoading/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/ProportionSales.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/SalesCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/TopSearch.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Trend/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/components/Trend/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/locales/en-US.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/locales/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/locales/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/locales/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/model.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/service.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/style.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/utils/Yuan.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/DashBoard/utils/utils.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/LessonList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/OrgList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/ResourceList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/RoleList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/System.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/TeacherList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/Readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step1/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step1/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step2/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step2/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step3/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/Step3/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/UploadAvatar/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/UploadAvatar/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/UploadBasic/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/components/UploadBasic/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/locales/en-US.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/locales/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/locales/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/locales/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UploadConfFile/style.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserAskList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserCourseList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserFav/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/LoginContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/LoginItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/LoginSubmit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/LoginTab.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/components/Login/map.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserLogin/style.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/UserMessage/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/_mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/components/CreateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/components/UpdateForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/VideoList/service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/Welcome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/pages/document.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/service-worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/services/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/services/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/Authorized.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/authority.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/domain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/excel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/utils.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/src/utils/utils.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/tests/PuppeteerEnvironment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/tests/beforeTest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/tests/getBrowser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/tests/run-tests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front_end/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/req_drf.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/0.8c333fa6.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/0.a5f92f9f.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/2.8281c3b4.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/2.a97de0df.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/3.05d91418.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/3.f36cc8b7.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/31.61016f31.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/31.ac673366.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/32.0320f17c.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/32.f9bf42a3.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/33.8d45bfd2.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/33.a94d2cd8.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/34.08d1e276.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/34.b63c10b5.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/35.12d11880.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/35.aec4343a.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/36.c1c6f7f9.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/36.c81f01f8.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/37.a919d16b.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/37.e63ab817.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/38.e63ab817.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/38.f2b01b2f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/39.7cd27cd1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/4.1046e038.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/40.0d1b2df6.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/5.7dacd3f0.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/5.cdded702.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/6.862f7cb7.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/6.d6e38ab4.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/home_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/icon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons/icon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__BasicLayout.1235045e.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__BasicLayout.2e4c3cae.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__BasicLayout.ec5a5dd3.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__SecurityLayout.7780157e.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__SecurityLayout.9eb54157.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__UserLayout.044a00bf.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__UserLayout.b53fe6b6.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layouts__UserLayout.c297a0ce.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__404.cbccbc08.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__404.edb45ee2.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__BannerList.41255ead.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__BannerList.8f31b94b.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__BannerList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CityList.6c7feaae.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CityList.8982ee95.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CityList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CodeList.529ac587.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CodeList.96205232.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CodeList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CommentList.07ff002f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CommentList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CommentList.fa86b109.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CourseList.66e399a5.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CourseList.cf9fdf06.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__CourseList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__DashBoard.22d7bf87.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__DashBoard.5e8b7533.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__Dashboard.3244ec23.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__Dashboard.cb24f0ff.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__LessonList.8d0bece1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__LessonList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__LessonList.f454c47a.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__OrgList.635c23ce.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__OrgList.ba8bd16f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__OrgList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__ResourceList.3eddd9b1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__ResourceList.90a03cce.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__ResourceList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__TeacherList.22ffd500.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__TeacherList.833e7a9f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__TeacherList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserAskList.6cf1174f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserAskList.a94fc789.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserAskList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserCourseList.36fe71f2.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserCourseList.5533e20e.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserCourseList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserFav.e68f05b0.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserFav.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserFav.f033131d.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserList.321da71c.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserList.c303b91b.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserLogin.3136da3f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserLogin.81c726fb.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserLogin.a6088eef.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserMessage.83944db3.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserMessage.b53da3e8.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__UserMessage.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__VideoList.21e5f7c4.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__VideoList.30ae9734.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p__VideoList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/pro_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static/logo.f0355d39.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/umi.5ce13ffb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/umi.a5056b76.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/umi.db3276c3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~layouts__BasicLayout~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__L~51db1b25.08d7295b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~layouts__BasicLayout~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__L~51db1b25.269d9ab1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~layouts__BasicLayout~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__L~51db1b25.6cb1f758.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__LessonList~p__OrgList~~27606eed.f8970c79.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__LessonList~p__OrgList~~27606eed.fd04645f.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__LessonList~p__OrgList~~27663239.918f5b33.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__LessonList~p__OrgList~~27663239.c58b64e1.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__UserLogin.daa0193c.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendors~p__UserLogin.fd04645f.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/1.a5f92f9f.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/1.b291b4e1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/2.8281c3b4.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/2.a97de0df.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/29.2f014d7e.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/29.ac673366.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/3.05d91418.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/3.f36cc8b7.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/30.8d45bfd2.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/30.e47b98c6.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/31.76e0d862.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/31.aec4343a.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/32.851502df.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/32.e63ab817.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/33.b2c02fdd.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/4.6f0f68f9.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/4.900bc27f.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/5.fc9d3110.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/home_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/icons/icon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/icons/icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/icons/icon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/layouts__BasicLayout.2e4c3cae.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/layouts__BasicLayout.38b74326.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/layouts__SecurityLayout.74c1baf2.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/layouts__UserLayout.70889136.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/layouts__UserLayout.b53fe6b6.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__404.89dfd6fa.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__BannerList.6f4f39be.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__BannerList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CityList.c6a2f893.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CityList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CodeList.9d566949.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CodeList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CommentList.585a8f0f.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CommentList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CourseList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__CourseList.edaad4c1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__DashBoard.22d7bf87.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__DashBoard.8666f21c.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__LessonList.a328fe22.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__LessonList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__OrgList.0c1b2b24.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__OrgList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__ResourceList.2f37e926.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__ResourceList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__TeacherList.496306f7.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__TeacherList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserAskList.a86b6473.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserAskList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserCourseList.169847c5.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserCourseList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserFav.e293421d.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserFav.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserList.4ce74b29.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserLogin.a6088eef.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserLogin.f7b540df.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserMessage.be4d7d25.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__UserMessage.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__VideoList.eab8c72b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/p__VideoList.ffe290f5.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/pro_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/static/logo.f0355d39.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/umi.91cbe3f8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/umi.a5056b76.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vendors~layouts__BasicLayout~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__L~51db1b25.08d7295b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vendors~layouts__BasicLayout~p__BannerList~p__CityList~p__CodeList~p__CommentList~p__CourseList~p__L~51db1b25.269d9ab1.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vendors~p__UserLogin.de383516.async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/vendors~p__UserLogin.fd04645f.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mxonline3/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mxonline3/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mxonline3/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mxonline3/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/adminx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organization/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organization/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mxonline3/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mxonline3/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +569,107 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front_end/src/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/extra_apps/xadmin/plugins" />
-      <recent name="$PROJECT_DIR$/extra_apps" />
-      <recent name="D:\CodeSpace\PythonProject\Mxonline3\extra_apps\xadmin\plugins" />
-      <recent name="D:\CodeSpace\PythonProject\Mxonline3\extra_apps" />
-      <recent name="D:\CodeSpace\PythonProject\Mxonline3\templates" />
+      <recent name="$PROJECT_DIR$/front_end/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend/src/models" />
+      <recent name="$PROJECT_DIR$/frontend/src/pages" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Mxonline3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/users" />
+      <recent name="$PROJECT_DIR$/apps/organization" />
+      <recent name="$PROJECT_DIR$/apps/operation" />
+      <recent name="$PROJECT_DIR$/apps/courses" />
+      <recent name="$PROJECT_DIR$/apps" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.copy_static">
+    <configuration name="copy_static" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mxonline3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/copy_static.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="deal_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mxonline3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deal_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gen_serializers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mxonline3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/gen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/gen/gen_serializers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <module name="Mxonline3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,8 +706,18 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
+      <option name="port" value="8009" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="http://127.0.0.1:8000/" />
@@ -117,6 +727,19 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.mxonline3" />
+      <item itemvalue="Python.deal_model" />
+      <item itemvalue="Python.gen_serializers" />
+      <item itemvalue="Python.copy_static" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.copy_static" />
+        <item itemvalue="Python.deal_model" />
+        <item itemvalue="Python.gen_serializers" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -198,7 +821,11 @@
       <workItem from="1593671970089" duration="136000" />
       <workItem from="1594780923746" duration="1245000" />
       <workItem from="1594955956199" duration="957000" />
-      <workItem from="1594999133476" duration="327000" />
+      <workItem from="1594999133476" duration="784000" />
+      <workItem from="1595475232227" duration="2919000" />
+      <workItem from="1595482658432" duration="1252000" />
+      <workItem from="1595492148740" duration="614000" />
+      <workItem from="1595651144049" duration="13890000" />
     </task>
     <task id="LOCAL-00001" summary="7-6完成列表筛选以及排序功能">
       <created>1515698110311</created>
@@ -396,7 +1023,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587293652556</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix some bug">
+      <created>1594999605087</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1594999605087</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +1049,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7-7 &amp; 8 modelform提交我要学习咨询。" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="7-9&amp;10&amp;11&amp;12将机构详情展示完毕，为课程机构添加了收藏功能。" />
     <MESSAGE value="7-9&amp;10&amp;11&amp;12将机构详情展示完毕，为课程机构添加了收藏功能。修复了index未登录状态下爆炸的错误" />
     <MESSAGE value="8-1完成课程列表页展示，分页，热门课程。" />
@@ -440,71 +1074,99 @@
     <MESSAGE value="Django3.0 更新" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="fix bug-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug-2" />
+    <MESSAGE value="fix some bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some bug" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="892" y="256" key="CommitChangelistDialog2" timestamp="1587293652451">
+    <state x="1051" y="488" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595651188192">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
-    <state x="892" y="255" key="CommitChangelistDialog2/0.23.2560.1327@0.23.2560.1327" timestamp="1586787812041" />
-    <state x="892" y="256" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1587293652451" />
-    <state x="256" y="144" key="DiffContextDialog" timestamp="1587293525818">
+    <state x="1051" y="488" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1595651188192" />
+    <state x="892" y="256" key="CommitChangelistDialog2" timestamp="1594999603771">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
-    <state x="256" y="144" key="DiffContextDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1587293525818" />
-    <state width="1352" height="183" key="GridCell.Tab.0.bottom" timestamp="1594999346766">
+    <state x="892" y="256" key="CommitChangelistDialog2/0.23.2560.1333@0.23.2560.1333" timestamp="1594999603771" />
+    <state width="754" height="466" key="DebuggerActiveHint" timestamp="1595475652545">
+      <screen x="0" y="23" width="1920" height="975" />
+    </state>
+    <state width="754" height="466" key="DebuggerActiveHint/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475652545" />
+    <state x="256" y="144" key="DiffContextDialog" timestamp="1594999579734">
+      <screen x="0" y="23" width="2560" height="1333" />
+    </state>
+    <state x="256" y="144" key="DiffContextDialog/0.23.2560.1333@0.23.2560.1333" timestamp="1594999579734" />
+    <state width="1783" height="183" key="GridCell.Tab.0.bottom" timestamp="1595667231815">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.1920.973/-1680.0.1680.1050@0.23.1920.973" timestamp="1594964590127" />
+    <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475761030" />
+    <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.1920.978/-1680.0.1680.1050@0.23.1920.978" timestamp="1595482325691" />
+    <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.1920.980/-1680.0.1680.1050@0.23.1920.980" timestamp="1595483914930" />
     <state width="1352" height="186" key="GridCell.Tab.0.bottom/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1594807456512" />
-    <state width="1256" height="272" key="GridCell.Tab.0.bottom/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980365" />
-    <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1594999346766" />
-    <state width="1352" height="183" key="GridCell.Tab.0.center" timestamp="1594999346765">
+    <state width="1783" height="183" key="GridCell.Tab.0.bottom/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595667231815" />
+    <state width="1352" height="183" key="GridCell.Tab.0.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1595651227354" />
+    <state width="1783" height="183" key="GridCell.Tab.0.center" timestamp="1595667231814">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.1920.973/-1680.0.1680.1050@0.23.1920.973" timestamp="1594964590127" />
+    <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475761029" />
+    <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.1920.978/-1680.0.1680.1050@0.23.1920.978" timestamp="1595482325690" />
+    <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.1920.980/-1680.0.1680.1050@0.23.1920.980" timestamp="1595483914929" />
     <state width="1352" height="186" key="GridCell.Tab.0.center/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1594807456511" />
-    <state width="1256" height="272" key="GridCell.Tab.0.center/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
-    <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.2560.1333@0.23.2560.1333" timestamp="1594999346765" />
-    <state width="1352" height="183" key="GridCell.Tab.0.left" timestamp="1594999346764">
+    <state width="1783" height="183" key="GridCell.Tab.0.center/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595667231814" />
+    <state width="1352" height="183" key="GridCell.Tab.0.center/0.23.2560.1333@0.23.2560.1333" timestamp="1595651227353" />
+    <state width="1783" height="183" key="GridCell.Tab.0.left" timestamp="1595667231813">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.1920.973/-1680.0.1680.1050@0.23.1920.973" timestamp="1594964590126" />
+    <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475761029" />
+    <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.1920.978/-1680.0.1680.1050@0.23.1920.978" timestamp="1595482325690" />
+    <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.1920.980/-1680.0.1680.1050@0.23.1920.980" timestamp="1595483914929" />
     <state width="1352" height="186" key="GridCell.Tab.0.left/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1594807456510" />
-    <state width="1256" height="272" key="GridCell.Tab.0.left/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
-    <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.2560.1333@0.23.2560.1333" timestamp="1594999346764" />
-    <state width="1352" height="183" key="GridCell.Tab.0.right" timestamp="1594999346765">
+    <state width="1783" height="183" key="GridCell.Tab.0.left/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595667231813" />
+    <state width="1352" height="183" key="GridCell.Tab.0.left/0.23.2560.1333@0.23.2560.1333" timestamp="1595651227353" />
+    <state width="1783" height="183" key="GridCell.Tab.0.right" timestamp="1595667231814">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.1920.973/-1680.0.1680.1050@0.23.1920.973" timestamp="1594964590127" />
+    <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475761030" />
+    <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.1920.978/-1680.0.1680.1050@0.23.1920.978" timestamp="1595482325690" />
+    <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.1920.980/-1680.0.1680.1050@0.23.1920.980" timestamp="1595483914929" />
     <state width="1352" height="186" key="GridCell.Tab.0.right/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1594807456511" />
-    <state width="1256" height="272" key="GridCell.Tab.0.right/0.23.2560.1327@0.23.2560.1327" timestamp="1586787980364" />
-    <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.2560.1333@0.23.2560.1333" timestamp="1594999346765" />
-    <state width="875" height="443" key="GridCell.Tab.1.bottom" timestamp="1587296631160">
+    <state width="1783" height="183" key="GridCell.Tab.0.right/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595667231814" />
+    <state width="1352" height="183" key="GridCell.Tab.0.right/0.23.2560.1333@0.23.2560.1333" timestamp="1595651227354" />
+    <state width="1352" height="303" key="GridCell.Tab.1.bottom" timestamp="1595658739174">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
+    <state width="1352" height="303" key="GridCell.Tab.1.bottom/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475710051" />
+    <state width="1352" height="303" key="GridCell.Tab.1.bottom/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595658739174" />
     <state width="875" height="443" key="GridCell.Tab.1.bottom/0.23.2560.1333@0.23.2560.1333" timestamp="1587296631160" />
-    <state width="875" height="443" key="GridCell.Tab.1.center" timestamp="1587296631159">
+    <state width="1352" height="303" key="GridCell.Tab.1.center" timestamp="1595658739173">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
+    <state width="1352" height="303" key="GridCell.Tab.1.center/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475710050" />
+    <state width="1352" height="303" key="GridCell.Tab.1.center/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595658739173" />
     <state width="875" height="443" key="GridCell.Tab.1.center/0.23.2560.1333@0.23.2560.1333" timestamp="1587296631159" />
-    <state width="875" height="443" key="GridCell.Tab.1.left" timestamp="1587296631159">
+    <state width="1352" height="303" key="GridCell.Tab.1.left" timestamp="1595658739173">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
+    <state width="1352" height="303" key="GridCell.Tab.1.left/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475710049" />
+    <state width="1352" height="303" key="GridCell.Tab.1.left/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595658739173" />
     <state width="875" height="443" key="GridCell.Tab.1.left/0.23.2560.1333@0.23.2560.1333" timestamp="1587296631159" />
-    <state width="875" height="443" key="GridCell.Tab.1.right" timestamp="1587296631160">
+    <state width="1352" height="303" key="GridCell.Tab.1.right" timestamp="1595658739174">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
+    <state width="1352" height="303" key="GridCell.Tab.1.right/0.23.1920.975/-1680.0.1680.1050@0.23.1920.975" timestamp="1595475710050" />
+    <state width="1352" height="303" key="GridCell.Tab.1.right/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595658739174" />
     <state width="875" height="443" key="GridCell.Tab.1.right/0.23.2560.1333@0.23.2560.1333" timestamp="1587296631160" />
-    <state x="880" y="428" key="Vcs.Push.Dialog.v2" timestamp="1587293654715">
+    <state x="880" y="428" key="Vcs.Push.Dialog.v2" timestamp="1594999607690">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
-    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.23.2560.1327@0.23.2560.1327" timestamp="1586787814825" />
-    <state x="880" y="428" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1587293654715" />
-    <state x="973" y="360" width="784" height="659" key="find.popup" timestamp="1589019810473">
+    <state x="880" y="428" key="Vcs.Push.Dialog.v2/0.23.2560.1333@0.23.2560.1333" timestamp="1594999607690" />
+    <state x="878" y="326" width="784" height="659" key="find.popup" timestamp="1595659245470">
       <screen x="0" y="23" width="2560" height="1333" />
     </state>
     <state x="730" y="272" width="588" height="486" key="find.popup/0.23.1920.984/-1680.0.1680.1050@0.23.1920.984" timestamp="1587633776836" />
+    <state x="878" y="326" width="784" height="659" key="find.popup/0.23.2560.1333/-1680.0.1680.1050@0.23.2560.1333" timestamp="1595659245470" />
     <state x="973" y="360" width="784" height="659" key="find.popup/0.23.2560.1333@0.23.2560.1333" timestamp="1589019810473" />
   </component>
   <component name="XDebuggerManager">
@@ -517,7 +1179,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/apps/users/views.py</url>
-          <line>281</line>
+          <line>285</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -527,5 +1189,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Mxonline3$gen_serializers.coverage" NAME="gen_serializers Coverage Results" MODIFIED="1595482156609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/gen" />
+    <SUITE FILE_PATH="coverage/Mxonline3$deal_model.coverage" NAME="deal_model Coverage Results" MODIFIED="1595657298879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Mxonline3$copy_static.coverage" NAME="copy_static Coverage Results" MODIFIED="1595667263596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,0 +1,6 @@
+coreapi
+django-filter
+djangorestframework
+mysqlclient
+django-crispy-forms
+django-cors-headers

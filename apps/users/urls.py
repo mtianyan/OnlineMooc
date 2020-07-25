@@ -37,4 +37,5 @@ urlpatterns = [
     # 我收藏的课程
     path('my_message/', MyMessageView.as_view(), name="my_message"),
 
+
 ]

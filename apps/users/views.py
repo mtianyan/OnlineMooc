@@ -1,6 +1,8 @@
 # encoding: utf-8
 import json
 
+from captcha.helpers import captcha_image_url
+from captcha.models import CaptchaStore
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
@@ -9,6 +11,8 @@ from django.shortcuts import render
 # Django自带的用户验证,login
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
+from rest_framework import views
+from rest_framework.response import Response
 
 from courses.models import Course
 from operation.models import UserCourse, UserFavorite, UserMessage
@@ -554,3 +558,23 @@ class IndexView(View):
             "banner_courses": banner_courses,
             "course_orgs": course_orgs,
         })
+
+
+class CaptchaView(views.APIView):
+    permission_classes = ()
+
+    def get(self, request, *args, **kwargs):
+        new_key = CaptchaStore.pick()
+        response = {
+            'key': new_key,
+            'image_url': request.build_absolute_uri(location=captcha_image_url(new_key)),
+        }
+        return Response(response)
+
+
+class AdminIndexView(View):
+    # 直接调用get方法免去判断
+    def get(self, request):
+        # render就是渲染html返回用户
+        # render三变量: request 模板名称 一个字典写明传给前端的值
+        return render(request, "admin/index.html")

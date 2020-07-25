@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'captcha',
     'pure_pagination',
     'DjangoUeditor',
+    'rest_framework',  # 添加rest framework，api服务依赖
+    'django_filters',  # 添加过滤器，后台xadmin filter支持，rest framework filter支持
 ]
 # 此处重载是为了使我们的UserProfile生效
 AUTH_USER_MODEL = "users.UserProfile"
@@ -157,3 +159,38 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 X_FRAME_OPTIONS = 'sameorigin'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+
+    # 使用默认权限类
+    'DEFAULT_PERMISSION_CLASSES': [
+        # Model级别权限，未登录(匿名)只可读
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    # 使用Django Filter 过滤器
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+
+    # 使用自定义的分页类，替换result为data
+    'DEFAULT_PAGINATION_CLASS': 'Mxonline3.pagination.CustomPageNumberPagination',
+    # 分页单页内容数量控制
+    'PAGE_SIZE': 10,
+
+    # 配置默认的解析类: JSON 与 XML解析类
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+    ),
+    # 默认的限速设置，匿名与已登录用户限速
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '100/day',
+    #     'user': '1000/day'
+    # }
+
+}
