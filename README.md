@@ -1,39 +1,43 @@
-# Mxonline3 在线教育(Django3.0 + Xadmin 后台管理+ Ueditor 富文本编辑器)
+#  Django3.0 + DjangoRestful Framework + Ant Design Pro V4 开发的在线教育网站及后台管理
 
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-使用Python3.7与Django3.0开发的在线教育平台网站: http://mxonline.mtianyan.cn
+- 在线体验地址: https://mooc.funpython.cn/xadmin
+- 首页地址: https://mooc.funpython.cn/
 
-> 已测试xadmin,  DjangoUeditor Django3.0下功能可用。 如有3.0使用时触发Bug,可请进群联系。欢迎加入 funpython.cn QQ群:211599322
+## 运行指南:
 
-## 如何开始使用？
+### docker运行
 
 ```
-git clone https://github.com/mtianyan/Mxonline3.git
-cd Mxonline3
+git clone https://github.com/mtianyan/OnlineMooc.git
+cd OnlineMooc
+docker-compose up
+
+# 导入数据
+docker exec -it mxonline3_mtianyan_mysql_1 bash
+mysql -u root -p -D mxonline3 < sql/mxonline3.sql
+# 输入密码: mtianyanroot 
+```
+
+### 本地环境运行
+
+后端项目运行:
+
+```
+git clone https://github.com/mtianyan/OnlineMooc.git
+cd OnlineMooc
+pipenv shell
 pip install -r requirements.txt
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+# Navicat创建数据库，导入mxonline3.sql
+# 修改settings.py 中数据库密码
+
 python manage.py runserver
 ```
 
-use the address: http://127.0.0.1:8000/
-
-## TODO:
-
-
-## 致谢 [原版视频课程地址:](https://coding.imooc.com/learn/list/78.html)
-
-## 关于我
-
-**欢迎star项目！谢谢！你的关注支持是我继续分享前进的动力**
-
-## 求打赏鼓励
-
-很高兴我写的文章（或我的项目代码）对你有帮助，请我吃包辣条吧!
+很高兴我的项目代码或许对你有帮助，请我吃包辣条或喝瓶可乐吧!
 
 微信打赏:
 
@@ -42,3 +46,7 @@ use the address: http://127.0.0.1:8000/
 支付宝打赏:
 
 ![mark](http://myphoto.mtianyan.cn/blog/180302/gDlBGemI60.jpg?imageslim)
+
+
+
+

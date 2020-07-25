@@ -7,8 +7,6 @@ mtianyan_mysql:
       - MYSQL_DATABASE=mxonline3 # name you want for the database
       - MYSQL_USER=root # change to whatever username you wantr
       - MYSQL_ROOT_PASSWORD=mtianyanroot #change to good root password
-    ports:
-      - "3310:3306"
     volumes:
       - "./db:/var/lib/mysql"
       - "./sql:/sql"
@@ -18,7 +16,7 @@ mtianyan_nginx:
   restart: always
   image: nginx
   ports:
-    - "82:80"
+    - "8001:80"
   volumes:
     - ./conf/nginx.conf:/etc/nginx/conf.d/nginx.conf
   volumes_from:
@@ -29,8 +27,6 @@ mtianyan_nginx:
 mtianyan_mxonline3:
   restart: always
   build: .
-  ports:
-    - "8014:8000"
   volumes:
     - .:/ProjectPath
     - ./conf/uwsgi.ini:/etc/uwsgi.ini
