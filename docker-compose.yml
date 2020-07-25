@@ -8,7 +8,7 @@ mtianyan_mysql:
       - MYSQL_USER=root # change to whatever username you wantr
       - MYSQL_ROOT_PASSWORD=mtianyanroot #change to good root password
     ports:
-      - "3309:3306"
+      - "3310:3306"
     volumes:
       - "./db:/var/lib/mysql"
       - "./sql:/sql"
@@ -36,4 +36,4 @@ mtianyan_mxonline3:
     - ./conf/uwsgi.ini:/etc/uwsgi.ini
   links:
     - mtianyan_mysql:mysql
-  command: uwsgi -s :8000 -w Mxonline3.wsgi -p 10
+  command: uwsgi -i /etc/uwsgi.ini
