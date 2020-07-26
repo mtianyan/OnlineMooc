@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import sys
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
@@ -89,17 +90,41 @@ WSGI_APPLICATION = 'Mxonline3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mxonline3',
-        'USER': 'root',
-        'PASSWORD': 'mtianyanroot',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+try:
+    var = os.environ["use_docker"]
+    print(var)
+    if var == "1":
+        UseDocker = True
+    else:
+        UseDocker = False
+except KeyError:
+    UseDocker = False
 
+print(UseDocker)
+
+if UseDocker:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mxonline3',
+            'USER': 'root',
+            'PASSWORD': 'mtianyanroot',
+            'HOST': 'mysql',
+            'PORT': '3306'
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mxonline3',
+            'USER': 'root',
+            'PASSWORD': 'mtianyanroot',
+            'HOST': '127.0.0.1',
+            'PORT': '3306'
+
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
