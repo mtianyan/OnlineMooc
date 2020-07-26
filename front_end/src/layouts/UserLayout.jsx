@@ -41,10 +41,10 @@ const UserLayout = props => {
         <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.header}>
-              <Link to="/">
+              {/*<Link to="/xadmin">*/}
                 <img alt="logo" className={styles.logo} src={logo} />
                 <span className={styles.title}>慕课管理</span>
-              </Link>
+              {/*</Link>*/}
             </div>
             <div className={styles.desc}>后台管理</div>
           </div>

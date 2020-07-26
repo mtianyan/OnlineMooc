@@ -150,7 +150,7 @@ const LoginItem = props => {
   }
 
   return (
-    <FormItem name={name} {...options}>
+    <FormItem name={name} {...options} >
       <Input {...customProps} {...otherProps} />
     </FormItem>
   );

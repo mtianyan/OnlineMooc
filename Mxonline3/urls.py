@@ -28,7 +28,8 @@ from courses.api_views import CourseViewSet, LessonViewSet, VideoViewSet, Course
 from operation.api_views import UserAskViewSet, CourseCommentsViewSet, UserFavoriteViewSet, UserMessageViewSet, UserCourseViewSet
 from organization.api_views import CityDictViewSet, CourseOrgViewSet, TeacherViewSet
 from organization.views import OrgView
-from users.api_views import EmailVerifyRecordViewSet, BannerViewSet, UserProfileViewSet, CurrentUserView, AdminLoginView, DashBoardView
+from users.api_views import EmailVerifyRecordViewSet, BannerViewSet, UserProfileViewSet, CurrentUserView, AdminLoginView, DashBoardView, \
+    AdminLogoutView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView, \
     IndexView, CaptchaView, AdminIndexView
 from rest_framework.routers import DefaultRouter
@@ -108,6 +109,7 @@ urlpatterns = [
     path('api/v1/user/currentUser', CurrentUserView.as_view(), name='user_current_user'),
     path('api/v1/captcha-generate/', CaptchaView.as_view(), name='captcha'),
     path('api/v1/user/login', AdminLoginView.as_view(), name='admin_login'),
+    path('api/v1/user/logout', AdminLogoutView.as_view(), name='admin_logout'),
     path('api/v1/fake_chart_data', DashBoardView.as_view(), name='dashboard'),
-
+    re_path('xadmin/.*', AdminIndexView.as_view(), name="admin_index"),
 ]

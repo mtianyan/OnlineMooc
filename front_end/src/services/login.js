@@ -9,6 +9,13 @@ export async function AccountLogin(params) {
     data: params,
   });
 }
+
+export async function AccountLogout() {
+  return request('/api/v1/user/logout', {
+    method: 'GET',
+  });
+}
+
 export async function getEmailCaptcha(email) {
   return request(`/api/v1/user/sendEmailCaptcha?email=${email}`);
 }

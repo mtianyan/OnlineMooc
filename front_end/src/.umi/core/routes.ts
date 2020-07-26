@@ -4,12 +4,12 @@ import { plugin } from './plugin';
 
 const routes = [
   {
-    "path": "/xadmin/user",
+    "path": "/xadmin/login",
     "component": dynamic({ loader: () => import(/* webpackChunkName: 'layouts__UserLayout' */'/Users/mtianyan/Desktop/Github/Mxonline3/front_end/src/layouts/UserLayout'), loading: require('@/components/PageLoading/index').default}),
     "routes": [
       {
         "name": "login",
-        "path": "/xadmin/user/login",
+        "path": "/xadmin/login",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__UserLogin' */'/Users/mtianyan/Desktop/Github/Mxonline3/front_end/src/pages/UserLogin'), loading: require('@/components/PageLoading/index').default}),
         "exact": true
       }
@@ -24,15 +24,15 @@ const routes = [
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'layouts__BasicLayout' */'/Users/mtianyan/Desktop/Github/Mxonline3/front_end/src/layouts/BasicLayout'), loading: require('@/components/PageLoading/index').default}),
         "routes": [
           {
-            "name": "首页",
-            "path": "/xadmin/index",
-            "icon": "smile",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__DashBoard' */'/Users/mtianyan/Desktop/Github/Mxonline3/front_end/src/pages/DashBoard'), loading: require('@/components/PageLoading/index').default}),
+            "path": "/",
+            "redirect": "/xadmin",
             "exact": true
           },
           {
-            "path": "/",
-            "redirect": "/xadmin/index",
+            "name": "首页",
+            "path": "/xadmin",
+            "icon": "smile",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__DashBoard' */'/Users/mtianyan/Desktop/Github/Mxonline3/front_end/src/pages/DashBoard'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {

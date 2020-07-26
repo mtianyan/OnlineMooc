@@ -9,7 +9,7 @@ export default defineConfig({
     hash: true,
     antd: {},
     outputPath: `../templates/admin/`,
-    publicPath: REACT_APP_ENV === 'dev' ? '/' : '../static/',
+    publicPath: REACT_APP_ENV === 'dev' ? '/' : '/static/madmin/',
     dva: {
         hmr: true,
     },
@@ -32,12 +32,12 @@ export default defineConfig({
     // umi routes: https://umijs.org/docs/routing
     routes: [
         {
-            path: '/xadmin/user',
+            path: '/xadmin/login',
             component: '../layouts/UserLayout',
             routes: [
                 {
                     name: 'login',
-                    path: '/xadmin/user/login',
+                    path: '/xadmin/login',
                     component: './UserLogin',
                 },
             ],
@@ -52,14 +52,14 @@ export default defineConfig({
                     // authority: ['admin', 'user'],
                     routes: [
                         {
-                            name: '首页',
-                            path: '/xadmin/index',
-                            icon: 'smile',
-                            component: './DashBoard',
+                            path: '/',
+                            redirect: '/xadmin',
                         },
                         {
-                            path: '/',
-                            redirect: '/xadmin/index',
+                            name: '首页',
+                            path: '/xadmin',
+                            icon: 'smile',
+                            component: './DashBoard',
                         },
                         {
                             name: '所在城市',

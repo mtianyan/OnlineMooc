@@ -1,4 +1,6 @@
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import viewsets, views
 
 from users.models import EmailVerifyRecord, Banner, UserProfile
@@ -23,16 +25,39 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 class CurrentUserView(views.APIView):
 
     def get(self, request, *args, **kwargs):
-        return JsonResponse({"id": 1, "name": "mtianyan", "email": "1147727180@qq.com",
-                             "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"})
+        if request.user.is_superuser:
+            return JsonResponse({"id": 1, "name": request.user.username, "email": request.user.email,
+                                 "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"})
+        else:
+            return JsonResponse({
+                "errors": "登录失败"
+            })
 
 
 class AdminLoginView(views.APIView):
+    @csrf_exempt
     def post(self, request, *args, **kwargs):
-        if request.data["userName"] == "admin" and request.data["password"] == "admin":
+        user = authenticate(request, username=request.data["userName"], password=request.data["password"])
+        if user is not None and user.is_superuser:
+            login(request, user)
             return JsonResponse({
                 "status": 'ok',
             })
+        else:
+            return JsonResponse({
+                "status": 'error',
+                "errors": {
+                    "password": "密码错误"
+                }
+            })
+
+
+class AdminLogoutView(views.APIView):
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return JsonResponse({
+            "status": 'ok',
+        })
 
 
 class DashBoardView(views.APIView):
