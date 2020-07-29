@@ -1,16 +1,16 @@
 const proSettings = {
-  navTheme: 'light',
+  navTheme: 'dark',
   // 拂晓蓝
   primaryColor: '#1890ff',
-  layout: 'sidemenu',
+  layout: 'side',
   contentWidth: 'Fluid',
   fixedHeader: false,
-  fixSiderbar: false,
+  fixSiderbar: true,
   colorWeak: false,
   menu: {
     locale: true,
   },
-  title: '慕课管理后台',
+  title: 'Ant Design Pro',
   pwa: false,
   iconfontUrl: '',
 };

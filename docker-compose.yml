@@ -27,6 +27,8 @@ mtianyan_nginx:
 mtianyan_mxonline3:
   restart: always
   build: .
+  environment:
+    - use_docker=1
   volumes:
     - .:/ProjectPath
     - ./conf/uwsgi.ini:/etc/uwsgi.ini

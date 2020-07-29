@@ -106,9 +106,9 @@ urlpatterns = [
     # 富文本相关url
     path('ueditor/', include('DjangoUeditor.urls')),
     path('api/v1/', include(router.urls)),
-    path('api/v1/user/currentUser', CurrentUserView.as_view(), name='user_current_user'),
+    path('api/v1/currentUser', CurrentUserView.as_view(), name='user_current_user'),
     path('api/v1/captcha-generate/', CaptchaView.as_view(), name='captcha'),
-    path('api/v1/user/login', AdminLoginView.as_view(), name='admin_login'),
+    path('api/v1/login/account', AdminLoginView.as_view(), name='admin_login'),
     path('api/v1/user/logout', AdminLogoutView.as_view(), name='admin_logout'),
     path('api/v1/fake_chart_data', DashBoardView.as_view(), name='dashboard'),
     re_path('xadmin/.*', AdminIndexView.as_view(), name="admin_index"),

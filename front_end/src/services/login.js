@@ -1,23 +1,17 @@
 import request from '@/utils/request';
 
-export async function AccountLogin(params) {
-  if(params.type === "email") {
-    delete params.key;
-  }
-  return request('/api/v1/user/login', {
+export async function fakeAccountLogin(params) {
+  return request('/api/v1/login/account', {
     method: 'POST',
     data: params,
   });
 }
-
-export async function AccountLogout() {
-  return request('/api/v1/user/logout', {
-    method: 'GET',
-  });
+export async function getFakeCaptcha(mobile) {
+  return request(`/api/v1/login/captcha?mobile=${mobile}`);
 }
 
 export async function getEmailCaptcha(email) {
-  return request(`/api/v1/user/sendEmailCaptcha?email=${email}`);
+  return request(`/api/v1/sendEmailCaptcha?email=${email}`);
 }
 export async function getCode() {
   return request(

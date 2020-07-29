@@ -3,17 +3,15 @@
  * You can view component api by:
  * https://github.com/ant-design/ant-design-pro-layout
  */
-import ProLayout, { DefaultFooter, SettingDrawer } from '@ant-design/pro-layout';
-import React, {Suspense, useEffect} from 'react';
-import { Link, useIntl, connect } from 'umi';
+import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
+import React, { useEffect } from 'react';
+import { Link, useIntl, connect, history } from 'umi';
 import { GithubOutlined } from '@ant-design/icons';
 import { Result, Button } from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
 import { getAuthorityFromRouter } from '@/utils/utils';
 import logo from '../assets/logo.svg';
-import styles from '@/layouts/UserLayout.less';
-
 
 const noMatch = (
   <Result
@@ -22,7 +20,7 @@ const noMatch = (
     subTitle="Sorry, you are not authorized to access this page."
     extra={
       <Button type="primary">
-        <Link to="/xadmin/login">Go Login</Link>
+        <Link to="/user/login">Go Login</Link>
       </Button>
     }
   />
@@ -33,13 +31,16 @@ const noMatch = (
  */
 const menuDataRender = menuList =>
   menuList.map(item => {
-    const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
+    const localItem = {
+      ...item,
+      children: item.children ? menuDataRender(item.children) : undefined,
+    };
     return Authorized.check(item.authority, localItem, null);
   });
 
 const defaultFooterDom = (
   <DefaultFooter
-    copyright="2020 mtianyan"
+    copyright={`${new Date().getFullYear()} 蚂蚁金服体验技术部出品`}
     links={[
       {
         key: 'Ant Design Pro',
@@ -48,7 +49,7 @@ const defaultFooterDom = (
         blankTarget: true,
       },
       {
-        key: 'Availink',
+        key: 'github',
         title: <GithubOutlined />,
         href: 'https://github.com/ant-design/ant-design-pro',
         blankTarget: true,
@@ -76,24 +77,6 @@ const BasicLayout = props => {
    * constructor
    */
 
-  const renderSettingDrawer = () => {
-    // Do not render SettingDrawer in production
-    if (process.env.NODE_ENV === 'production') {
-      return null;
-    }
-    return (
-      <SettingDrawer
-        settings={settings}
-        onSettingChange={(config) =>
-          dispatch({
-            type: 'settings/changeSetting',
-            payload: config,
-          })
-        }
-      />
-    );
-  };
-
   useEffect(() => {
     if (dispatch) {
       dispatch({
@@ -117,62 +100,47 @@ const BasicLayout = props => {
   const authorized = getAuthorityFromRouter(props.route.routes, location.pathname || '/') || {
     authority: undefined,
   };
-  const logo_img = <img alt="logo" src={logo}/>
   const { formatMessage } = useIntl();
   return (
-    <>
-      <ProLayout
-        logo={logo_img}
-        formatMessage={formatMessage}
-        menuHeaderRender={(logoDom, titleDom) => (
-          <Link to="/">
-            {logoDom}
-            {titleDom}
-          </Link>
-        )}
-        onCollapse={handleMenuCollapse}
-        menuItemRender={(menuItemProps, defaultDom) => {
-          if (menuItemProps.isUrl || menuItemProps.children || !menuItemProps.path) {
-            return defaultDom;
-          }
+    <ProLayout
+      logo={logo}
+      formatMessage={formatMessage}
+      onCollapse={handleMenuCollapse}
+      onMenuHeaderClick={() => history.push('/')}
+      menuItemRender={(menuItemProps, defaultDom) => {
+        if (menuItemProps.isUrl || !menuItemProps.path) {
+          return defaultDom;
+        }
 
-          return <Link to={menuItemProps.path}>{defaultDom}</Link>;
-        }}
-        breadcrumbRender={(routers = []) => [
-          {
-            path: '/',
-            breadcrumbName: formatMessage({
-              id: 'menu.home',
-            }),
-          },
-          ...routers,
-        ]}
-        itemRender={(route, params, routes, paths) => {
-          // console.log("*******")
-          // console.log(routes)
-          // console.log(route)
-          // console.log(params)
-          // console.log(paths)
-          // console.log("*******")
-          const first = routes.indexOf(route) === 0;
-          return first ? (
-            <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-          ) : (
-            <Link to={route.path}>{route.breadcrumbName}</Link>
-          );
-        }}
-        footerRender={() => defaultFooterDom}
-        menuDataRender={menuDataRender}
-        rightContentRender={() => <RightContent />}
-        {...props}
-        {...settings}
-      >
-        <Authorized authority={authorized.authority} noMatch={noMatch}>
-          {children}
-        </Authorized>
-      </ProLayout>
-      <Suspense fallback={null}>{renderSettingDrawer()}</Suspense>
-    </>
+        return <Link to={menuItemProps.path}>{defaultDom}</Link>;
+      }}
+      breadcrumbRender={(routers = []) => [
+        {
+          path: '/',
+          breadcrumbName: formatMessage({
+            id: 'menu.home',
+          }),
+        },
+        ...routers,
+      ]}
+      itemRender={(route, params, routes, paths) => {
+        const first = routes.indexOf(route) === 0;
+        return first ? (
+          <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
+        ) : (
+          <span>{route.breadcrumbName}</span>
+        );
+      }}
+      footerRender={() => defaultFooterDom}
+      menuDataRender={menuDataRender}
+      rightContentRender={() => <RightContent />}
+      {...props}
+      {...settings}
+    >
+      <Authorized authority={authorized.authority} noMatch={noMatch}>
+        {children}
+      </Authorized>
+    </ProLayout>
   );
 };
 

@@ -26,7 +26,7 @@ class CurrentUserView(views.APIView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_superuser:
-            return JsonResponse({"id": 1, "name": request.user.username, "email": request.user.email,
+            return JsonResponse({"userid": 1, "name": request.user.username, "email": request.user.email,
                                  "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"})
         else:
             return JsonResponse({
@@ -42,6 +42,7 @@ class AdminLoginView(views.APIView):
             login(request, user)
             return JsonResponse({
                 "status": 'ok',
+                "currentAuthority": 'admin'
             })
         else:
             return JsonResponse({

@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -91,25 +91,19 @@ WSGI_APPLICATION = 'Mxonline3.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 try:
-    var = os.environ["use_docker"]
-    print(var)
-    if var == "1":
-        UseDocker = True
-    else:
-        UseDocker = False
+    var = os.environ["not_use_docker"]
+    NotUseDocker = True
 except KeyError:
-    UseDocker = False
+    NotUseDocker = False
 
-print(UseDocker)
-
-if UseDocker:
+if NotUseDocker:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'mxonline3',
             'USER': 'root',
             'PASSWORD': 'mtianyanroot',
-            'HOST': 'mysql',
+            'HOST': '127.0.0.1',
             'PORT': '3306'
         }
     }
@@ -120,7 +114,7 @@ else:
             'NAME': 'mxonline3',
             'USER': 'root',
             'PASSWORD': 'mtianyanroot',
-            'HOST': '127.0.0.1',
+            'HOST': 'mysql',
             'PORT': '3306'
 
         }
