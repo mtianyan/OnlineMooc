@@ -4,6 +4,10 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 - 在线体验地址: https://mooc.funpython.cn/xadmin
+
+>账号: admin
+密码: admin2020
+
 - 首页地址: https://mooc.funpython.cn/
 
 ## 运行指南:
