@@ -108,7 +108,9 @@ const TableList = () => {
                             },{
                                       title: '密码',
                                       dataIndex: 'password',
-                                      ellipsis: true,
+                                      hideInTable: true,
+                                                                    hideInForm: true,
+                              hideInSearch: true,
                                       rules: [
                                         {
                                           required: true,

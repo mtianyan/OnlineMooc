@@ -34,7 +34,7 @@ from rest_framework.response import Response
 from users.models import EmailVerifyRecord
 from xadmin_api.custom import MtyCustomExecView
 
-from xadmin_api.utils import send_email, save_uploaded_file, gen_file_name
+from xadmin_api.utils import send_email, save_uploaded_file, gen_file_name, log_save
 
 
 class RichUploadSerializer(serializers.Serializer):
@@ -78,6 +78,9 @@ class LoginView(MtyCustomExecView):
             except CaptchaStore.DoesNotExist:
                 raise ValidationError({"pic_captcha": ["验证码不正确"]})
             user = authenticate(request, username=request.data["userName"], password=request.data["password"])
+            log_save(user=request.user.username, request=self.request, flag="登录",
+                     message=f'{request.user.username}登录成功',
+                     log_type="login")
             if user is not None:
                 login(request, user)
                 return JsonResponse({
@@ -88,7 +91,6 @@ class LoginView(MtyCustomExecView):
             else:
                 raise ValidationError({"password": ["密码错误"]})
         else:
-
             # 邮箱登录
             captcha = request.data["captcha"]
             email = request.data["email"]
