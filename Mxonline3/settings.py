@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'DjangoUeditor',
     'rest_framework',  # 添加rest framework，api服务依赖
     'django_filters',  # 添加过滤器，后台xadmin filter支持，rest framework filter支持
+    'xadmin_api'
 ]
 # 此处重载是为了使我们的UserProfile生效
 AUTH_USER_MODEL = "users.UserProfile"
@@ -114,7 +115,7 @@ else:
             'NAME': 'mxonline3',
             'USER': 'root',
             'PASSWORD': 'mtianyanroot',
-            'HOST': 'mysql',
+            'HOST': '127.0.0.1',
             'PORT': '3306'
 
         }
@@ -179,6 +180,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 X_FRAME_OPTIONS = 'sameorigin'
 
 REST_FRAMEWORK = {
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
+    # 'EXCEPTION_HANDLER': 'xadmin_api.custom.custom_exception_handler',
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
 
@@ -212,3 +215,7 @@ REST_FRAMEWORK = {
     # }
 
 }
+
+MAIN_DISPLAY = "$显示字段$"
+MAIN_AVATAR = "$显示头像$"
+MAIN_PIC = "$显示图片$"

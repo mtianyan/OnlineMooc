@@ -3,6 +3,7 @@ from datetime import datetime
 from django.db import models
 
 # 引入我们CourseComments所需要的外键models
+from Mxonline3.settings import MAIN_DISPLAY
 from users.models import UserProfile
 from courses.models import Course
 
@@ -27,8 +28,8 @@ class UserAsk(models.Model):
 class CourseComments(models.Model):
     """用户对于课程评论"""
     # 会涉及两个外键: 1. 用户， 2. 课程。import进来
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name=u"课程")
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name=u"课程", help_text=f'{MAIN_DISPLAY}__name')
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户", help_text=f'{MAIN_DISPLAY}__name')
     comments = models.CharField(max_length=250, verbose_name=u"评论")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"评论时间")
 
@@ -49,7 +50,7 @@ class UserFavorite(models.Model):
         (3, u"讲师")
     )
 
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户")
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户", help_text=f'{MAIN_DISPLAY}__username')
     # course = models.ForeignKey(Course, verbose_name=u"课程")
     # teacher = models.ForeignKey()
     # org = models.ForeignKey()
@@ -97,8 +98,8 @@ class UserMessage(models.Model):
 class UserCourse(models.Model):
     """用户课程表"""
     # 会涉及两个外键: 1. 用户， 2. 课程。import进来
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name=u"课程")
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name=u"课程", help_text=f'{MAIN_DISPLAY}__name')
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name=u"用户", help_text=f'{MAIN_DISPLAY}__username')
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:

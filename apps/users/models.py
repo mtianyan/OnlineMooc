@@ -5,6 +5,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
+from Mxonline3.settings import MAIN_AVATAR, MAIN_PIC
+from xadmin_api.fields import ImageField
 
 
 class UserProfile(AbstractUser):
@@ -32,11 +34,12 @@ class UserProfile(AbstractUser):
         blank=True,
         verbose_name=u"电话")
     # 头像 默认使用default.png
-    image = models.ImageField(
+    image = ImageField(
         upload_to="image/%Y/%m",
         default=u"image/default.png",
         max_length=100,
-        verbose_name=u"头像"
+        verbose_name=u"头像",
+        help_text=MAIN_AVATAR
     )
 
     # meta信息，即后台栏目名
@@ -84,10 +87,10 @@ class EmailVerifyRecord(models.Model):
 class Banner(models.Model):
     """轮播图model"""
     title = models.CharField(max_length=100, verbose_name=u"标题")
-    image = models.ImageField(
+    image = ImageField(
         upload_to="banner/%Y/%m",
         verbose_name=u"轮播图",
-        max_length=100)
+        max_length=100, help_text=MAIN_PIC)
     url = models.URLField(max_length=200, verbose_name=u"访问地址")
     # 默认index很大靠后。想要靠前修改index值。
     index = models.IntegerField(default=100, verbose_name=u"顺序")

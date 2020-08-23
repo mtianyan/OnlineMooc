@@ -5,7 +5,7 @@
 
 - 在线体验地址: https://mooc.funpython.cn/xadmin
 
->账号: admin
+>账号: mtianyan
 密码: admin2020
 
 - 首页地址: https://mooc.funpython.cn/

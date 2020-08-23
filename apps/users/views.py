@@ -577,4 +577,4 @@ class AdminIndexView(View):
     def get(self, request):
         # render就是渲染html返回用户
         # render三变量: request 模板名称 一个字典写明传给前端的值
-        return render(request, "admin/index.html")
+        return render(request, "TyAdmin/index.html")

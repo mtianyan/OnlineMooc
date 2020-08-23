@@ -4,6 +4,8 @@ from datetime import datetime
 from django.db import models
 
 # Create your models here.
+from Mxonline3.settings import MAIN_DISPLAY, MAIN_PIC, MAIN_AVATAR
+from xadmin_api.fields import ImageField
 
 
 class CityDict(models.Model):
@@ -39,11 +41,11 @@ class CourseOrg(models.Model):
     image = models.ImageField(
         upload_to="org/%Y/%m",
         verbose_name=u"Logo",
-        max_length=100)
+        max_length=100, help_text=MAIN_PIC)
     address = models.CharField(max_length=150, verbose_name=u"机构地址")
     # 一个城市可以有很多课程机构，通过将city设置外键，变成课程机构的一个字段
     # 可以让我们通过机构找到城市
-    city = models.ForeignKey(CityDict, on_delete=models.CASCADE, verbose_name=u"所在城市")
+    city = models.ForeignKey(CityDict, on_delete=models.CASCADE, verbose_name=u"所在城市", help_text=f'{MAIN_DISPLAY}__name')
     # 当学生点击学习课程，找到所属机构，学习人数加1
     students = models.IntegerField(default=0, verbose_name=u"学习人数")
     # 当发布课程就加1
@@ -62,7 +64,7 @@ class Teacher(models.Model):
     """讲师"""
     # 一个机构会有很多老师，所以我们在讲师表添加外键并把课程机构名称保存下来
     # 可以使我们通过讲师找到对应的机构
-    org = models.ForeignKey(CourseOrg, on_delete=models.CASCADE, verbose_name=u"所属机构")
+    org = models.ForeignKey(CourseOrg, on_delete=models.CASCADE, verbose_name=u"所属机构", help_text=f'{MAIN_DISPLAY}__name')
     name = models.CharField(max_length=50, verbose_name=u"教师名称")
     work_years = models.IntegerField(default=0, verbose_name=u"工作年限")
     work_company = models.CharField(max_length=50, verbose_name=u"就职公司")
@@ -71,11 +73,11 @@ class Teacher(models.Model):
     points = models.CharField(max_length=50, verbose_name=u"教学特点")
     click_nums = models.IntegerField(default=0, verbose_name=u"点击数")
     fav_nums = models.IntegerField(default=0, verbose_name=u"收藏数")
-    image = models.ImageField(
+    image = ImageField(
         default='',
         upload_to="teacher/%Y/%m",
         verbose_name=u"头像",
-        max_length=100)
+        max_length=100, help_text=MAIN_AVATAR)
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
 
     class Meta:
