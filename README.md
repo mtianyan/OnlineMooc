@@ -3,6 +3,11 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
+使用TyAdmin(现代化的Xadmin替代品)生成前后端，并自动对接。TyAdmin已处理:
+
+1. 外键字段自动关联
+2. 
+
 - 在线体验地址: https://mooc.funpython.cn/xadmin
 
 >账号: mtianyan

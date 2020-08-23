@@ -55,8 +55,6 @@ const Login = props => {
       payload: {...values, type: "account", key: challengeKey},
     });
     res.then(err => {
-      console.log("有问题吧1")
-      console.log(err)
       if (err.data && err.data instanceof Object && 'fields_errors' in err.data) {
         fieldErrorHandle(err, loginAccountFormRef);
       }
@@ -105,7 +103,7 @@ const Login = props => {
               style={{marginBottom: 24}}
               name="password"
               placeholder="密码"
-              initialValue="123456"
+              initialValue="admin2020"
               rules={[
                 {
                   required: true,

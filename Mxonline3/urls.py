@@ -76,5 +76,5 @@ urlpatterns = [
     path('api/xadmin/v1/', include('xadmin_api.urls')),
 
     path('api/v1/captcha-generate/', CaptchaView.as_view(), name='captcha'),
-    re_path('xadmin/.*', AdminIndexView.as_view(), name="admin_index"),
+    re_path('^xadmin/.*', AdminIndexView.as_view(), name="admin_index"),
 ]

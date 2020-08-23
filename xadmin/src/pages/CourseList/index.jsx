@@ -10,7 +10,7 @@ import UploadAvatar from '@/components/UploadAvatar';
 import {queryCourseOrg} from '@/pages/CourseOrgList/service';import {queryTeacher} from '@/pages/TeacherList/service';
 import moment from 'moment';
 const {Option} = Select;
-import {BooleanDisplay, dealDateTimeDisplay, dealTime, deepCopy, getObjectClass, getTableColumns, richForm, richTrans, richCol} from '@/utils/utils';
+import {BooleanDisplay, dealDateTimeDisplay, dealTime, deepCopy, getObjectClass, getTableColumns, richForm, richTrans, richCol,fileUpload} from '@/utils/utils';
 import 'braft-editor/dist/index.css'
 
 const TableList = () => {
@@ -120,7 +120,7 @@ const TableList = () => {
           return <Option key={item.id} value={item.id}>{item.name}</Option>;
         });
         return <Select
-          placeholder="请选择课程"
+          placeholder="请选择所属机构"
           onChange={onChange}
         >
           {children}
@@ -141,7 +141,7 @@ const TableList = () => {
           return <Option key={item.id} value={item.id}>{item.name}</Option>;
         });
         return <Select
-          placeholder="请选择课程"
+          placeholder="请选择讲师"
           onChange={onChange}
         >
           {children}

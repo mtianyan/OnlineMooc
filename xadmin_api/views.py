@@ -147,12 +147,12 @@ class CurrentUserView(MtyCustomExecView):
                                      "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"})
             except AttributeError:
                 return JsonResponse({
-                    "none_fields_errors": "Cookie已过期，请重新登录"
-                }, status=status.HTTP_400_BAD_REQUEST)
+                    "errors": "暂未登录"
+                }, status=status.HTTP_200_OK)
         else:
             return JsonResponse({
-                "none_fields_errors": "Cookie已过期，请重新登录"
-            }, status=status.HTTP_400_BAD_REQUEST)
+                "errors": "暂未登录"
+            }, status=status.HTTP_200_OK)
 
 
 class UploadView(MtyCustomExecView):

@@ -40,42 +40,42 @@ const routes = [
             "exact": true
           },
           {
-            "name": "用户信息",
+            "name": "所在城市",
             "icon": "smile",
-            "path": "/xadmin/user_profile",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__UserProfileList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/UserProfileList'), loading: require('@/components/PageLoading/index').default}),
+            "path": "/xadmin/city_dict",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CityDictList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CityDictList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "邮箱验证码",
+            "name": "课程机构",
             "icon": "smile",
-            "path": "/xadmin/email_verify_record",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__EmailVerifyRecordList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/EmailVerifyRecordList'), loading: require('@/components/PageLoading/index').default}),
+            "path": "/xadmin/course_org",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CourseOrgList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CourseOrgList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "轮播图",
+            "name": "机构讲师",
             "icon": "smile",
-            "path": "/xadmin/banner",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__BannerList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/BannerList'), loading: require('@/components/PageLoading/index').default}),
+            "path": "/xadmin/teacher",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TeacherList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/TeacherList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "课程",
+            "name": "课程信息",
             "icon": "smile",
             "path": "/xadmin/course",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CourseList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CourseList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "章节",
+            "name": "章节信息",
             "icon": "smile",
             "path": "/xadmin/lesson",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__LessonList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/LessonList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "视频",
+            "name": "视频信息",
             "icon": "smile",
             "path": "/xadmin/video",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__VideoList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/VideoList'), loading: require('@/components/PageLoading/index').default}),
@@ -89,17 +89,38 @@ const routes = [
             "exact": true
           },
           {
-            "name": "用户咨询",
-            "icon": "smile",
-            "path": "/xadmin/user_ask",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__UserAskList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/UserAskList'), loading: require('@/components/PageLoading/index').default}),
-            "exact": true
-          },
-          {
             "name": "课程评论",
             "icon": "smile",
             "path": "/xadmin/course_comments",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CourseCommentsList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CourseCommentsList'), loading: require('@/components/PageLoading/index').default}),
+            "exact": true
+          },
+          {
+            "name": "用户信息",
+            "icon": "smile",
+            "path": "/xadmin/user_profile",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__UserProfileList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/UserProfileList'), loading: require('@/components/PageLoading/index').default}),
+            "exact": true
+          },
+          {
+            "name": "邮箱验证",
+            "icon": "smile",
+            "path": "/xadmin/email_verify_record",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__EmailVerifyRecordList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/EmailVerifyRecordList'), loading: require('@/components/PageLoading/index').default}),
+            "exact": true
+          },
+          {
+            "name": "首页轮播",
+            "icon": "smile",
+            "path": "/xadmin/banner",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__BannerList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/BannerList'), loading: require('@/components/PageLoading/index').default}),
+            "exact": true
+          },
+          {
+            "name": "用户咨询",
+            "icon": "smile",
+            "path": "/xadmin/user_ask",
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__UserAskList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/UserAskList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
@@ -124,35 +145,14 @@ const routes = [
             "exact": true
           },
           {
-            "name": "城市",
-            "icon": "smile",
-            "path": "/xadmin/city_dict",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CityDictList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CityDictList'), loading: require('@/components/PageLoading/index').default}),
-            "exact": true
-          },
-          {
-            "name": "课程机构",
-            "icon": "smile",
-            "path": "/xadmin/course_org",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__CourseOrgList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/CourseOrgList'), loading: require('@/components/PageLoading/index').default}),
-            "exact": true
-          },
-          {
-            "name": "教师",
-            "icon": "smile",
-            "path": "/xadmin/teacher",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TeacherList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/TeacherList'), loading: require('@/components/PageLoading/index').default}),
-            "exact": true
-          },
-          {
-            "name": "系统日志",
+            "name": "TyAdmin日志",
             "icon": "smile",
             "path": "/xadmin/ty_admin_sys_log",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TyAdminSysLogList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/TyAdminSysLogList'), loading: require('@/components/PageLoading/index').default}),
             "exact": true
           },
           {
-            "name": "TyAdmin邮箱验证码",
+            "name": "TyAdmin验证",
             "icon": "smile",
             "path": "/xadmin/ty_admin_email_verify_record",
             "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TyAdminEmailVerifyRecordList' */'/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/TyAdminEmailVerifyRecordList'), loading: require('@/components/PageLoading/index').default}),

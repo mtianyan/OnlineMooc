@@ -9,6 +9,7 @@ router.register('ty_admin_sys_log/?', TyAdminSysLogViewSet)
 
 router.register('ty_admin_email_verify_record/?', TyAdminEmailVerifyRecordViewSet)
 urlpatterns = [
+    re_path('^', include(router.urls)),
     path('login/account', LoginView.as_view(), name='user_login'),
     path('currentUser', CurrentUserView.as_view(), name='user_current_user'),
     path('captcha-generate', CaptchaView.as_view(), name='captcha'),

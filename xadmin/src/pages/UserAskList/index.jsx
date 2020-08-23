@@ -10,7 +10,7 @@ import UploadAvatar from '@/components/UploadAvatar';
 
 import moment from 'moment';
 const {Option} = Select;
-import {BooleanDisplay, dealDateTimeDisplay, dealTime, deepCopy, getObjectClass, getTableColumns, richForm, richTrans, richCol} from '@/utils/utils';
+import {BooleanDisplay, dealDateTimeDisplay, dealTime, deepCopy, getObjectClass, getTableColumns, richForm, richTrans, richCol,fileUpload} from '@/utils/utils';
 import 'braft-editor/dist/index.css'
 
 const TableList = () => {
