@@ -141,16 +141,16 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '顺序',
-                              dataIndex: 'index',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '顺序为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '顺序',
+                                  dataIndex: 'index',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '顺序为必填项',
+                                    },
+                                  ],
+                                },{
           title: '添加时间',
           dataIndex: 'add_time',
           valueType: 'dateTime',

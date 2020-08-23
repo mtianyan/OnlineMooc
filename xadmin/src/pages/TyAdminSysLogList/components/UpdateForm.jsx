@@ -8,7 +8,7 @@ const UpdateForm = props => {
       destroyOnClose
       title="修改系统日志"
       visible={modalVisible}
-      
+      width={600}
       onCancel={() => onCancel()}
       footer={null}
     >

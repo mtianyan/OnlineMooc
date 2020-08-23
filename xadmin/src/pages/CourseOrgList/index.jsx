@@ -147,26 +147,26 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '点击数',
-                              dataIndex: 'click_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '点击数为必填项',
-                                },
-                              ],
-                            },{
-                              title: '收藏数',
-                              dataIndex: 'fav_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '收藏数为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '点击数',
+                                  dataIndex: 'click_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '点击数为必填项',
+                                    },
+                                  ],
+                                },{
+                                  title: '收藏数',
+                                  dataIndex: 'fav_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '收藏数为必填项',
+                                    },
+                                  ],
+                                },{
                         title: 'Logo',
                         dataIndex: 'image',
                                       render: (text, record) => {
@@ -214,26 +214,26 @@ const TableList = () => {
         </Select>;
       },
                         },{
-                              title: '学习人数',
-                              dataIndex: 'students',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '学习人数为必填项',
-                                },
-                              ],
-                            },{
-                              title: '课程数',
-                              dataIndex: 'course_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '课程数为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '学习人数',
+                                  dataIndex: 'students',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '学习人数为必填项',
+                                    },
+                                  ],
+                                },{
+                                  title: '课程数',
+                                  dataIndex: 'course_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '课程数为必填项',
+                                    },
+                                  ],
+                                },{
           title: '添加时间',
           dataIndex: 'add_time',
           valueType: 'dateTime',

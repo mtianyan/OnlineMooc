@@ -442,9 +442,7 @@ export const richForm = (form, fieldName) => {
 
 export const richTrans = (value) => {
   for (let key in value) {
-    console.log('typeof value[key]');
-    console.log(getObjectClass(value[key]));
-    if (getObjectClass(value[key]) === 'EditorState') {
+    if (getObjectClass(value[key]) === 'EditorState' || getObjectClass(value[key]) === 'e') {
       value[key] = value[key].toHTML();
     }
   }

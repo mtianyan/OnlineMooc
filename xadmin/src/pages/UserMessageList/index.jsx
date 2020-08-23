@@ -106,16 +106,16 @@ const TableList = () => {
                                 },
                               ],
                             },{
-                              title: '接收用户',
-                              dataIndex: 'user',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '接收用户为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '接收用户',
+                                  dataIndex: 'user',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '接收用户为必填项',
+                                    },
+                                  ],
+                                },{
                   title: '消息内容',
                   dataIndex: 'message',
                   rules: [

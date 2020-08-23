@@ -136,16 +136,16 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '工作年限',
-                              dataIndex: 'work_years',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '工作年限为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '工作年限',
+                                  dataIndex: 'work_years',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '工作年限为必填项',
+                                    },
+                                  ],
+                                },{
                   title: '就职公司',
                   dataIndex: 'work_company',
                   rules: [
@@ -164,16 +164,16 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '年龄',
-                              dataIndex: 'age',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '年龄为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '年龄',
+                                  dataIndex: 'age',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '年龄为必填项',
+                                    },
+                                  ],
+                                },{
                   title: '教学特点',
                   dataIndex: 'points',
                   rules: [
@@ -183,26 +183,26 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '点击数',
-                              dataIndex: 'click_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '点击数为必填项',
-                                },
-                              ],
-                            },{
-                              title: '收藏数',
-                              dataIndex: 'fav_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '收藏数为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '点击数',
+                                  dataIndex: 'click_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '点击数为必填项',
+                                    },
+                                  ],
+                                },{
+                                  title: '收藏数',
+                                  dataIndex: 'fav_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '收藏数为必填项',
+                                    },
+                                  ],
+                                },{
                         title: '头像',
                         dataIndex: 'image',
                  valueType: 'avatar',

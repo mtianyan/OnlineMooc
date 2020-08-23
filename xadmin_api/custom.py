@@ -5,7 +5,9 @@ from django.core.files.images import ImageFile
 from django.db import models
 from django.db.models import QuerySet
 from django.db.models.fields.files import ImageFieldFile, FieldFile
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, mixins
+from rest_framework.filters import SearchFilter
 from rest_framework.generics import GenericAPIView, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
@@ -64,6 +66,7 @@ class MtyCustomExecView(APIView):
 class XadminViewSet(MtyModelViewSet):
     pagination_class = CustomPageNumberPagination
     authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
+    filter_backends = (DjangoFilterBackend, SearchFilter)
 
     def create(self, request, *args, **kwargs):
         ret = super().create(request, args, kwargs)

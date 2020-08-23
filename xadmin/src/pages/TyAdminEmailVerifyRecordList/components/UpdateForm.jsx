@@ -8,7 +8,7 @@ const UpdateForm = props => {
       destroyOnClose
       title="修改TyAdmin邮箱验证码"
       visible={modalVisible}
-      
+      width={600}
       onCancel={() => onCancel()}
       footer={null}
     >

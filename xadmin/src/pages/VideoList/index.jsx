@@ -145,16 +145,16 @@ const TableList = () => {
                     },
                   ],
                 },{
-                              title: '学习时长(分钟数)',
-                              dataIndex: 'learn_times',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '学习时长(分钟数)为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '学习时长(分钟数)',
+                                  dataIndex: 'learn_times',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '学习时长(分钟数)为必填项',
+                                    },
+                                  ],
+                                },{
           title: '添加时间',
           dataIndex: 'add_time',
           valueType: 'dateTime',

@@ -216,36 +216,36 @@ const TableList = () => {
                                          cj:"初级",zj:"中级",gj:"高级"
                                         },
                                      },{
-                              title: '学习时长(分钟数)',
-                              dataIndex: 'learn_times',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '学习时长(分钟数)为必填项',
-                                },
-                              ],
-                            },{
-                              title: '学习人数',
-                              dataIndex: 'students',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '学习人数为必填项',
-                                },
-                              ],
-                            },{
-                              title: '收藏人数',
-                              dataIndex: 'fav_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '收藏人数为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '学习时长(分钟数)',
+                                  dataIndex: 'learn_times',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '学习时长(分钟数)为必填项',
+                                    },
+                                  ],
+                                },{
+                                  title: '学习人数',
+                                  dataIndex: 'students',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '学习人数为必填项',
+                                    },
+                                  ],
+                                },{
+                                  title: '收藏人数',
+                                  dataIndex: 'fav_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '收藏人数为必填项',
+                                    },
+                                  ],
+                                },{
                   title: '课程须知',
                   dataIndex: 'you_need_know',
                   rules: [
@@ -281,16 +281,16 @@ const TableList = () => {
       return <UploadAvatar img={imageUrl}/>
     },
                       },{
-                              title: '点击数',
-                              dataIndex: 'click_nums',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '点击数为必填项',
-                                },
-                              ],
-                            },{
+                                  title: '点击数',
+                                  dataIndex: 'click_nums',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: '点击数为必填项',
+                                    },
+                                  ],
+                                },{
                   title: '课程类别',
                   dataIndex: 'category',
                   rules: [

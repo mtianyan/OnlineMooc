@@ -127,26 +127,28 @@ const TableList = () => {
         </Select>;
       },
                         },{
-                              title: 'fav id',
-                              dataIndex: 'fav_id',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'fav id为必填项',
-                                },
-                              ],
-                            },{
-                              title: '收藏类型',
-                              dataIndex: 'fav_type',
-                                        valueType: 'digit',
-                              rules: [
-                                {
-                                  required: true,
-                                  message: '收藏类型为必填项',
-                                },
-                              ],
-                            },{
+                                  title: 'fav id',
+                                  dataIndex: 'fav_id',
+                                            valueType: 'digit',
+                                  rules: [
+                                    {
+                                      required: true,
+                                      message: 'fav id为必填项',
+                                    },
+                                  ],
+                                },{
+                                      title: '收藏类型',
+                                      dataIndex: 'fav_type',
+                                      rules: [
+                                        {
+                                          required: true,
+                                          message: '收藏类型为必填项',
+                                        },
+                                      ],
+                                       valueEnum: {
+                                                 1:"课程",2:"课程机构",3:"讲师"
+                                                },
+                                    },{
           title: '评论时间',
           dataIndex: 'add_time',
           valueType: 'dateTime',

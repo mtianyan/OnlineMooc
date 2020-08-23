@@ -8,7 +8,7 @@ const UpdateForm = props => {
       destroyOnClose
       title="修改用户咨询"
       visible={modalVisible}
-      
+      width={600}
       onCancel={() => onCancel()}
       footer={null}
     >
