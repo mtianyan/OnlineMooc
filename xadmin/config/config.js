@@ -68,6 +68,7 @@ export default defineConfig({
                             icon: 'smile',
                             path: '/xadmin/course_org',
                             component: './CourseOrgList',
+                            authority: ['admin', 'user'],
                         },
                         {
                             name: '机构讲师',

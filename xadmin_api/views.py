@@ -65,6 +65,19 @@ class DashBoardView(views.APIView):
         return JsonResponse(json.loads(content))
 
 
+class MenuView(views.APIView):
+    def get(self, request, *args, **kwargs):
+        data_json = os.path.join(settings.BASE_DIR, 'xadmin_api/menu.json')
+        with open(data_json) as fr:
+            content = fr.read()
+        import demjson
+        content = demjson.decode(content)
+        print(json.dumps(content, ensure_ascii=False))
+        return JsonResponse({
+            "data": content
+        })
+
+
 class LoginView(MtyCustomExecView):
     permission_classes = ()
 

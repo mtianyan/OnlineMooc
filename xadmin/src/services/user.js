@@ -9,3 +9,7 @@ export async function queryCurrent() {
 export async function queryNotices() {
   return request('/api/xadmin/v1/notices');
 }
+
+export async function queryMenu() {
+  return request('/api/xadmin/v1/sys/menu');
+}

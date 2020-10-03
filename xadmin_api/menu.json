@@ -1,0 +1,114 @@
+[
+      {
+        path: '/xadmin/',
+        redirect: '/xadmin/index'
+      },
+      {
+        name: '首页',
+        icon: 'Appstore',
+        path: '/xadmin/index',
+        component: './DashBoard'
+      },
+      {
+        name: '所在城市',
+        icon: 'UpCircle',
+        path: '/xadmin/city_dict',
+        component: './CityDictList'
+      },
+      {
+        name: '课程机构',
+        icon: 'smile',
+        path: '/xadmin/course_org',
+        component: './CourseOrgList'
+      },
+      {
+        name: '机构讲师',
+        icon: 'smile',
+        path: '/xadmin/teacher',
+        component: './TeacherList'
+      },
+      {
+        name: '课程信息',
+        icon: 'smile',
+        path: '/xadmin/course',
+        component: './CourseList'
+      },
+      {
+        name: '章节信息',
+        icon: 'smile',
+        path: '/xadmin/lesson',
+        component: './LessonList'
+      },
+      {
+        name: '视频信息',
+        icon: 'smile',
+        path: '/xadmin/video',
+        component: './VideoList'
+      },
+      {
+        name: '课程资源',
+        icon: 'smile',
+        path: '/xadmin/course_resource',
+        component: './CourseResourceList'
+      },
+      {
+        name: '课程评论',
+        icon: 'smile',
+        path: '/xadmin/course_comments',
+        component: './CourseCommentsList'
+      },
+      {
+        name: '用户信息',
+        icon: 'smile',
+        path: '/xadmin/user_profile',
+        component: './UserProfileList'
+      },
+      {
+        name: '邮箱验证',
+        icon: 'smile',
+        path: '/xadmin/email_verify_record',
+        component: './EmailVerifyRecordList'
+      },
+      {
+        name: '首页轮播',
+        icon: 'smile',
+        path: '/xadmin/banner',
+        component: './BannerList'
+      },
+      {
+        name: '用户咨询',
+        icon: 'smile',
+        path: '/xadmin/user_ask',
+        component: './UserAskList'
+      },
+      {
+        name: '用户收藏',
+        icon: 'smile',
+        path: '/xadmin/user_favorite',
+        component: './UserFavoriteList'
+      },
+      {
+        name: '用户消息',
+        icon: 'smile',
+        path: '/xadmin/user_message',
+        component: './UserMessageList'
+      },
+      {
+        name: '用户课程',
+        icon: 'smile',
+        path: '/xadmin/user_course',
+        component: './UserCourseList'
+      },
+      {
+        name: 'TyAdmin日志',
+        icon: 'smile',
+        path: '/xadmin/ty_admin_sys_log',
+        component: './TyAdminSysLogList'
+      },
+      {
+        name: 'TyAdmin验证',
+        icon: 'smile',
+        path: '/xadmin/ty_admin_email_verify_record',
+        component: './TyAdminEmailVerifyRecordList'
+      }
+]

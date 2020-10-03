@@ -27,7 +27,7 @@ from .forms import LoginForm, RegisterForm, ActiveForm, ForgetForm, ModifyPwdFor
 # 进行密码加密
 from django.contrib.auth.hashers import make_password
 # 发送邮件
-from utils.email_send import send_register_eamil
+from utils.email_send import send_register_email
 
 
 class ActiveUserView(View):
@@ -98,7 +98,7 @@ class RegisterView(View):
             user_message.message = "欢迎注册mtianyan慕课小站!! --系统自动消息"
             user_message.save()
             # 发送注册激活邮件
-            send_register_eamil(user_name, "register")
+            send_register_email(user_name, "register")
 
             # 跳转到登录页面
             return render(request, "login.html", )
@@ -245,7 +245,7 @@ class ForgetPwdView(View):
         if forget_form.is_valid():
             email = request.POST.get("email", "")
             # 发送找回密码邮件
-            send_register_eamil(email, "forget")
+            send_register_email(email, "forget")
             # 发送完毕返回登录页面并显示发送邮件成功。
             return render(request, "login.html", {"msg": "重置密码邮件已发送,请注意查收"})
         # 如果表单验证失败也就是他验证码输错等。
@@ -407,7 +407,7 @@ class SendEmailCodeView(LoginRequiredMixin, View):
             return HttpResponse(
                 '{"email":"邮箱已经存在"}',
                 content_type='application/json')
-        send_register_eamil(email, "update_email")
+        send_register_email(email, "update_email")
         return HttpResponse(
             '{"status":"success"}',
             content_type='application/json')

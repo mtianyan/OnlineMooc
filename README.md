@@ -1,12 +1,9 @@
-#  Django3.0 + DjangoRestful Framework + Ant Design Pro V4 开发的在线教育网站及后台管理
+#  Django3.1 + DjangoRestful Framework + Ant Design Pro V4 开发的在线教育网站及后台管理
 
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-使用TyAdmin(现代化的Xadmin替代品)生成前后端，并自动对接。TyAdmin已处理:
-
-1. 外键字段自动关联
-2. 
+使用TyAdmin(现代化的Xadmin替代品)生成前后端，并自动对接。
 
 - 在线体验地址: https://mooc.funpython.cn/xadmin
 
@@ -51,10 +48,6 @@ python manage.py runserver
 微信打赏:
 
 ![mark](http://myphoto.mtianyan.cn/blog/180302/i52eHgilfD.png?imageslim)
-
-支付宝打赏:
-
-![mark](http://myphoto.mtianyan.cn/blog/180302/gDlBGemI60.jpg?imageslim)
 
 
 

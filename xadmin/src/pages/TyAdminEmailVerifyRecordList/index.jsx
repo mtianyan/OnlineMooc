@@ -1,5 +1,5 @@
-import {DownOutlined, PlusOutlined, EditOutlined,DeleteOutlined} from '@ant-design/icons';
-import {Button, Divider, Dropdown, Input, Menu, message, Popconfirm, Select, Switch} from 'antd';
+import {DownOutlined, PlusOutlined, EditOutlined, DeleteOutlined, UserOutlined} from '@ant-design/icons';
+import {Row, Form, Button, Divider, Dropdown, Input, Menu, message, Popconfirm, Select, Switch, Col, Card} from 'antd';
 import React, {useEffect,useRef, useState} from 'react';
 import {PageHeaderWrapper} from '@ant-design/pro-layout';
 import ProTable from 'mtianyan-pro-table';
@@ -7,11 +7,14 @@ import CreateForm from './components/CreateForm';
 import {addTyAdminEmailVerifyRecord, queryTyAdminEmailVerifyRecord, removeTyAdminEmailVerifyRecord, updateTyAdminEmailVerifyRecord} from './service';
 import UpdateForm from './components/UpdateForm';
 import UploadAvatar from '@/components/UploadAvatar';
+import IconDisplay from '@/components/IconDisplay';
 
 import moment from 'moment';
 const {Option} = Select;
 import {BooleanDisplay, dealDateTimeDisplay, dealTime, deepCopy, getObjectClass, getTableColumns, richForm, richTrans, richCol,fileUpload} from '@/utils/utils';
 import 'braft-editor/dist/index.css'
+import styles from '@/pages/UserLogin/style.less';
+import DragTree from '@/components/MenuDragSortTree';
 
 const TableList = () => {
   const [createModalVisible, handleModalVisible] = useState(false);
@@ -191,10 +194,11 @@ const TableList = () => {
 
   const [paramState, setParamState] = useState({});
 
-  
+  const [ showDropdown, setShowDropdown] = useState(false)
 
 
-    
+
+
   return (
     <PageHeaderWrapper>
       <ProTable
@@ -260,6 +264,25 @@ const TableList = () => {
         rowSelection={{}}
       />
       <CreateForm onCancel={() => handleModalVisible(false)} modalVisible={createModalVisible}>
+        <Card>
+          <DragTree/>
+        </Card>
+          <Form >
+            <Form.Item
+              style={{marginBottom: 24}}
+              name="userName"
+              placeholder="菜单图标"
+              label="菜单图标"
+              rules={[
+                {
+                  required: true,
+                  message: '请输入用户名!',
+                },
+              ]}
+            >
+              <IconDisplay/>
+            </Form.Item>
+          </Form>
         <ProTable
                      formRef={addFormRef}
           onSubmit={async value => {
@@ -276,7 +299,7 @@ const TableList = () => {
           }}
           rowKey="key"
           type="form"
-          
+
           form={
             {
               labelCol: {span: 6},
@@ -285,6 +308,7 @@ const TableList = () => {
           columns={create_columns}
           rowSelection={{}}
         />
+
       </CreateForm>
       <UpdateForm onCancel={() => handleUpdateModalVisible(false)} modalVisible={updateModalVisible}>
         <ProTable
@@ -302,7 +326,7 @@ const TableList = () => {
             }
           }}
           rowKey="key"
-          
+
           type="form"
           form={{
             initialValues: updateFormValues, labelCol: {span: 6},

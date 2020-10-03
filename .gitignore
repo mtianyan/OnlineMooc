@@ -228,3 +228,4 @@ dmypy.json
 **/node_modules
 ./db/
 */__pycache__
+xadmin/node_modules

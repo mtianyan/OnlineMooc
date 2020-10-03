@@ -1,11 +1,10 @@
+from django.conf import settings
 from django.db import models
 from datetime import datetime
 
 from django.contrib.auth.models import AbstractUser
 
-
 # Create your models here.
-from Mxonline3.settings import MAIN_AVATAR, MAIN_PIC
 from xadmin_api.fields import ImageField
 
 
@@ -39,7 +38,7 @@ class UserProfile(AbstractUser):
         default=u"image/default.png",
         max_length=100,
         verbose_name=u"头像",
-        help_text=MAIN_AVATAR
+        help_text=settings.MAIN_AVATAR
     )
 
     # meta信息，即后台栏目名
@@ -55,6 +54,7 @@ class UserProfile(AbstractUser):
     def unread_nums(self):
         from operation.models import UserMessage
         return UserMessage.objects.filter(has_read=False, user=self.id).count()
+
 
 class EmailVerifyRecord(models.Model):
     """邮箱验证码model"""
@@ -90,7 +90,7 @@ class Banner(models.Model):
     image = ImageField(
         upload_to="banner/%Y/%m",
         verbose_name=u"轮播图",
-        max_length=100, help_text=MAIN_PIC)
+        max_length=100, help_text=settings.MAIN_PIC)
     url = models.URLField(max_length=200, verbose_name=u"访问地址")
     # 默认index很大靠后。想要靠前修改index值。
     index = models.IntegerField(default=100, verbose_name=u"顺序")

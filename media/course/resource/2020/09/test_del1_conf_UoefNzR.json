@@ -1,0 +1,7 @@
+index.jsx:28 {course: 6, name: "1", download: {…}}
+utils.js:97 {course: 6, name: "1", download: {…}}
+utils.js:100 download
+utils.js:101 fileField
+utils.js:105 File {uid: "rc-upload-1600331021529-2", name: "test_del1_conf.json", lastModified: 1600330929284, lastModifiedDate: Thu Sep 17 2020 16:22:09 GMT+0800 (中国标准时间), webkitRelativePath: "", …}
+utils.js:111 FormData {}
+utils.js:123 FormData {}1

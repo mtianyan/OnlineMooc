@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory } from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/node_modules/@umijs/runtime';
+import { createBrowserHistory } from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/"

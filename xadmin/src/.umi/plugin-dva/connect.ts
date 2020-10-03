@@ -6,11 +6,11 @@ import { EffectsCommandMap, SubscriptionAPI } from 'dva';
 import { match } from 'react-router-dom';
 import { Location, LocationState, History } from 'history';
 
-export * from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/models/global';
-export * from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/models/login';
-export * from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/models/setting';
-export * from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/models/user';
-export * from '/Users/mtianyan/Desktop/Github/Mxonline3/xadmin/src/pages/DashBoard/model';
+export * from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/src/models/global';
+export * from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/src/models/login';
+export * from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/src/models/setting';
+export * from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/src/models/user';
+export * from '/Users/mtianyan/tyRepos/Python/Mxonline3/xadmin/src/pages/DashBoard/model';
 
 export interface Action<T = any> {
   type: T

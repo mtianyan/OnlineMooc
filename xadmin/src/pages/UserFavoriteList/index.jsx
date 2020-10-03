@@ -145,9 +145,6 @@ const TableList = () => {
                                           message: '收藏类型为必填项',
                                         },
                                       ],
-                                       valueEnum: {
-                                                 1:"课程",2:"课程机构",3:"讲师"
-                                                },
                                     },{
           title: '评论时间',
           dataIndex: 'add_time',

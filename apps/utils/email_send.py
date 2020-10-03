@@ -5,13 +5,12 @@ __date__ = '2018/1/11 0011 03:57'
 # encoding: utf-8
 from random import Random
 
-__author__ = 'mtianyan'
-__date__ = '2018/1/10 0010 20:47'
+from django.conf import settings
+
 from users.models import EmailVerifyRecord
 # 导入Django自带的邮件模块
 from django.core.mail import send_mail, EmailMessage
 # 导入setting中发送邮件的配置
-from Mxonline3.settings import EMAIL_FROM
 # 发送html格式的邮件:
 from django.template import loader
 
@@ -28,7 +27,7 @@ def random_str(random_length=8):
     return str
 
 
-def send_register_eamil(email, send_type="register"):
+def send_register_email(email, send_type="register"):
     """发送注册邮件"""
     # 发送之前先保存到数据库，到时候查询链接是否存在
     # 实例化一个EmailVerifyRecord对象
@@ -56,10 +55,10 @@ def send_register_eamil(email, send_type="register"):
             "email_register.html",  # 需要渲染的html模板
             {
                 "active_code": code  # 参数
-                }
-            )
+            }
+        )
 
-        msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
+        msg = EmailMessage(email_title, email_body, settings.EMAIL_FROM, [email])
         msg.content_subtype = "html"
         send_status = msg.send()
         # 使用Django内置函数完成邮件发送。四个参数：主题，邮件内容，从哪里发，接受者list
@@ -76,7 +75,7 @@ def send_register_eamil(email, send_type="register"):
                 "active_code": code  # 参数
             }
         )
-        msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
+        msg = EmailMessage(email_title, email_body, settings.EMAIL_FROM, [email])
         msg.content_subtype = "html"
         send_status = msg.send()
     elif send_type == "update_email":
@@ -87,6 +86,6 @@ def send_register_eamil(email, send_type="register"):
                 "active_code": code  # 参数
             }
         )
-        msg = EmailMessage(email_title, email_body, EMAIL_FROM, [email])
+        msg = EmailMessage(email_title, email_body, settings.EMAIL_FROM, [email])
         msg.content_subtype = "html"
         send_status = msg.send()

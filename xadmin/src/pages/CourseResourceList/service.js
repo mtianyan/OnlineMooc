@@ -13,9 +13,15 @@ export async function removeCourseResource(params) {
 export async function addCourseResource(params) {
   let fileFieldList = ["download"]
   let fileData = buildFileFormData(params, fileFieldList);
+  console.log("add")
+  for (var [a, b] of fileData.entries()) {
+    console.log(a, b);
+  }
   return request('/api/xadmin/v1/course_resource', {
     method: 'POST',
     data: fileData,
+  }).catch(error=>{
+    console.log(error)
   });
 }
 export async function updateCourseResource(params, id) {

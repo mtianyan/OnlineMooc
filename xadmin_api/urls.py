@@ -1,7 +1,7 @@
 from django.urls import re_path, include, path
 from rest_framework.routers import DefaultRouter
 
-from xadmin_api.views import LoginView, CurrentUserView, CaptchaView, UserSendCaptchaView, DashBoardView, UploadView
+from xadmin_api.views import LoginView, CurrentUserView, CaptchaView, UserSendCaptchaView, DashBoardView, UploadView, MenuView
 from xadmin_api.views import TyAdminSysLogViewSet, TyAdminEmailVerifyRecordViewSet
 
 router = DefaultRouter(trailing_slash=False)
@@ -17,5 +17,6 @@ urlpatterns = [
     path('fake_chart_data', DashBoardView.as_view(), name='dashboard'),
     path('captcha', include('captcha.urls')),
     path('upload', UploadView.as_view(), name="rich_upload"),
+    path('sys/menu', MenuView.as_view(), name="rich_upload"),
     path('', include('xadmin_api.auto_url'))
 ]

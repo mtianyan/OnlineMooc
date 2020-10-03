@@ -25,11 +25,13 @@ const TableList = () => {
   const hide = message.loading('正在添加');
 
   try {
+    console.log(fields)
     await addCourseResource({...fields});
     hide();
     message.success('添加成功');
     return true;
   } catch (error) {
+      console.log(error)
       if ('fields_errors' in error.data) {
         for (let key in error.data.fields_errors) {
           var value = error.data.fields_errors[key];
@@ -216,7 +218,7 @@ const TableList = () => {
   }, []);
 
 
-    
+
   return (
     <PageHeaderWrapper>
       <ProTable
@@ -298,7 +300,7 @@ const TableList = () => {
           }}
           rowKey="key"
           type="form"
-          
+
           form={
             {
               labelCol: {span: 6},
@@ -324,7 +326,7 @@ const TableList = () => {
             }
           }}
           rowKey="key"
-          
+
           type="form"
           form={{
             initialValues: updateFormValues, labelCol: {span: 6},
