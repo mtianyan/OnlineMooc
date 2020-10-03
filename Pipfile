@@ -39,7 +39,7 @@ django-crispy-forms = "~=1.8.1"
 django-cors-headers = "*"
 requests = "~=2.24.0"
 Django = "==3.0"
-Pillow = "==6.0.0"
+Pillow = "==7.1.0"
 PyMySQL = "==0.9.3"
 
 [requires]
