@@ -1,3 +1,5 @@
+import django
+
 from xadmin_api.custom import XadminViewSet
 from xadmin_api.filters import TyAdminSysLogFilter, TyAdminEmailVerifyRecordFilter
 from xadmin_api.models import TyAdminSysLog, TyAdminEmailVerifyRecord
@@ -31,10 +33,9 @@ from rest_framework import views, status, serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
-from users.models import EmailVerifyRecord
 from xadmin_api.custom import MtyCustomExecView
 
-from xadmin_api.utils import send_email, save_uploaded_file, gen_file_name
+from xadmin_api.utils import send_email, save_uploaded_file, gen_file_name, log_save
 
 
 class RichUploadSerializer(serializers.Serializer):
@@ -65,6 +66,34 @@ class DashBoardView(views.APIView):
         return JsonResponse(json.loads(content))
 
 
+class MenuView(views.APIView):
+    def get(self, request, *args, **kwargs):
+        data_json = os.path.join(settings.BASE_DIR, 'xadmin_api/menu.json')
+        with open(data_json) as fr:
+            content = fr.read()
+        import demjson
+        content = demjson.decode(content)
+        print(json.dumps(content, ensure_ascii=False))
+        return JsonResponse({
+            "data": content
+        })
+
+
+class DashBoardView(views.APIView):
+    def get(self, request, *args, **kwargs):
+        sys_label = ['admin', 'auth', 'contenttypes', 'sessions', 'captcha', 'xadmin', 'xadmin_api', 'authtoken', 'social_django']
+        count_dict = {}
+        for one in django.apps.apps.get_models():
+            app_label = one._meta.app_label
+            if app_label not in sys_label:
+                model_ver_name = one._meta.verbose_name
+                one_num = one.objects.all().count()
+                count_dict[model_ver_name] = one_num
+        return JsonResponse({
+            "data": count_dict
+        })
+
+
 class LoginView(MtyCustomExecView):
     permission_classes = ()
 
@@ -78,6 +107,9 @@ class LoginView(MtyCustomExecView):
             except CaptchaStore.DoesNotExist:
                 raise ValidationError({"pic_captcha": ["验证码不正确"]})
             user = authenticate(request, username=request.data["userName"], password=request.data["password"])
+            log_save(user=request.user.username, request=self.request, flag="登录",
+                     message=f'{request.user.username}登录成功',
+                     log_type="login")
             if user is not None:
                 login(request, user)
                 return JsonResponse({
@@ -87,30 +119,6 @@ class LoginView(MtyCustomExecView):
                 })
             else:
                 raise ValidationError({"password": ["密码错误"]})
-        else:
-
-            # 邮箱登录
-            captcha = request.data["captcha"]
-            email = request.data["email"]
-            try:
-                user = SysUser.objects.get(email=email)
-            except SysUser.DoesNotExist:
-                raise ValidationError({"email": ["邮箱不存在"]})
-            try:
-                email_code = EmailVerifyRecord.objects.get(code=captcha, email=email)
-                if email_code.send_time + datetime.timedelta(minutes=6) < datetime.datetime.now():
-                    email_code.delete()
-                    raise ValidationError({"captcha": ["邮箱验证码已过期"]})
-                else:
-                    email_code.delete()
-                    login(request, user)
-                    return JsonResponse({
-                        "status": 'ok',
-                        "type": "account",
-                        "currentAuthority": ""
-                    })
-            except EmailVerifyRecord.DoesNotExist:
-                raise ValidationError({"captcha": ["邮箱验证码错误"]})
 
 
 class UserSendCaptchaView(MtyCustomExecView):
@@ -147,12 +155,12 @@ class CurrentUserView(MtyCustomExecView):
                                      "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"})
             except AttributeError:
                 return JsonResponse({
-                    "none_fields_errors": "Cookie已过期，请重新登录"
-                }, status=status.HTTP_400_BAD_REQUEST)
+                    "errors": "暂未登录"
+                }, status=status.HTTP_200_OK)
         else:
             return JsonResponse({
-                "none_fields_errors": "Cookie已过期，请重新登录"
-            }, status=status.HTTP_400_BAD_REQUEST)
+                "errors": "暂未登录"
+            }, status=status.HTTP_200_OK)
 
 
 class UploadView(MtyCustomExecView):
