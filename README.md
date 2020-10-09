@@ -1,14 +1,15 @@
-#  Django3.0 + DjangoRestful Framework + Ant Design Pro V4 开发的在线教育网站及后台管理
+#  第二版: Vue前台高仿 + Django3.1 + DjangoRestful Framework + Ant Design Pro V4 开发的在线教育网站及后台管理
 
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-- 在线体验地址: https://mooc.funpython.cn/xadmin
+使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。
+
+- 前台体验地址: https://imooc.funpython.cn
+- 在线体验地址: https://imooc.funpython.cn/xadmin
 
 >账号: mtianyan
 密码: admin2020
-
-- 首页地址: https://mooc.funpython.cn/
 
 ## 运行指南:
 
@@ -46,10 +47,6 @@ python manage.py runserver
 微信打赏:
 
 ![mark](http://myphoto.mtianyan.cn/blog/180302/i52eHgilfD.png?imageslim)
-
-支付宝打赏:
-
-![mark](http://myphoto.mtianyan.cn/blog/180302/gDlBGemI60.jpg?imageslim)
 
 
 

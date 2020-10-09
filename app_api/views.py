@@ -1,11 +1,17 @@
-from django.contrib.auth import authenticate, login
+import json
+import os
+
+from django.conf import settings
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
+from django.db.models import Q
 from django.http import JsonResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.renderers import BrowsableAPIRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -13,7 +19,8 @@ from rest_framework.views import APIView
 from app_api.app_page import AppPageNumberPagination
 from app_api.app_viewset import MyViewSet
 from app_api.custom_render import MyJSONRenderer
-from utils.utils import get_order_no
+from utils.log_utils import login_log_save
+from utils.utils import get_order_no, log_save
 from app_api.models import Order, Coupon, Integral, Notice, Lesson, Question, Cart, User, Bill, Address, Catalog, Log, ReadType, Teacher, Comment, \
     Hot, Recharge, LabelFollow, Student, Navigation, Read, Article, History, Qa, ArticleType, UserNotice, Slider, UserLesson, Nav, LabelType, \
     IntegralType, Label, Footer, CommonPathConfig, Chapter, RechargePay, RechargeAction, OrderItem, OrderStatus, Consult
@@ -22,7 +29,8 @@ from app_api.serializers import OrderSerializer, CouponSerializer, IntegralSeria
     CommentSerializer, HotSerializer, RechargeSerializer, LabelFollowSerializer, StudentSerializer, NavigationSerializer, ReadSerializer, \
     ArticleSerializer, HistorySerializer, QaSerializer, ArticleTypeSerializer, UserNoticeSerializer, SliderSerializer, UserLessonSerializer, \
     NavSerializer, LabelTypeSerializer, IntegralTypeSerializer, LabelSerializer, FooterSerializer, CommonPathConfigSerializer, LessonInfoSerializer, \
-    ChapterSerializer, RechargeListSerializer, OrderInfoSerializer, OrderListSerializer, ConsultSerializer, ReadInfoSerializer
+    ChapterSerializer, RechargeListSerializer, OrderInfoSerializer, OrderListSerializer, ConsultSerializer, ReadInfoSerializer, \
+    LabelTypeHomeSerializer
 from app_api.filters import OrderFilter, CouponFilter, IntegralFilter, NoticeFilter, LessonFilter, QuestionFilter, CartFilter, UserFilter, BillFilter, \
     AddressFilter, CatalogFilter, LogFilter, ReadTypeFilter, TeacherFilter, CommentFilter, HotFilter, RechargeFilter, LabelFollowFilter, \
     StudentFilter, NavigationFilter, ReadFilter, ArticleFilter, HistoryFilter, QaFilter, ArticleTypeFilter, UserNoticeFilter, SliderFilter, \
@@ -33,6 +41,10 @@ class ConsultViewSet(MyViewSet):
     serializer_class = ConsultSerializer
     queryset = Consult.objects.all()
     filter_class = ConsultFilter
+    permission_classes = [IsAuthenticated, ]
+
+    def get_queryset(self):
+        return Consult.objects.filter(userid=self.request.user.id)
 
 
 class OrderViewSet(viewsets.ModelViewSet):
@@ -41,6 +53,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
     filter_class = OrderFilter
+    permission_classes = [IsAuthenticated, ]
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -49,12 +62,18 @@ class OrderViewSet(viewsets.ModelViewSet):
             return OrderSerializer
 
     def list(self, request, *args, **kwargs):
-        base_data = super().list(self, request, args, kwargs)
-        return base_data
+        queryset = self.filter_queryset(self.get_queryset()).filter(userid=request.user.id)
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         self.request.data["code"] = get_order_no()
         self.request.data["status"] = OrderStatus.objects.get(code="0").id
         order_base = super().create(request, args, kwargs)
@@ -100,6 +119,10 @@ class CouponViewSet(MyViewSet):
     serializer_class = CouponSerializer
     queryset = Coupon.objects.all()
     filter_class = CouponFilter
+    permission_classes = [IsAuthenticated, ]
+
+    def get_queryset(self):
+        return Coupon.objects.filter(userid=self.request.user.id)
 
 
 class IntegralViewSet(MyViewSet):
@@ -115,6 +138,7 @@ class NoticeViewSet(viewsets.ModelViewSet):
     serializer_class = NoticeSerializer
     queryset = Notice.objects.all()
     filter_class = NoticeFilter
+    permission_classes = [IsAuthenticated, ]
 
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
@@ -123,32 +147,33 @@ class NoticeViewSet(viewsets.ModelViewSet):
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             for one in serializer.data:
-                one["isRead"] = UserNotice.objects.get(messageid=one["id"], userid=1).isRead
+                try:
+                    one["isRead"] = UserNotice.objects.get(messageid=one["id"], userid=request.user.id).isRead
+                except UserNotice.DoesNotExist:
+                    one["isRead"] = False
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
         for one in serializer.data:
-            one["isRead"] = UserNotice.objects.get(messageid=one["id"], userid=1).isRead
+            one["isRead"] = UserNotice.objects.get(messageid=one["id"], userid=request.user.id).isRead
         return Response(serializer.data)
 
     @action(methods=['post'], detail=False, url_path="read/?")
     def read(self, request, pk=None):
         message_id = request.data["id"]
-        # TODO 变为自己的id
-        user_notice = UserNotice.objects.get(messageid=message_id, userid=1)
+        user_notice = UserNotice.objects.get(messageid=message_id, userid=request.user.id)
         user_notice.isRead = True
         user_notice.save()
         return Response(True)
 
     @action(methods=['post'], detail=False, url_path="read/all?")
     def readAll(self, request, pk=None):
-        # TODO 变为自己的id
-        UserNotice.objects.filter(userid=1).update(isRead=True)
+        UserNotice.objects.filter(userid=request.user.id).update(isRead=True)
         return Response(True)
 
     @action(methods=['get'], detail=False, url_path="read/not?")
     def readNot(self, request, pk=None):
-        notice = UserNotice.objects.filter(userid=1, isRead=False).count()
+        notice = UserNotice.objects.filter(userid=request.user.id, isRead=False).count()
         flag = False
         if notice != 0:
             flag = True
@@ -164,6 +189,15 @@ class NoticeViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         self.perform_destroy(instance)
         return Response(status=status.HTTP_200_OK)
+
+    @action(methods=['get'], detail=False, url_path="setting/?")
+    def setting(self, request, pk=None):
+        data_json = os.path.join(settings.BASE_DIR, 'app_api/mock/notice/setting.json')
+        with open(data_json) as fr:
+            content = fr.read()
+        import demjson
+        content = demjson.decode(content)
+        return JsonResponse(content)
 
 
 class LessonViewSet(MyViewSet):
@@ -213,16 +247,22 @@ class CartViewSet(viewsets.ModelViewSet):
     serializer_class = CartSerializer
     queryset = Cart.objects.all()
     filter_class = CartFilter
+    permission_classes = [IsAuthenticated, ]
 
     def create(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         self.request.data["lessonid"] = self.request.data["id"]
-        return super().create(request, args, kwargs)
+        serializer = self.get_serializer(data=request.data)
+        bak_img_url = self.request.data["img"]
+        del self.request.data["img"]
+        serializer.is_valid(raise_exception=True)
+        serializer.validated_data["img"] = bak_img_url
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def update(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         return super().update(request, args, kwargs)
 
     def destroy(self, request, *args, **kwargs):
@@ -236,17 +276,17 @@ class UserViewSet(MyViewSet):
     queryset = User.objects.all()
     filter_class = UserFilter
 
-    @action(methods=['get'], detail=False, url_path="info/?")
+    @action(methods=['get'], detail=False, url_path="info/?", permission_classes=[IsAuthenticated, ])
     def info(self, request, pk=None):
-        # TODO: 修改为当前用户
-        ret = UserSerializer(User.objects.get(id=1)).data
+        user = request.user
+        ret = UserSerializer(user).data
         del ret["password"]
         return Response(ret)
 
-    @action(methods=['post'], detail=False, url_path="update/info/?")
+    @action(methods=['post'], detail=False, url_path="update/info/?", permission_classes=[IsAuthenticated, ])
     def update_info(self, request, pk=None):
-        # TODO 获取登录后的用户
-        user = User.objects.get(id=1)
+        user = request.user
+        user.nickname = request.data["nickname"]
         user.city = request.data["city"]
         user.job = request.data["job"]
         user.sex = request.data["sex"]
@@ -254,10 +294,9 @@ class UserViewSet(MyViewSet):
         user.save()
         return Response(True)
 
-    @action(methods=['post'], detail=False, url_path="update/binds/?")
+    @action(methods=['post'], detail=False, url_path="update/binds/?", permission_classes=[IsAuthenticated, ])
     def update_binds(self, request, pk=None):
-        # TODO 获取登录后的用户
-        user = User.objects.get(id=1)
+        user = request.user
         user.email = request.data["email"]
         user.password = make_password(request.data["ckpassword"])
         user.phone = request.data["phone"]
@@ -271,6 +310,8 @@ class UserViewSet(MyViewSet):
         username = request.data["username"]
         password = request.data["password"]
         user = User(username=username, password=make_password(password))
+        # TODO 更改默认头像
+        user.avatar = "https://img3.sycdn.imooc.com/5a5d1f3a0001cab806380638-140-140.jpg"
         user.save()
         return Response(True)
 
@@ -279,12 +320,21 @@ class UserViewSet(MyViewSet):
         user = authenticate(request, username=request.data["username"], password=request.data["password"])
         if user is not None:
             login(request, user)
+            login_log_save(request, user, login_type="0")
             return Response(UserSerializer(user).data)
         else:
             return JsonResponse({
                 "code": -1,
                 "msg": "登录失败"
             })
+
+    @action(methods=['get'], detail=False, url_path="logout/?")
+    def logout(self, request, pk=None):
+        logout(request)
+        return JsonResponse({
+            "code": 0,
+            "msg": "用户退出成功"
+        })
 
 
 class BillViewSet(MyViewSet):
@@ -293,9 +343,12 @@ class BillViewSet(MyViewSet):
     queryset = Bill.objects.all()
     filter_class = BillFilter
 
+    def get_queryset(self):
+        return Bill.objects.filter(userid=self.request.user.id)
+
     def list(self, request, *args, **kwargs):
         base_data = super().list(self, request, args, kwargs)
-        all_recharge = Bill.objects.filter(userid=1)
+        all_recharge = Bill.objects.filter(userid=request.user.id)
         sum_total = 0
         for one in all_recharge:
             sum_total += one.cost
@@ -311,15 +364,25 @@ class AddressViewSet(viewsets.ModelViewSet):
     serializer_class = AddressSerializer
     queryset = Address.objects.all()
     filter_class = AddressFilter
+    permission_classes = [IsAuthenticated, ]
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset()).filter(userid=request.user.id)
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         return super(AddressViewSet, self).create(request, args, kwargs)
 
     def update(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         return super(AddressViewSet, self).update(request, args, kwargs)
 
     def destroy(self, request, *args, **kwargs):
@@ -356,6 +419,17 @@ class LogViewSet(MyViewSet):
     queryset = Log.objects.all()
     filter_class = LogFilter
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset()).filter(userid=request.user.id)
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
 
 class ReadTypeViewSet(MyViewSet):
     serializer_class = ReadTypeSerializer
@@ -387,6 +461,13 @@ class RechargeViewSet(viewsets.ModelViewSet):
     renderer_classes = (MyJSONRenderer, BrowsableAPIRenderer)
     queryset = Recharge.objects.all()
     filter_class = RechargeFilter
+    permission_classes = [IsAuthenticated, ]
+
+    def get_queryset(self):
+        if self.action == "list":
+            return Recharge.objects.filter(userid=self.request.user.id)
+        else:
+            return Recharge.objects.all()
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -395,8 +476,7 @@ class RechargeViewSet(viewsets.ModelViewSet):
             return RechargeSerializer
 
     def create(self, request, *args, **kwargs):
-        # TODO 获取登录了的用户id
-        self.request.data["userid"] = 1
+        self.request.data["userid"] = request.user.id
         if self.request.data["way"] == 1:
             self.request.data["remark"] = "微信充值"
         elif self.request.data["way"] == 0:
@@ -408,7 +488,7 @@ class RechargeViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         base_data = super().list(self, request, args, kwargs)
-        all_recharge = Recharge.objects.filter(userid=1)
+        all_recharge = Recharge.objects.filter(userid=request.user.id)
         sum_total = 0
         for one in all_recharge:
             if one.action.code == 0:
@@ -449,6 +529,27 @@ class NavigationViewSet(MyViewSet):
     serializer_class = NavigationSerializer
     queryset = Navigation.objects.all()
     filter_class = NavigationFilter
+
+    def list(self, request, *args, **kwargs):
+        nav_list = Navigation.objects.all().order_by('sort')
+        wait_code_list = []
+        for one in nav_list:
+            wait_code_list += one.code.split(",")
+        tag_list = Label.objects.filter(type__code__in=wait_code_list)
+        lesson_list = Lesson.objects.filter(category__code__in=wait_code_list)
+        base_ret = NavigationSerializer(nav_list, many=True).data
+        for one in base_ret:
+            tag_ret_list = []
+            for one_tag in one["code"].split(","):
+                one_label = LabelType.objects.get(code=one_tag)
+                one_label_data = LabelTypeHomeSerializer(one_label).data
+                one_label_data["list"] = list(Label.objects.filter(type__code=one_tag).values_list("title", flat=True))
+                tag_ret_list.append(one_label_data)
+            one["tags"] = tag_ret_list
+            one["lessons"] = LessonSerializer(lesson_list.filter(Q(type__code=1) & Q(category__code__in=one["code"].split(",")))[:4], many=True).data
+        return Response(base_ret, status=status.HTTP_200_OK)
+        # data_json = os.path.join(settings.BASE_DIR, 'app_api/mock/home/nav.json')
+        # return JsonResponse(json.load(open(data_json, 'r')))
 
 
 class ReadViewSet(viewsets.ModelViewSet):
@@ -492,6 +593,9 @@ class UserNoticeViewSet(MyViewSet):
     queryset = UserNotice.objects.all()
     filter_class = UserNoticeFilter
 
+    def get_queryset(self):
+        return UserNotice.objects.filter(userid=self.request.user.id)
+
 
 class SliderViewSet(MyViewSet):
     serializer_class = SliderSerializer
@@ -525,28 +629,28 @@ class IntegralTypeViewSet(MyViewSet):
 
 
 class LabelViewSet(MyViewSet):
+    # 猿问感兴趣的标签
     serializer_class = LabelSerializer
     queryset = Label.objects.all()
     filter_class = LabelFilter
+    # permission_classes = [IsAuthenticated, ]
 
-    @action(methods=['post'], detail=False, url_path="follow/?")
+    @action(methods=['post'], detail=False, url_path="follow/?", permission_classes=[IsAuthenticated, ])
     def follow(self, request, pk=None):
         list = request.data["list"]
         add_list = []
         for one in list:
-            # TODO 改为当前用户
-            one_follow = LabelFollow(userid=1, title=one["title"], labelid=Label.objects.get(title=one["title"]).id)
+            one_follow = LabelFollow(userid=request.user.id, title=one["title"], labelid=Label.objects.get(title=one["title"]).id)
             add_list.append(one_follow)
         LabelFollow.objects.bulk_create(add_list, ignore_conflicts=True)
         return Response(True)
 
-    @action(methods=['get'], detail=False, url_path="follow/list?")
+    @action(methods=['get'], detail=False, url_path="follow/list?", permission_classes=[IsAuthenticated, ])
     def followList(self, request, pk=None):
-        # TODO 只展示当前用户
         return JsonResponse({
             "code": 0,
             "msg": "success",
-            "data": LabelFollowSerializer(LabelFollow.objects.all(), many=True).data
+            "data": LabelFollowSerializer(LabelFollow.objects.filter(userid=request.user.id), many=True).data
         })
 
 
@@ -578,140 +682,25 @@ class CommonPathConfigViewSet(MyViewSet):
 
 class RecommendView(APIView):
     def get(self, request):
-        return Response({
+        data_json = os.path.join(settings.BASE_DIR, 'app_api/mock/home/recommend.json')
+        return JsonResponse(json.load(open(data_json, 'r')))
+
+
+class HomeLessonView(APIView):
+    def get(self, request):
+        recommend_list = LessonSerializer(Lesson.objects.filter(type__code=1).order_by("persons")[:5], many=True).data
+        new_list = Lesson.objects.filter(type__code=1).order_by('time')[:10]
+        easy_list = Lesson.objects.filter(hard__code=0)[:10]
+        improve_list = Lesson.objects.filter(hard__code__gte=2)[:10]
+        advance_list = Lesson.objects.filter(category__code=4)[:10]
+        return JsonResponse({
             "code": 0,
-            "msg": "获取成功",
-            "data": [
-                {
-                    "type": "topic",
-                    "data": [
-                        {
-                            "topic": "【内推第2波】",
-                            "title": " 打工奋斗7万落京户VS自主创业牧马城市，如何抉择？",
-                            "img": "https://img.mukewang.com/5abc43e500012ec805120512.jpg",
-                            "desc": "毕业求职？跳槽加薪？纠结滋润加班还是苦练x年自主创业？速速提问互撩，你在撩的极有可能就是你的Boss！激不激动？惊不惊喜？Offer已在这里！你的简历在哪里？Scott老师邮箱：wolf18387@qq.comJeson老师邮箱：jeson@imoocc.com"
-                        },
-                        {
-                            "topic": "【获奖名单戳查看更多】",
-                            "title": "当我们谈论Java时，我们都谈些什么？",
-                            "img": "https://img.mukewang.com/5abaf07b00016b7005120512.jpg",
-                            "desc": ""
-                        },
-                        {
-                            "topic": "【内推第1波】",
-                            "title": "直击BAT面试机会！行业大佬在线答疑",
-                            "img": "https://img.mukewang.com/5aaf11ae0001d26c05120512.jpg",
-                            "desc": ""
-                        },
-                        {
-                            "topic": "【【花式填坑】第23期",
-                            "title": "运维进化篇：成为Python DevOps工程师有哪些必备条件？",
-                            "img": "https://img.mukewang.com/5a5d55de00015cba05120512.jpg",
-                            "desc": ""
-                        }
-                    ]
-                },
-                {
-                    "type": "article",
-                    "title": "前端要不要学数据结构&算法",
-                    "img": "https://img.mukewang.com/5c696fad000148dc08180526-210-130.jpg",
-                    "desc": "我们都知道前端开发工程师更多偏向 DOM 渲染和 DOM 交互操作，随之 Node 的推广前端工程师也可以完成服务端开发。对于服务端开发而言大家都觉得数据结构和算法是基础，非学不可。所以正在进行 Node 开发的同学而言，这个答案跃然纸上。我们今天重点说一说纯前端开发的同学到底需不要数据结构与算法。我先说下结论：需要，非常需要。第一，只要是程序员，基本功都是数据结构与算法",
-                    "scan": 17358,
-                    "recommend": 66
-                },
-                {
-                    "type": "question",
-                    "title": "java好学吗.??pp",
-                    "status": {
-                        "text": "最赞回答",
-                        "answer": "挺好的！"
-                    },
-                    "total": 272
-                },
-                {
-                    "type": "article",
-                    "title": "【前端学习路线升级版】看新手如何系统掌握前端技能",
-                    "img": "https://img.mukewang.com/5c92209100019b0402500237-210-130.jpg",
-                    "desc": "前端怎样入门？ 这一波良心推荐的【前端学习路线】干货，不谈虚的，直接来谈每个阶段要学习的内容 想入门前端的小伙伴们，那就放马过来吧！     首先，给大家分享一张最新的以 企业岗位需求为导向前端技能点图，如下 根据前端工程师技能点图，我们分为四个阶段： 第一阶段：前端基础 （HTML / CSS / HTML5 / CSS3 / JavaScript ） 干货文章： 初识HTML+CSS",
-                    "scan": 20216,
-                    "recommend": 192
-                },
-                {
-                    "type": "question",
-                    "title": "date.getMonth()+1 为什么获取月份要加1，而日期 年份 什么的没有",
-                    "status": {
-                        "text": "已采纳回答",
-                        "answer": "月份范围是1-12月份对应的常量值 是0-11， 就像数组下标是从0开始不是从1开始。"
-                    },
-                    "total": 1
-                },
-                {
-                    "type": "article",
-                    "title": "【React学习路线】从零进阶前端核心工程师",
-                    "img": "https://img.mukewang.com/5c4172810001941104400440-210-130.jpg",
-                    "desc": "哈喽，良心推荐小慕又来跟大家分享啦，今天分享的是React~ 面向工资编程，前端核心框架、加薪神器React了解一下！ React毫无疑问是前端界主流的框架，而框架本身就是热点，可以说是前端工程师们能力提升、快速晋升高级开发工程师的必备技能。 还不知道如何入门？ 技术提升遇到瓶颈？ 别担心，下面小慕就跟大家详细聊一下React的学习路线，入门到进阶的秘籍都在这里啦！ 第一阶段：React快速入门",
-                    "scan": 10419,
-                    "recommend": 91
-                },
-                {
-                    "type": "question",
-                    "title": "【有奖问答】与大咖交流前端JS与框架开发，免费赢取前端图书（11.28-12.4）",
-                    "status": {
-                        "text": "最赞回答",
-                        "answer": "我觉得不管学习哪门语言，到后面总还是要学习一下规范，程序员的素养必不可少啊！！"
-                    },
-                    "total": 156
-                },
-                {
-                    "type": "article",
-                    "title": "Vue倔强青铜-入门和组件化通信",
-                    "img": "https://img.mukewang.com/5c8d186a00012f4109000383-210-130.jpg",
-                    "desc": "原文链接 入门 作为前端最容易上手的框架，Vue入门其实没啥说的，我放一段清单的代码，大家能看懂就说明能上手了",
-                    "scan": 8477,
-                    "recommend": 30
-                },
-                {
-                    "type": "question",
-                    "title": "话说，大家想编程的最初初衷是什么",
-                    "status": {
-                        "text": "最赞回答",
-                        "answer": "说兴趣的话有没有人打我...."
-                    },
-                    "total": 490
-                },
-                {
-                    "type": "article",
-                    "title": "【面试技巧系列】找工作、涨薪、跳槽都得来一份",
-                    "img": "https://img.mukewang.com/5c6d07a000015abd02000198-210-130.jpg",
-                    "desc": "面试是程序员求职过程中最重要的一步 别以为面试技巧很虚 很多技术不错的人 恰恰输在了面试技巧上 知识点怎么复习、问题如何回答 怎么在面试时避免采坑、惊艳面试官 怎么与HR谈论薪资待遇…… 往往这些问题决定你能否成功应聘。 敲黑板划重点： 以下面试技巧神器你值得拥有！ 大量干货文章袭来预警~ 一、通用篇 干货文章： 聪明人喜欢这样写简历 如何有效地备战面试 【程序员】在面",
-                    "scan": 21665,
-                    "recommend": 115
-                },
-                {
-                    "type": "question",
-                    "title": "各位猿或者媛，一般几点睡啊。有时忍住头痛看java到很晚，第二天就头痛一整天",
-                    "status": {
-                        "text": "已采纳回答",
-                        "answer": "没有什么事情是需要熬夜完成的"
-                    },
-                    "total": 335
-                },
-                {
-                    "type": "article",
-                    "title": "【干货推荐】java工程师从零进阶，大牛带你轻松上路",
-                    "img": "https://img.mukewang.com/5c35b57c0001d18302430269-210-130.jpg",
-                    "desc": "java新手不知如何入门？ 经验多却面临上升瓶颈期？ 想进阶高级工程师还差点火候？ 今天这波最实用的java实战之路 以战养兵 为你打通职业发展脉络 沿着Java大牛们的思路， 逐步成长为一名业务与思想同样优秀的Java开发者。 就业、晋升、管理均游刃有余！ 不多说了，上干货！ 阅读指南：本文专为Java开发行业人员设计，分为四个阶段，循序渐进的带你进行SSM框架、SpringBoot框架、微服务",
-                    "scan": 23549,
-                    "recommend": 147
-                },
-                {
-                    "type": "question",
-                    "title": "date.getMonth()+1 为什么获取月份要加1，而日期 年份 什么的没有",
-                    "status": {
-                        "text": "已采纳回答",
-                        "answer": "月份范围是1-12月份对应的常量值 是0-11， 就像数组下标是从0开始不是从1开始。"
-                    },
-                    "total": 1
-                }
-            ]
+            "msg": "获取首页课程成功",
+            "data": {
+                "recommend": recommend_list,
+                "new": LessonSerializer(new_list, many=True).data,
+                "easy": LessonSerializer(easy_list, many=True).data,
+                "improve": LessonSerializer(improve_list, many=True).data,
+                "advanced": LessonSerializer(advance_list, many=True).data
+            }
         })

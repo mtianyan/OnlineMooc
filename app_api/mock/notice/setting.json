@@ -1,0 +1,85 @@
+{
+  "code": 0,
+  "msg": "获取成功",
+  "data": [
+    {
+      "type": "课程",
+      "data": [
+        {
+          "label": "课程提问有人回答",
+          "value": true
+        },
+        {
+          "label": "关注的课程问答有人回答",
+          "value": true
+        },
+        {
+          "label": "回答被采纳",
+          "value": true
+        },
+        {
+          "label": "回答被赞",
+          "value": true
+        },
+        {
+          "label": "回答被回复",
+          "value": true
+        },
+        {
+          "label": "回复被回复",
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "猿问",
+      "data": [
+        {
+          "label": "课程提问有人回答",
+          "value": true
+        },
+        {
+          "label": "关注的问答有人回答",
+          "value": true
+        },
+        {
+          "label": "回答被采纳",
+          "value": true
+        },
+        {
+          "label": "回答被赞",
+          "value": true
+        },
+        {
+          "label": "回答被回复",
+          "value": true
+        },
+        {
+          "label": "回复被回复",
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "手记",
+      "data": [
+        {
+          "label": "我的文章被评论",
+          "value": true
+        },
+        {
+          "label": "评论被回复",
+          "value": true
+        },
+        {
+          "label": "文章被推荐",
+          "value": true
+        },
+        {
+          "label": "回复被回复",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

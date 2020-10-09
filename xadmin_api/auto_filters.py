@@ -97,18 +97,15 @@ class LessonScriptFilter(filters.FilterSet):
 
 class LessonFilter(filters.FilterSet):
     category_text = filters.CharFilter(field_name="category")
+    type_text = filters.CharFilter(field_name="type")
+    hard_text = filters.CharFilter(field_name="hard")
+    teacher_text = filters.CharFilter(field_name="teacher")
+    script_text = filters.CharFilter(field_name="script")
+    time = DateFromToRangeFilter(field_name="time")
 
-
-type_text = filters.CharFilter(field_name="type")
-hard_text = filters.CharFilter(field_name="hard")
-teacher_text = filters.CharFilter(field_name="teacher")
-script_text = filters.CharFilter(field_name="script")
-time = DateFromToRangeFilter(field_name="time")
-
-
-class Meta:
-    model = Lesson
-    exclude = ["img", "img", "banner", "banner"]
+    class Meta:
+        model = Lesson
+        exclude = ["img", "img", "banner", "banner"]
 
 
 class QuestionFilter(filters.FilterSet):
@@ -189,14 +186,11 @@ class ReadChapterFilter(filters.FilterSet):
 
 class ReadChapterItemFilter(filters.FilterSet):
     read_chapter_text = filters.CharFilter(field_name="read_chapter")
+    time = DateFromToRangeFilter(field_name="time")
 
-
-time = DateFromToRangeFilter(field_name="time")
-
-
-class Meta:
-    model = ReadChapterItem
-    exclude = []
+    class Meta:
+        model = ReadChapterItem
+        exclude = []
 
 
 class TeacherFilter(filters.FilterSet):
@@ -235,15 +229,12 @@ class RechargePayFilter(filters.FilterSet):
 
 class RechargeFilter(filters.FilterSet):
     action_text = filters.CharFilter(field_name="action")
+    way_text = filters.CharFilter(field_name="way")
+    time = DateFromToRangeFilter(field_name="time")
 
-
-way_text = filters.CharFilter(field_name="way")
-time = DateFromToRangeFilter(field_name="time")
-
-
-class Meta:
-    model = Recharge
-    exclude = []
+    class Meta:
+        model = Recharge
+        exclude = []
 
 
 class LabelFollowFilter(filters.FilterSet):

@@ -1,4 +1,6 @@
 import django
+from django.shortcuts import render
+from django.views import View
 
 from xadmin_api.custom import XadminViewSet
 from xadmin_api.filters import TyAdminSysLogFilter, TyAdminEmailVerifyRecordFilter
@@ -171,3 +173,11 @@ class UploadView(MtyCustomExecView):
         rich_ser.validated_data["ty_admin_prefix"] = request._request.scheme + "://" + self.request.META['HTTP_HOST'] + settings.MEDIA_URL
         res = rich_ser.create(validated_data=rich_ser.validated_data)
         return Response(res)
+
+
+class AdminIndexView(View):
+    # 直接调用get方法免去判断
+    def get(self, request):
+        # render就是渲染html返回用户
+        # render三变量: request 模板名称 一个字典写明传给前端的值
+        return render(request, "TyAdmin/index.html")

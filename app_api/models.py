@@ -191,7 +191,7 @@ class Question(models.Model):
 class Cart(models.Model):
     userid = models.CharField(max_length=255, verbose_name="用户id")
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
-    img = ImageField(max_length=255, verbose_name="封面图", help_text=MAIN_PIC)
+    img = ImageField(max_length=255, verbose_name="封面图", help_text=MAIN_PIC, default="")
     title = models.CharField(max_length=255, verbose_name="标题")
     price = models.IntegerField(default=0, verbose_name="价格")
     isDiscount = models.BooleanField(verbose_name="是否优惠")
@@ -203,6 +203,7 @@ class Cart(models.Model):
 
 
 class Consult(models.Model):
+    userid = models.CharField(max_length=255, verbose_name="用户id", default="1", blank=True, null=True)
     like = models.BooleanField(verbose_name="是否点赞", default=False)
     number = models.IntegerField(default=0, verbose_name="点赞数")
     title = models.CharField(max_length=255, verbose_name="咨询标题")
@@ -237,8 +238,8 @@ class User(AbstractUser):
     #     """
     #     return True
 
-    username = models.CharField(max_length=255, verbose_name="用户名", unique=True)
-    password = models.CharField(max_length=255, verbose_name="密码")
+    # username = models.CharField(max_length=255, verbose_name="用户名", unique=True)
+    # password = models.CharField(max_length=255, verbose_name="密码")
     nickname = models.CharField(max_length=255, verbose_name="昵称")
     avatar = ImageField(upload_to="User_avatar", max_length=255, default="https://static.mukewang.com/static/img/avatar_default.png",
                         verbose_name="头像",

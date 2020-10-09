@@ -99,6 +99,12 @@ class NoticeSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class LabelTypeHomeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LabelType
+        fields = ["code", "title"]
+
+
 class LabelTypeSerializer(serializers.ModelSerializer):
     text = serializers.CharField(source="title")
 

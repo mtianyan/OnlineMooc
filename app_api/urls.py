@@ -2,7 +2,7 @@ from app_api import views
 from django.urls import re_path, include, path
 from rest_framework.routers import DefaultRouter
 
-from app_api.views import RecommendView
+from app_api.views import RecommendView, HomeLessonView
 
 router = DefaultRouter(trailing_slash=False)
 
@@ -12,7 +12,7 @@ router.register('common', views.CommonPathConfigViewSet)
 
 router.register('home/slider/?', views.SliderViewSet)
 
-router.register('home/nav?', views.NavigationViewSet)
+router.register('home/nav/?', views.NavigationViewSet)
 
 router.register('address/?', views.AddressViewSet)
 
@@ -70,7 +70,7 @@ router.register('qa/?', views.QaViewSet)
 
 router.register('user_notice/?', views.UserNoticeViewSet)
 
-router.register('nav/?', views.NavViewSet)
+# router.register('nav/?', views.NavViewSet)
 
 router.register('label_type/?', views.LabelTypeViewSet)
 
@@ -78,5 +78,7 @@ router.register('footer/?', views.FooterViewSet)
 
 urlpatterns = [
     re_path('^', include(router.urls)),
-    path('home/recommend', RecommendView.as_view())
+    path('home/recommend', RecommendView.as_view()),
+    path('home/lesson', HomeLessonView.as_view()),
+    # path('notice/setting', NoticeSettingView.as_view())
 ]

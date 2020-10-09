@@ -84,7 +84,7 @@ export default clientRender();
 
         // Umi UI Bubble
         require('/Users/mtianyan/tyRepos/Python/OnlineMooc/xadmin/node_modules/@umijs/preset-ui/lib/bubble').default({
-          port: 3001,
+          port: 3000,
           path: '/Users/mtianyan/tyRepos/Python/OnlineMooc/xadmin',
           currentProject: '',
           isBigfish: undefined,
