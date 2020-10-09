@@ -4,7 +4,7 @@ mtianyan_mysql:
     command: --default-authentication-plugin=mysql_native_password --mysqlx=0
     environment:
       - MYSQL_PORT=3306  # cannot change this port to other number
-      - MYSQL_DATABASE=mxonline3 # name you want for the database
+      - MYSQL_DATABASE=online_mooc # name you want for the database
       - MYSQL_USER=root # change to whatever username you wantr
       - MYSQL_ROOT_PASSWORD=mtianyanroot #change to good root password
     volumes:
@@ -16,7 +16,7 @@ mtianyan_nginx:
   restart: always
   image: nginx
   ports:
-    - "8001:80"
+    - "8002:80"
   volumes:
     - ./conf/nginx.conf:/etc/nginx/conf.d/nginx.conf
   volumes_from:

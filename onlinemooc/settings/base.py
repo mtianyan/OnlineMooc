@@ -58,7 +58,7 @@ ROOT_URLCONF = 'onlinemooc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -167,3 +167,9 @@ EMAIL_HOST_USER = "1147727180@qq.com"
 EMAIL_HOST_PASSWORD = "tuzosukurdpjihda"
 EMAIL_USE_TLS = True
 EMAIL_FROM = "1147727180@qq.com"
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')

@@ -14,7 +14,7 @@
 Vue前台代码地址: https://github.com/mtianyan/vue-mooc
 
 >账号: mtianyan
-密码: admin2020
+密码: 123456
 
 ## 运行指南:
 
@@ -27,7 +27,7 @@ docker-compose up
 
 # 导入数据
 docker exec -it onlinemooc_mtianyan_mysql_1 bash
-mysql -u root -p -D mxonline3 < sql/mxonline3.sql
+mysql -u root -p -D online_mooc < sql/online_mooc.sql
 # 输入密码: mtianyanroot 
 ```
 
