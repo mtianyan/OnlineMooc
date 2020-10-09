@@ -3,10 +3,12 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。
+后台管理使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。
 
 - 前台体验地址: https://imooc.funpython.cn
 - 在线体验地址: https://imooc.funpython.cn/xadmin
+
+Vue前台代码地址: https://github.com/mtianyan/vue-mooc
 
 >账号: mtianyan
 密码: admin2020
