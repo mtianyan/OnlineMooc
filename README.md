@@ -12,6 +12,10 @@
 
 - 首页地址: https://mooc.funpython.cn/
 
+## 思维导图:
+
+![](http://cdn.pic.mtianyan.cn/blog_img/20201009234316.png)
+
 ## 运行指南:
 
 ### docker运行
