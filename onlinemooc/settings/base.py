@@ -76,16 +76,34 @@ WSGI_APPLICATION = 'onlinemooc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'online_mooc',  # 数据库名
-        'USER': 'root',  # 用户名
-        'PASSWORD': 'mtianyanroot',  # 密码
-        'HOST': '127.0.0.1',  # 链接id ,空为本地,可以设置绝对路径
-        'PORT': '3306',  # 端口号
+try:
+    var = os.environ["not_use_docker"]
+    UseDocker = False
+except KeyError:
+    UseDocker = True
+
+if UseDocker:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'online_mooc',  # 数据库名
+            'USER': 'root',  # 用户名
+            'PASSWORD': 'mtianyanroot',  # 密码
+            'HOST': 'mysql',  # 链接id ,空为本地,可以设置绝对路径
+            'PORT': '3306',  # 端口号
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'online_mooc',  # 数据库名
+            'USER': 'root',  # 用户名
+            'PASSWORD': 'mtianyanroot',  # 密码
+            'HOST': '127.0.0.1',  # 链接id ,空为本地,可以设置绝对路径
+            'PORT': '3306',  # 端口号
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
