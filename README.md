@@ -5,8 +5,11 @@
 
 后台管理使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。
 
-- 前台体验地址: https://imooc.funpython.cn
-- 在线体验地址: https://imooc.funpython.cn/xadmin
+- v2版前台体验地址: https://imooc.funpython.cn
+- v2版在线体验地址: https://imooc.funpython.cn/xadmin
+
+- 第一版(master分支)前台体验地址: https://mooc.funpython.cn
+- 第一版(master分支)后台体验地址:: https://mooc.funpython.cn/xadmin
 
 Vue前台代码地址: https://github.com/mtianyan/vue-mooc
 
