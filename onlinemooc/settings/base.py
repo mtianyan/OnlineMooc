@@ -34,11 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'xadmin_api',
     'app_api',
     'rest_framework',
     'django_filters',
     'captcha',
+    'tyadmin_api_cli',
+    'tyadmin_api'
 ]
 
 AUTH_USER_MODEL = "app_api.User"
@@ -173,3 +174,7 @@ if DEBUG:
     ]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+TY_ADMIN_CONFIG = {
+    'GEN_APPS': ['app_api']
+}

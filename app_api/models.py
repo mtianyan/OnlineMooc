@@ -4,8 +4,8 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from xadmin_api_cli.contants import MAIN_DISPLAY, MAIN_PIC, MAIN_AVATAR
-from xadmin_api_cli.fileds import ImageField
+
+from tyadmin_api_cli.fileds import SImageField
 
 
 class EmailVerifyRecord(models.Model):
@@ -45,9 +45,9 @@ class Order(models.Model):
     expired = models.IntegerField(default=1800000, verbose_name="过期时间")
     coupon = models.IntegerField(default=0, verbose_name="优惠卷")
     status = models.ForeignKey(OrderStatus, on_delete=models.DO_NOTHING, verbose_name="订单状态", default="",
-                               blank=True, db_constraint=False, related_name="list", help_text=f'{MAIN_DISPLAY}__text')
+                               blank=True, db_constraint=False, related_name="list")
     way = models.ForeignKey("RechargePay", on_delete=models.DO_NOTHING, verbose_name="支付方式", default="", null=True,
-                            blank=True, db_constraint=False, related_name="list", help_text=f'{MAIN_DISPLAY}__text')
+                            blank=True, db_constraint=False, related_name="list")
 
     class Meta:
         verbose_name = '订单'
@@ -56,9 +56,9 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.DO_NOTHING, verbose_name="所属订单", default="",
-                              blank=True, db_constraint=False, related_name="list", help_text=f'{MAIN_DISPLAY}__code')
+                              blank=True, db_constraint=False, related_name="list")
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
-    img = ImageField(max_length=255, verbose_name="封面图", help_text=MAIN_PIC)
+    img = SImageField(max_length=255, verbose_name="封面图")
     title = models.CharField(max_length=255, verbose_name="标题")
     price = models.IntegerField(default=0, verbose_name="价格")
     isDiscount = models.BooleanField(verbose_name="是否优惠")
@@ -96,9 +96,9 @@ class Coupon(models.Model):
     endtime = models.DateTimeField(max_length=255, verbose_name="结束时间")
     usetime = models.CharField(max_length=255, default="", verbose_name="使用时间")
     range = models.ForeignKey(CouponRange, on_delete=models.DO_NOTHING, verbose_name="优惠券使用范围", default="",
-                              blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                              blank=True, db_constraint=False, )
     status = models.ForeignKey(CouponStatus, on_delete=models.DO_NOTHING, verbose_name="优惠券使用状态", default="",
-                               blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                               blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '优惠券'
@@ -115,11 +115,11 @@ class IntegralType(models.Model):
 
 
 class Integral(models.Model):
-    img = ImageField(upload_to="Integral_img", max_length=255, verbose_name="图片", help_text=MAIN_PIC)
+    img = SImageField(upload_to="Integral_img", max_length=255, verbose_name="图片")
     title = models.CharField(max_length=255, verbose_name="标题")
     integral = models.IntegerField(default=0, verbose_name="积分数")
     type = models.ForeignKey(IntegralType, on_delete=models.DO_NOTHING, verbose_name="积分商品类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '积分商品'
@@ -148,8 +148,8 @@ class LessonScript(models.Model):
 class Lesson(models.Model):
     title = models.CharField(max_length=255, verbose_name="课程标题", unique=True)
     introduction = models.CharField(max_length=255, default="", verbose_name="课程介绍")
-    img = ImageField(upload_to="Lesson_img", max_length=255, verbose_name="课程图片", help_text=MAIN_PIC)
-    banner = ImageField(upload_to="Lesson_banner", max_length=255, verbose_name="课程Banner", help_text=MAIN_PIC)
+    img = SImageField(upload_to="Lesson_img", max_length=255, verbose_name="课程图片")
+    banner = SImageField(upload_to="Lesson_banner", max_length=255, verbose_name="课程Banner")
     price = models.IntegerField(default=0, verbose_name="课程价格")
     isDiscount = models.BooleanField(verbose_name="是否打折")
     discountPrice = models.IntegerField(default=0, verbose_name="打折后价格")
@@ -157,17 +157,17 @@ class Lesson(models.Model):
     persons = models.IntegerField(default=0, verbose_name="学习人数")
     comments = models.IntegerField(default=0, verbose_name="评论数")
     category = models.ForeignKey("LabelType", on_delete=models.DO_NOTHING, verbose_name="课程分类", default="",
-                                 blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                                 blank=True, db_constraint=False)
     type = models.ForeignKey("LessonType", on_delete=models.DO_NOTHING, verbose_name="课程类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
     hard = models.ForeignKey("LessonHardType", on_delete=models.DO_NOTHING, verbose_name="课程难度类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
     teacher = models.ForeignKey("Teacher", on_delete=models.DO_NOTHING, verbose_name="课程讲师", default="",
-                                blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__name')
+                                blank=True, db_constraint=False)
     labels = models.ManyToManyField("Label", verbose_name="课程拥有的label", default=None,
-                                    blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                                    blank=True, db_constraint=False)
     script = models.ForeignKey(LessonScript, on_delete=models.DO_NOTHING, verbose_name="课程角标", default="", null=True,
-                               blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                               blank=True, db_constraint=False)
 
     class Meta:
         verbose_name = '课程'
@@ -178,10 +178,10 @@ class Question(models.Model):
     title = models.CharField(max_length=255, verbose_name="问题标题")
     answers = models.IntegerField(default=0, verbose_name="问题回答")
     views = models.IntegerField(default=0, verbose_name="问题点击量")
-    icon = ImageField(max_length=255, default="", verbose_name="问题图标", help_text=MAIN_PIC)
+    icon = SImageField(max_length=255, default="", verbose_name="问题图标")
     isResolve = models.BooleanField(verbose_name="问题是否解决")
     tags = models.ManyToManyField("Label", verbose_name="问题拥有的label", default=None,
-                                  blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                                  blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '问题'
@@ -191,7 +191,7 @@ class Question(models.Model):
 class Cart(models.Model):
     userid = models.CharField(max_length=255, verbose_name="用户id")
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
-    img = ImageField(max_length=255, verbose_name="封面图", help_text=MAIN_PIC, default="")
+    img = SImageField(max_length=255, verbose_name="封面图", default="")
     title = models.CharField(max_length=255, verbose_name="标题")
     price = models.IntegerField(default=0, verbose_name="价格")
     isDiscount = models.BooleanField(verbose_name="是否优惠")
@@ -241,9 +241,8 @@ class User(AbstractUser):
     # username = models.CharField(max_length=255, verbose_name="用户名", unique=True)
     # password = models.CharField(max_length=255, verbose_name="密码")
     nickname = models.CharField(max_length=255, verbose_name="昵称")
-    avatar = ImageField(upload_to="User_avatar", max_length=255, default="https://static.mukewang.com/static/img/avatar_default.png",
-                        verbose_name="头像",
-                        help_text=MAIN_AVATAR)
+    avatar = SImageField(upload_to="User_avatar", max_length=255, default="https://static.mukewang.com/static/img/avatar_default.png",
+                        verbose_name="头像")
     sex = models.CharField(max_length=255, default="male", verbose_name="性别")
     job = models.CharField(max_length=255, default="", verbose_name="工作")
     city = models.CharField(max_length=255, default="", verbose_name="城市")
@@ -288,7 +287,7 @@ class Bill(models.Model):
     time = models.CharField(max_length=255, verbose_name="时间")
     cost = models.IntegerField(default=0, verbose_name="消费金额")
     way = models.ForeignKey("RechargePay", on_delete=models.DO_NOTHING, verbose_name="账单支方式", default="", null=True,
-                            blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                            blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = 'Bill'
@@ -335,7 +334,7 @@ class Log(models.Model):
     device = models.CharField(max_length=255, verbose_name="设备")
     city = models.CharField(max_length=255, verbose_name="城市")
     type = models.ForeignKey(LogType, on_delete=models.DO_NOTHING, verbose_name="日志类型", default="", null=True,
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '访问日志'
@@ -353,7 +352,7 @@ class ReadType(models.Model):
 
 class ReadChapter(models.Model):
     read = models.ForeignKey("Read", on_delete=models.DO_NOTHING, verbose_name="所属专栏", default="",
-                             blank=True, db_constraint=False, related_name="chapter", help_text=f'{MAIN_DISPLAY}__title')
+                             blank=True, db_constraint=False, related_name="chapter")
     title = models.CharField(max_length=255, verbose_name="章节标题")
 
     class Meta:
@@ -363,7 +362,7 @@ class ReadChapter(models.Model):
 
 class ReadChapterItem(models.Model):
     read_chapter = models.ForeignKey(ReadChapter, on_delete=models.DO_NOTHING, verbose_name="所属章节", default="",
-                                     blank=True, db_constraint=False, related_name="chapter_item", help_text=f'{MAIN_DISPLAY}__title')
+                                     blank=True, db_constraint=False, related_name="chapter_item")
     title = models.CharField(max_length=255, verbose_name="小章节标题", default="")
     isTry = models.BooleanField(verbose_name="是否试看")
     time = models.DateTimeField(verbose_name="发布时间")
@@ -375,7 +374,7 @@ class ReadChapterItem(models.Model):
 
 class Teacher(models.Model):
     name = models.CharField(max_length=255, verbose_name="讲师姓名", unique=True)
-    avatar = ImageField(upload_to="Teacher_avatar", max_length=255, verbose_name="讲师头像", help_text=MAIN_AVATAR)
+    avatar = SImageField(upload_to="Teacher_avatar", max_length=255, verbose_name="讲师头像")
     job = models.CharField(max_length=255, verbose_name="讲师职业")
     introduction = models.CharField(max_length=255, verbose_name="个人介绍")
 
@@ -387,7 +386,7 @@ class Teacher(models.Model):
 class Comment(models.Model):
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
     name = models.CharField(max_length=255, verbose_name="评论者", default="")
-    avatar = ImageField(upload_to="Comment_avatar", max_length=255, verbose_name="评论头像", default="", help_text=MAIN_AVATAR)
+    avatar = SImageField(upload_to="Comment_avatar", max_length=255, verbose_name="评论头像", default="")
     content_score = models.FloatField(verbose_name="内容分数", default=0)
     easy_score = models.FloatField(verbose_name="简单分数", default=0)
     logic_score = models.FloatField(verbose_name="逻辑分数", default=0)
@@ -432,9 +431,9 @@ class Recharge(models.Model):
     money = models.IntegerField(default=0, verbose_name="充值金额(分)")
     remark = models.CharField(max_length=255, default="", verbose_name="备注")
     action = models.ForeignKey(RechargeAction, on_delete=models.DO_NOTHING, verbose_name="RechargeAction", default="",
-                               blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                               blank=True, db_constraint=False, )
     way = models.ForeignKey(RechargePay, on_delete=models.DO_NOTHING, verbose_name="RechargePay", default="",
-                            blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                            blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '充值记录'
@@ -453,11 +452,11 @@ class LabelFollow(models.Model):
 
 
 class Student(models.Model):
-    avatar = ImageField(upload_to='pic', max_length=255, verbose_name="头像", help_text=MAIN_AVATAR)
+    avatar = SImageField(upload_to='pic', max_length=255, verbose_name="头像")
     name = models.CharField(max_length=255, verbose_name="名称")
     number = models.IntegerField(default=0, verbose_name="积分数")
     type = models.ForeignKey("StudentType", on_delete=models.DO_NOTHING, verbose_name="学生类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = '学生'
@@ -486,15 +485,15 @@ class Navigation(models.Model):
 class Read(models.Model):
     type = models.CharField(max_length=255, verbose_name="类型")
     title = models.CharField(max_length=255, verbose_name="标题", unique=True)
-    img = ImageField(upload_to="Read_img", max_length=255, verbose_name="图片", help_text=MAIN_PIC)
-    detailImg = ImageField(upload_to="Read_detail", max_length=255, verbose_name="细节图片", help_text=MAIN_PIC)
+    img = SImageField(upload_to="Read_img", max_length=255, verbose_name="图片")
+    detailImg = SImageField(upload_to="Read_detail", max_length=255, verbose_name="细节图片")
     desc = models.CharField(max_length=255, verbose_name="描述")
     price = models.IntegerField(default=0, verbose_name="价格")
     persons = models.IntegerField(default=0, verbose_name="人数")
     term = models.IntegerField(default=0, verbose_name="章节数")
     isRecommend = models.BooleanField(verbose_name="是否推荐", default=False)
     author = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING, verbose_name="作者", default="",
-                               blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__name')
+                               blank=True, db_constraint=False)
 
     class Meta:
         verbose_name = '专栏'
@@ -503,13 +502,13 @@ class Read(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name="文章名")
-    img = ImageField(upload_to="Article_img", max_length=255, verbose_name="图片", help_text=MAIN_PIC)
+    img = SImageField(upload_to="Article_img", max_length=255, verbose_name="图片")
     views = models.IntegerField(default=0, verbose_name="查看量")
     author = models.CharField(max_length=255, verbose_name="作者")
     tag = models.CharField(max_length=255, verbose_name="标签")
     time = models.CharField(max_length=255, verbose_name="时间")
     type = models.ForeignKey("ArticleType", on_delete=models.DO_NOTHING, verbose_name="文章类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                             blank=True, db_constraint=False)
 
     class Meta:
         verbose_name = '文章'
@@ -546,14 +545,14 @@ class Answer(models.Model):
 class Qa(models.Model):
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
     title = models.CharField(max_length=255, verbose_name="问题名称", default="")
-    avatar = ImageField(upload_to="Qa_avatar", max_length=255, verbose_name="提问者头像", default="", help_text=MAIN_AVATAR)
+    avatar = SImageField(upload_to="Qa_avatar", max_length=255, verbose_name="提问者头像", default="")
     answers = models.IntegerField(verbose_name="回答数", default=0)
     views = models.IntegerField(verbose_name="查看数", default=0)
     chapter = models.CharField(max_length=255, verbose_name="章节名字", default="")
     time = models.DateTimeField(auto_now=True, verbose_name="评论时间")
     comment = models.CharField(max_length=1000, verbose_name="评论内容", default="")
     type = models.ForeignKey(QaType, on_delete=models.DO_NOTHING, verbose_name="问题类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
 
     class Meta:
         verbose_name = 'Qa'
@@ -571,7 +570,7 @@ class ArticleType(models.Model):
 
 class UserNotice(models.Model):
     messageid = models.ForeignKey(Notice, on_delete=models.DO_NOTHING, verbose_name="通知id", default="",
-                                  blank=True, db_constraint=False, related_name="notice", help_text=f'{MAIN_DISPLAY}__title')
+                                  blank=True, db_constraint=False, related_name="notice")
     userid = models.CharField(max_length=255, verbose_name="通知用户id")
     isRead = models.BooleanField(verbose_name="通知已读")
     isDelete = models.BooleanField(verbose_name="通知已删除")
@@ -582,7 +581,7 @@ class UserNotice(models.Model):
 
 
 class Slider(models.Model):
-    img = ImageField(upload_to="Slider_img", max_length=255, verbose_name="图片地址", help_text=MAIN_PIC)
+    img = SImageField(upload_to="Slider_img", max_length=255, verbose_name="图片地址")
     path = models.CharField(default="", max_length=255, verbose_name="跳转地址")
     sort = models.IntegerField(default=0, verbose_name="排序")
 
@@ -593,11 +592,11 @@ class Slider(models.Model):
 
 class UserLesson(models.Model):
     type = models.ForeignKey("LessonType", on_delete=models.DO_NOTHING, verbose_name="课程类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__text')
+                             blank=True, db_constraint=False, )
     userid = models.CharField(max_length=255, verbose_name="用户id")
     lessonid = models.CharField(max_length=255, verbose_name="课程id")
     title = models.CharField(max_length=255, verbose_name="标题")
-    img = ImageField(upload_to="UserLesson_img", max_length=255, verbose_name="图片", help_text=MAIN_PIC)
+    img = SImageField(upload_to="UserLesson_img", max_length=255, verbose_name="图片")
     percent = models.IntegerField(default=0, verbose_name="百分比")
     isFollow = models.BooleanField(verbose_name="是否follow")
     exp = models.IntegerField(default=0, verbose_name="经验")
@@ -615,7 +614,7 @@ class UserLesson(models.Model):
 class Nav(models.Model):
     title = models.CharField(max_length=255, verbose_name="名称")
     path = models.CharField(max_length=255, default="/", verbose_name="访问路径")
-    icon = models.ImageField(max_length=255, verbose_name="图标", help_text=MAIN_PIC)
+    icon = models.ImageField(max_length=255, verbose_name="图标")
 
     class Meta:
         verbose_name = '首页左侧菜单'
@@ -654,7 +653,7 @@ class Label(models.Model):
     title = models.CharField(max_length=255, verbose_name="标题")
     sort = models.IntegerField(default=0, verbose_name="排序")
     type = models.ForeignKey(LabelType, on_delete=models.DO_NOTHING, verbose_name="Label类型", default="",
-                             blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                             blank=True, db_constraint=False)
 
     class Meta:
         verbose_name = 'Label小项'
@@ -687,7 +686,7 @@ class CommonPathConfig(models.Model):
 
 class Chapter(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.DO_NOTHING, verbose_name="所属Lesson", default="",
-                               blank=True, db_constraint=False, help_text=f'{MAIN_DISPLAY}__title')
+                               blank=True, db_constraint=False)
     title = models.CharField(max_length=255, verbose_name="章节标题")
     introduce = models.CharField(default="", max_length=800, verbose_name="章节介绍")
 
@@ -698,7 +697,7 @@ class Chapter(models.Model):
 
 class Term(models.Model):
     chapter = models.ForeignKey(Chapter, on_delete=models.DO_NOTHING, verbose_name="所属章节", default="",
-                                blank=True, db_constraint=False, related_name="term", help_text=f'{MAIN_DISPLAY}__title')
+                                blank=True, db_constraint=False, related_name="term")
     seconds = models.IntegerField(verbose_name="时长")
     title = models.CharField(default="", max_length=255, verbose_name="小节标题")
     path = models.CharField(max_length=255, verbose_name="访问链接")

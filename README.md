@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-后台管理使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。
+后台管理使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接,欢迎关注使用tyadmin。
+
+>https://github.com/mtianyan/tyadmin_api_cli
 
 - v2版前台体验地址: https://imooc.funpython.cn
 - v2版在线体验地址: https://imooc.funpython.cn/xadmin
