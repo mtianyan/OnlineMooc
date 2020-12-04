@@ -90,7 +90,7 @@ if UseDocker:
             'NAME': 'online_mooc',  # 数据库名
             'USER': 'root',  # 用户名
             'PASSWORD': 'mtianyanroot',  # 密码
-            'HOST': 'mysql',  # 链接id ,空为本地,可以设置绝对路径
+            'HOST': '127.0.0.1',  # 链接id ,空为本地,可以设置绝对路径
             'PORT': '3306',  # 端口号
         }
     }

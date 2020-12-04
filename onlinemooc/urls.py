@@ -18,10 +18,11 @@ from django.views.static import serve
 from django.urls import path, include, re_path
 from rest_framework.documentation import include_docs_urls
 from django.conf import settings
+from tyadmin_api.views import AdminIndexView
 
 urlpatterns = [
     path('api/xadmin/v1/', include('tyadmin_api.urls')),
     path('api/v1/', include('app_api.urls')),
     re_path('media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
-    # re_path('^xadmin/.*', AdminIndexView.as_view(), name="admin_index"),
+    re_path('^xadmin/.*', AdminIndexView.as_view(), name="admin_index"),
 ]

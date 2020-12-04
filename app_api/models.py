@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-from tyadmin_api_cli.fileds import SImageField
+from tyadmin_api_cli.fields import SImageField
 
 
 class EmailVerifyRecord(models.Model):

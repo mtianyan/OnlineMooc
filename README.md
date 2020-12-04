@@ -3,20 +3,28 @@
 [![Build Status](https://travis-ci.org/mtianyan/hexoBlog-Github.svg?branch=master)](https://travis-ci.org/mtianyan/hexoBlog-Github)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-后台管理使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接,欢迎关注使用tyadmin。
+使用TyAdmin(现代化的Xadmin替代品)生成管理后台前后端，并自动对接。✨ 强烈推荐使用:
+
+>https://github.com/mtianyan/tyadmin_api_cli 
+
+📨 Tyadmin互动交流反馈QQ群: 304094780
+
+# 前后台效果展示
+
+![](http://cdn.pic.mtianyan.cn/blog_img/20201204233749.png)
+
+![](http://cdn.pic.mtianyan.cn/blog_img/20201204233849.png)
 
 >https://github.com/mtianyan/tyadmin_api_cli
 
 - v2版前台体验地址: https://imooc.funpython.cn
 - v2版在线体验地址: https://imooc.funpython.cn/xadmin
 
-- 第一版(master分支)前台体验地址: https://mooc.funpython.cn
-- 第一版(master分支)后台体验地址:: https://mooc.funpython.cn/xadmin
+>账号: mtianyan
+密码: admin2020
 
 Vue前台代码地址: https://github.com/mtianyan/vue-mooc
-
->账号: mtianyan
-密码: 123456
+Vue前台代码原作者及文档: https://github.com/wangtunan/vue-mooc  https://wangtunan.github.io/vue-mooc/
 
 ## 运行指南:
 
