@@ -14,7 +14,7 @@ itypes==1.2.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 mysqlclient==2.0.1
-Pillow==7.2.0
+Pillow==8.2.0
 pytz==2020.1
 requests==2.24.0
 six==1.15.0
