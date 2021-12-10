@@ -9,6 +9,12 @@
 
 📨 Tyadmin互动交流反馈QQ群: 304094780
 
+- v2版前台体验地址: https://imooc.funpython.cn
+- v2版在线体验地址: https://imooc.funpython.cn/xadmin
+
+>账号: mtianyan
+密码: admin2020
+
 # 前后台效果展示
 
 ![](http://cdn.pic.mtianyan.cn/blog_img/20201204233749.png)
@@ -17,11 +23,6 @@
 
 >https://github.com/mtianyan/tyadmin_api_cli
 
-- v2版前台体验地址: https://imooc.funpython.cn
-- v2版在线体验地址: https://imooc.funpython.cn/xadmin
-
->账号: mtianyan
-密码: admin2020
 
 Vue前台代码地址: https://github.com/mtianyan/vue-mooc
 Vue前台代码原作者及文档: https://github.com/wangtunan/vue-mooc  https://wangtunan.github.io/vue-mooc/
