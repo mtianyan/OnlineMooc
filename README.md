@@ -12,8 +12,8 @@
 - v2版前台体验地址: https://imooc.funpython.cn
 - v2版在线体验地址: https://imooc.funpython.cn/xadmin
 
->账号: mtianyan
-密码: admin2020
+>账号: mtianyan2
+密码: admin2022
 
 # 前后台效果展示
 
